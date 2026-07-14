@@ -1,0 +1,114 @@
+/* Artist page */
+
+.artist-hero {
+  position: relative;
+  min-height: 88svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: clip;
+  color: #fff;
+}
+.artist-hero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.artist-hero__band {
+  width: 100%;
+  background: var(--band-red);
+  padding: clamp(1.5rem, 3.5vw, 3rem) var(--gutter);
+}
+
+/* Biography — editorial two-column with display drop cap */
+.bio {
+  display: grid;
+  gap: 3rem;
+}
+@media (min-width: 60em) {
+  .bio { grid-template-columns: 1fr 1fr; gap: 5rem; }
+}
+.bio__col p + p { margin-top: 1.25rem; }
+.bio__col--first > p:first-of-type::first-letter {
+  font-family: var(--font-display);
+  font-size: 5.2em;
+  float: left;
+  line-height: 0.8;
+  padding: 0.08em 0.12em 0 0;
+  color: var(--tupa-red);
+}
+.bio__facts {
+  margin-top: 2rem;
+  border-top: 2px solid var(--ink);
+  font-size: 0.9375rem;
+}
+.bio__facts div {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-block: 0.7rem;
+  border-bottom: 1px solid rgba(20,20,20,0.12);
+}
+.bio__facts dt { color: var(--stone); }
+.bio__facts dd { margin: 0; text-align: right; }
+
+/* Pilgrimage quote — full-screen typographic moment, sticky pin */
+.quote-pin { height: 320vh; position: relative; }
+.quote-pin__panel {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  background: var(--ink);
+  color: var(--gallery);
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: var(--gutter);
+  overflow: hidden;
+}
+.quote-pin__line {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  line-height: 1.05;
+  opacity: 0.08;
+  transform: translateY(0.3em);
+  transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
+}
+.quote-pin__line.is-lit { opacity: 1; transform: none; }
+.quote-pin__line em { font-style: normal; color: var(--tupa-yellow); }
+.quote-pin__sig {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.8s var(--ease-out-expo);
+}
+.quote-pin__sig.is-lit { opacity: 1; }
+.quote-pin__sig svg { width: min(280px, 60vw); height: auto; }
+.quote-pin__attr {
+  margin-top: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.8s var(--ease-out-expo) 0.2s;
+}
+.quote-pin__attr.is-lit { opacity: 0.7; }
+@media (prefers-reduced-motion: reduce) {
+  .quote-pin { height: auto; }
+  .quote-pin__panel { position: static; height: auto; padding-block: 6rem; }
+  .quote-pin__line, .quote-pin__sig, .quote-pin__attr {
+    opacity: 1; transform: none; transition: none;
+  }
+  .quote-pin__attr { opacity: 0.7; }
+}
+.no-js .quote-pin { height: auto; }
+.no-js .quote-pin__panel { position: static; height: auto; padding-block: 6rem; }
+.no-js .quote-pin__line, .no-js .quote-pin__sig { opacity: 1; transform: none; }
+.no-js .quote-pin__attr { opacity: 0.7; }
+
+/* Works grid reuses .lot-grid from catalogue */
+.artist-works .lot-grid {
+  display: grid;
+  gap: 2.5rem 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 48em) { .artist-works .lot-grid { grid-template-columns: repeat(3, 1fr); } }

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" width="320" height="96" role="img" aria-label="Tupa  Jerome Tupa Fine Art">
+  <!-- TODO: replace with the client's vector signature mark; this is a traced stand-in. -->
+  <g fill="none" stroke="#141414" stroke-linecap="round" stroke-linejoin="round">
+    <!-- T -->
+    <path class="sig-stroke" stroke-width="7" d="M14 22 C 40 14, 78 12, 104 18"/>
+    <path class="sig-stroke" stroke-width="8" d="M58 17 C 54 34, 48 52, 46 64 C 45 70, 47 73, 52 71"/>
+    <!-- u -->
+    <path class="sig-stroke" stroke-width="7" d="M118 38 C 114 48, 111 58, 113 63 C 115 68, 122 67, 128 60 C 133 54, 136 46, 138 40 C 136 48, 134 58, 138 63 C 141 67, 147 64, 151 58"/>
+    <!-- p -->
+    <path class="sig-stroke" stroke-width="7" d="M166 40 C 160 58, 155 74, 151 88 M162 50 C 166 42, 174 36, 181 39 C 188 42, 188 53, 181 59 C 175 64, 167 63, 163 58"/>
+    <!-- a with flourish -->
+    <path class="sig-stroke" stroke-width="7" d="M218 42 C 210 38, 200 43, 197 52 C 194 60, 199 66, 206 64 C 213 62, 218 54, 220 46 C 218 54, 217 61, 221 64 C 226 67, 238 62, 252 50 C 268 36, 284 28, 302 26"/>
+  </g>
+  <text x="16" y="88" font-family="'Helvetica Neue', Helvetica, Inter, Arial, sans-serif" font-size="12.5" font-weight="700" letter-spacing="4.5" fill="#141414">JEROME TUPA FINE ART</text>
+</svg>

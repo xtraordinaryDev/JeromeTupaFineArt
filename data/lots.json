@@ -1,0 +1,264 @@
+[
+  {
+    "id": "001",
+    "lotNumber": 1,
+    "artist": "Father Jerome Tupa",
+    "title": "Pilgrim's Road",
+    "year": 2017,
+    "medium": "Oil on canvas",
+    "dimensionsIn": "60 × 40 in",
+    "dimensionsCm": "152.4 × 101.6 cm",
+    "widthIn": 60,
+    "heightIn": 40,
+    "estimateLow": 9000,
+    "estimateHigh": 14000,
+    "category": "tupa",
+    "provenance": "From the artist’s studio, Saint John’s Abbey, Collegeville, Minnesota.",
+    "essay": "Painted after Tupa’s walking pilgrimage along the Camino de Santiago, Pilgrim’s Road compresses weeks of landscape into a single fauvist panorama — ochre fields, a ribbon of red road, and the high blue of a Spanish sky. The horizon tilts as if seen mid-stride; the paint is applied in the broad, joyful strokes that have become the artist’s signature.",
+    "images": [
+      "assets/lots/lot-001-1.svg",
+      "assets/lots/lot-001-2.svg"
+    ]
+  },
+  {
+    "id": "002",
+    "lotNumber": 2,
+    "artist": "Father Jerome Tupa",
+    "title": "Silver Palace Tiles",
+    "year": 2019,
+    "medium": "Oil on canvas",
+    "dimensionsIn": "36 × 48 in",
+    "dimensionsCm": "91.4 × 121.9 cm",
+    "widthIn": 36,
+    "heightIn": 48,
+    "estimateLow": 8000,
+    "estimateHigh": 12000,
+    "category": "tupa",
+    "provenance": "From the artist’s studio, Saint John’s Abbey, Collegeville, Minnesota.",
+    "essay": "A meditation on pattern and light, Silver Palace Tiles takes the geometry of Moorish tilework and lets it dissolve into pure color. Squares of teal and gold interlock, then break rank — an ordered surface interrupted by paint, the way ritual is interrupted by joy.",
+    "images": [
+      "assets/lots/lot-002-1.svg",
+      "assets/lots/lot-002-2.svg"
+    ]
+  },
+  {
+    "id": "003",
+    "lotNumber": 3,
+    "artist": "Father Jerome Tupa",
+    "title": "Abbey Bells at Dusk",
+    "year": 2021,
+    "medium": "Oil on canvas",
+    "dimensionsIn": "48 × 60 in",
+    "dimensionsCm": "121.9 × 152.4 cm",
+    "widthIn": 48,
+    "heightIn": 60,
+    "estimateLow": 10000,
+    "estimateHigh": 15000,
+    "category": "tupa",
+    "provenance": "From the artist’s studio, Saint John’s Abbey, Collegeville, Minnesota.",
+    "essay": "The banner tower of Saint John’s Abbey — Marcel Breuer’s great concrete bell banner — rendered not as architecture but as sound: concentric waves of red and violet ringing outward across a darkening Minnesota sky. One of the largest canvases in the sale.",
+    "images": [
+      "assets/lots/lot-003-1.svg",
+      "assets/lots/lot-003-2.svg"
+    ]
+  },
+  {
+    "id": "004",
+    "lotNumber": 4,
+    "artist": "Father Jerome Tupa",
+    "title": "Umbrian Gate",
+    "year": 2015,
+    "medium": "Oil on canvas",
+    "dimensionsIn": "30 × 40 in",
+    "dimensionsCm": "76.2 × 101.6 cm",
+    "widthIn": 30,
+    "heightIn": 40,
+    "estimateLow": 6000,
+    "estimateHigh": 9000,
+    "category": "tupa",
+    "provenance": "Private collection, Minneapolis; acquired directly from the artist.",
+    "essay": "From the artist’s Assisi period. A medieval gate in the Umbrian hills becomes a proscenium of hot yellow and rose, the passage beyond left ambiguous — an invitation rather than a destination. “We are all on a pilgrimage,” Tupa has said. “That is the human condition.”",
+    "images": [
+      "assets/lots/lot-004-1.svg"
+    ]
+  },
+  {
+    "id": "005",
+    "lotNumber": 5,
+    "artist": "Father Jerome Tupa",
+    "title": "The Long Walk to Compostela",
+    "year": 2018,
+    "medium": "Oil on linen",
+    "dimensionsIn": "72 × 36 in",
+    "dimensionsCm": "182.9 × 91.4 cm",
+    "widthIn": 72,
+    "heightIn": 36,
+    "estimateLow": 12000,
+    "estimateHigh": 18000,
+    "category": "tupa",
+    "provenance": "From the artist’s studio, Saint John’s Abbey, Collegeville, Minnesota.",
+    "essay": "A six-foot horizontal frieze — the widest work in the sale — tracing the pilgrim road west toward Santiago de Compostela. Waystations appear as flares of teal; the walking figures are barely more than brushmarks, dissolved into the landscape they cross.",
+    "images": [
+      "assets/lots/lot-005-1.svg",
+      "assets/lots/lot-005-2.svg"
+    ]
+  },
+  {
+    "id": "006",
+    "lotNumber": 6,
+    "artist": "Father Jerome Tupa",
+    "title": "Garden of the Cloister",
+    "year": 2022,
+    "medium": "Oil on canvas",
+    "dimensionsIn": "24 × 30 in",
+    "dimensionsCm": "61 × 76.2 cm",
+    "widthIn": 24,
+    "heightIn": 30,
+    "estimateLow": 4500,
+    "estimateHigh": 7000,
+    "category": "tupa",
+    "provenance": "From the artist’s studio, Saint John’s Abbey, Collegeville, Minnesota.",
+    "essay": "An intimate study of the abbey garden in high summer — beds of red and gold held inside the cool geometry of the cloister walk. The smallest Tupa canvas in the sale, and among the most concentrated.",
+    "images": [
+      "assets/lots/lot-006-1.svg"
+    ]
+  },
+  {
+    "id": "007",
+    "lotNumber": 7,
+    "artist": "Donald Jackson & scribes",
+    "title": "The Word Made Flesh — Illuminated Folio",
+    "year": 2005,
+    "medium": "Ink, gold leaf and pigment on vellum (fine-art edition)",
+    "dimensionsIn": "24.5 × 31.5 in",
+    "dimensionsCm": "62.2 × 80 cm",
+    "widthIn": 24.5,
+    "heightIn": 31.5,
+    "estimateLow": 5000,
+    "estimateHigh": 8000,
+    "category": "bible",
+    "provenance": "The Saint John’s Bible, Heritage Edition; Saint John’s University, Collegeville, Minnesota.",
+    "essay": "A folio from The Saint John’s Bible — the first completely handwritten and illuminated Bible commissioned by a Benedictine abbey since the invention of the printing press. Gold leaf catches and returns the light of the room, as the illuminators intended.",
+    "images": [
+      "assets/lots/lot-007-1.svg"
+    ]
+  },
+  {
+    "id": "008",
+    "lotNumber": 8,
+    "artist": "Donald Jackson & scribes",
+    "title": "Genesis Frontispiece — Illuminated Folio",
+    "year": 2003,
+    "medium": "Ink, gold leaf and pigment on vellum (fine-art edition)",
+    "dimensionsIn": "24.5 × 31.5 in",
+    "dimensionsCm": "62.2 × 80 cm",
+    "widthIn": 24.5,
+    "heightIn": 31.5,
+    "estimateLow": 6000,
+    "estimateHigh": 9000,
+    "category": "bible",
+    "provenance": "The Saint John’s Bible, Heritage Edition; Saint John’s University, Collegeville, Minnesota.",
+    "essay": "The opening of Genesis: seven vertical bands of creation emerging from darkness into gold. Among the most reproduced images of the entire Saint John’s Bible project, offered here as a museum-grade illuminated folio.",
+    "images": [
+      "assets/lots/lot-008-1.svg"
+    ]
+  },
+  {
+    "id": "009",
+    "lotNumber": 9,
+    "artist": "Richard Bresnahan",
+    "title": "Tea Bowl, Nanban-Glazed",
+    "year": 2016,
+    "medium": "Wood-fired stoneware, natural ash glaze",
+    "dimensionsIn": "5.5 × 4 in",
+    "dimensionsCm": "14 × 10.2 cm",
+    "widthIn": 5.5,
+    "heightIn": 4,
+    "estimateLow": 1200,
+    "estimateHigh": 1800,
+    "category": "pottery",
+    "provenance": "Saint John’s Pottery, Collegeville, Minnesota.",
+    "essay": "Fired in the Johanna Kiln — the largest wood-burning kiln in North America — at Saint John’s Pottery, where Bresnahan has been artist-in-residence since 1979. The nanban surface is unglazed by hand; the kiln itself paints it in ten days of continuous firing.",
+    "images": [
+      "assets/lots/lot-009-1.svg"
+    ]
+  },
+  {
+    "id": "010",
+    "lotNumber": 10,
+    "artist": "Richard Bresnahan",
+    "title": "Sculpted Vase with Natural Ash Glaze",
+    "year": 2019,
+    "medium": "Wood-fired stoneware, local Minnesota clay",
+    "dimensionsIn": "9 × 16 in",
+    "dimensionsCm": "22.9 × 40.6 cm",
+    "widthIn": 9,
+    "heightIn": 16,
+    "estimateLow": 2500,
+    "estimateHigh": 4000,
+    "category": "pottery",
+    "provenance": "Saint John’s Pottery, Collegeville, Minnesota.",
+    "essay": "Thrown from clay dug within thirty miles of the abbey and fired with deadfall timber from its forest — Bresnahan’s practice is a closed ecological loop, and every surface records the fire that finished it.",
+    "images": [
+      "assets/lots/lot-010-1.svg"
+    ]
+  },
+  {
+    "id": "011",
+    "lotNumber": 11,
+    "artist": "Pablo Picasso",
+    "title": "Original Work — Details Announced at Sale",
+    "year": null,
+    "medium": "To be announced",
+    "dimensionsIn": "20 × 26 in",
+    "dimensionsCm": "50.8 × 66 cm",
+    "widthIn": 20,
+    "heightIn": 26,
+    "estimateLow": null,
+    "estimateHigh": null,
+    "category": "modern",
+    "provenance": "Distinguished private collection. Full catalogue entry available at the evening sale.",
+    "essay": "An original work by Pablo Picasso, offered from a distinguished private collection. In keeping with the consignor’s wishes, full details — title, date, medium and estimate — will be announced in the room on the evening of the sale.",
+    "images": []
+  },
+  {
+    "id": "012",
+    "lotNumber": 12,
+    "artist": "Private collection",
+    "title": "Lakeshore, Minnesota",
+    "year": 1954,
+    "medium": "Oil on board",
+    "dimensionsIn": "32 × 24 in",
+    "dimensionsCm": "81.3 × 61 cm",
+    "widthIn": 32,
+    "heightIn": 24,
+    "estimateLow": 3000,
+    "estimateHigh": 5000,
+    "category": "private",
+    "provenance": "Private collection, Wayzata, Minnesota.",
+    "essay": "A mid-century Minnesota lakeshore in late light, from a distinguished private collection — one of several regional works consigned in support of the abbey and university.",
+    "images": [
+      "assets/lots/lot-012-1.svg"
+    ]
+  },
+  {
+    "id": "013",
+    "lotNumber": 13,
+    "artist": "Private collection",
+    "title": "Still Life with Lilies",
+    "year": 1962,
+    "medium": "Oil on canvas",
+    "dimensionsIn": "22 × 28 in",
+    "dimensionsCm": "55.9 × 71.1 cm",
+    "widthIn": 22,
+    "heightIn": 28,
+    "estimateLow": 2000,
+    "estimateHigh": 3500,
+    "category": "private",
+    "provenance": "Private collection, Edina, Minnesota.",
+    "essay": "Cut lilies against a field of loose, confident color — consigned from a private Twin Cities collection in support of the enduring missions of Saint John’s Abbey and Saint John’s University.",
+    "images": [
+      "assets/lots/lot-013-1.svg"
+    ]
+  }
+]

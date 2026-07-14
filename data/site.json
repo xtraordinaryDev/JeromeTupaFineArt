@@ -1,0 +1,42 @@
+{
+  "event": {
+    "name": "An Evening of Fine Art & Philanthropy featuring Father Jerome Tupa",
+    "dateISO": "2026-10-22T16:00:00-05:00",
+    "endISO": "2026-10-22T19:30:00-05:00",
+    "dateDisplay": "Thursday, October 22, 2026",
+    "timeDisplay": "4:00 p.m. \u2013 7:30 p.m.",
+    "host": "John Pellegrene",
+    "venue": {
+      "name": "Bacio Restaurant",
+      "address1": "1571 Plymouth Road",
+      "address2": "Minnetonka, Minnesota 55305",
+      "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=Bacio+Restaurant,+1571+Plymouth+Road,+Minnetonka,+MN+55305"
+    }
+  },
+  "quote": {
+    "text": "We are all on a pilgrimage. That is the human condition.",
+    "attribution": "Father Jerome Tupa"
+  },
+  "rsvpEndpoint": "https://formspree.io/f/REPLACE_ME",
+  "conditionReportEmail": "info@jerometupafineart.com",
+  "sponsors": [
+    { "name": "Fidelis Capital", "logo": "assets/brand/sponsor-fidelis.svg" },
+    { "name": "Saint John's University", "logo": "assets/brand/sponsor-sju.svg" },
+    { "name": "Saint John's Abbey", "logo": "assets/brand/sponsor-abbey.svg" },
+    { "name": "The Saint John's Bible", "logo": "assets/brand/sponsor-bible.svg" }
+  ],
+  "nav": [
+    { "label": "The Lots", "href": "auction.html" },
+    { "label": "The Artist", "href": "artist.html" },
+    { "label": "The Collection", "href": "collection.html" },
+    { "label": "The Event", "href": "event.html" },
+    { "label": "The Cause", "href": "support.html" }
+  ],
+  "categories": {
+    "tupa": "Tupa Paintings",
+    "bible": "The Saint John's Bible",
+    "pottery": "Pottery",
+    "modern": "Modern Masters",
+    "private": "Private Collections"
+  }
+}

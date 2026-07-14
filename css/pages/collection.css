@@ -1,0 +1,86 @@
+/* Collection + Support pages */
+
+.page-head {
+  padding-top: var(--nav-h);
+}
+
+/* Long-scroll editorial chapters */
+.chapter { scroll-margin-top: var(--nav-h); }
+.chapter__intro {
+  color: #fff;
+  padding: clamp(2rem, 5vw, 3.5rem) 0;
+}
+.chapter__intro--blue { background: var(--band-blue); }
+.chapter__intro--teal { background: var(--band-teal); }
+.chapter__intro--red  { background: var(--band-red); }
+.chapter__intro--ink  { background: var(--ink); }
+.chapter__intro .display { max-width: 20ch; }
+
+.chapter__body {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+  padding-block: clamp(3rem, 7vw, 6rem);
+}
+@media (min-width: 60em) {
+  .chapter__body { grid-template-columns: 1.1fr 1fr; gap: 5rem; }
+  .chapter__body--flip > :first-child { order: 2; }
+}
+.chapter__media { overflow: hidden; }
+.chapter__media img { width: 100%; height: auto; }
+.chapter__copy > * + * { margin-top: 1.25rem; }
+.chapter__copy .caption { display: block; }
+.chapter__picasso {
+  background: var(--ink);
+  color: var(--gallery);
+  aspect-ratio: 4 / 5;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+.chapter__picasso .display { font-size: clamp(3.5rem, 8vw, 6.5rem); }
+
+/* ------------------------------------------------------------ Support */
+
+.support-hero {
+  background: var(--ink);
+  color: var(--gallery);
+  padding: calc(var(--nav-h) + clamp(3rem, 8vw, 6rem)) 0 clamp(3rem, 8vw, 6rem);
+}
+.support-hero .display { max-width: 14ch; }
+.support-hero .lead { max-width: 40rem; margin-top: 1.5rem; color: #cfcec9; }
+
+.mission-grid {
+  display: grid;
+  gap: 3rem;
+}
+@media (min-width: 48em) { .mission-grid { grid-template-columns: 1fr 1fr; } }
+.mission-card { border-top: 3px solid var(--tupa-red); padding-top: 1.5rem; }
+.mission-card:nth-child(2) { border-top-color: var(--tupa-blue); }
+.mission-card h3 { font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem; }
+.mission-card p + p { margin-top: 1rem; }
+
+.sponsor-wall {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+@media (min-width: 40em) { .sponsor-wall { grid-template-columns: 1fr 1fr; } }
+.sponsor-wall a {
+  display: grid;
+  place-items: center;
+  background: #fff;
+  border: 1px solid rgba(20,20,20,0.1);
+  padding: 2.5rem 2rem;
+  min-height: 9rem;
+}
+.sponsor-wall img {
+  filter: grayscale(1);
+  opacity: 0.7;
+  transition: filter 0.35s ease, opacity 0.35s ease;
+  max-height: 4rem;
+  width: auto;
+}
+.sponsor-wall a:hover img, .sponsor-wall a:focus-visible img { filter: none; opacity: 1; }

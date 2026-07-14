@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Lots — Father Jerome Tupa Auction | October 22, 2026</title>
+  <meta name="description" content="Browse the catalogue for An Evening of Fine Art &amp; Philanthropy: original paintings by Father Jerome Tupa, illuminated pages from the St. John's Bible, Bresnahan pottery, an original Picasso, and works from private collections.">
+  <script>document.documentElement.classList.replace('no-js','js')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/motion.css">
+  <link rel="stylesheet" href="css/pages/catalogue.css">
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/catalogue.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a class="site-nav__logo" href="index.html" aria-label="Jerome Tupa Fine Art — home">
+        <svg viewBox="0 0 320 96" aria-hidden="true" focusable="false">
+          <g fill="none" stroke="#141414" stroke-linecap="round" stroke-linejoin="round">
+            <path class="sig-stroke" stroke-width="7" d="M14 22 C 40 14, 78 12, 104 18"/>
+            <path class="sig-stroke" stroke-width="8" d="M58 17 C 54 34, 48 52, 46 64 C 45 70, 47 73, 52 71"/>
+            <path class="sig-stroke" stroke-width="7" d="M118 38 C 114 48, 111 58, 113 63 C 115 68, 122 67, 128 60 C 133 54, 136 46, 138 40 C 136 48, 134 58, 138 63 C 141 67, 147 64, 151 58"/>
+            <path class="sig-stroke" stroke-width="7" d="M166 40 C 160 58, 155 74, 151 88 M162 50 C 166 42, 174 36, 181 39 C 188 42, 188 53, 181 59 C 175 64, 167 63, 163 58"/>
+            <path class="sig-stroke" stroke-width="7" d="M218 42 C 210 38, 200 43, 197 52 C 194 60, 199 66, 206 64 C 213 62, 218 54, 220 46 C 218 54, 217 61, 221 64 C 226 67, 238 62, 252 50 C 268 36, 284 28, 302 26"/>
+          </g>
+          <text x="16" y="88" font-family="'Helvetica Neue', Helvetica, Inter, Arial, sans-serif" font-size="12.5" font-weight="700" letter-spacing="4.5" fill="#141414">JEROME TUPA FINE ART</text>
+        </svg>
+      </a>
+      <ul class="site-nav__links">
+        <li><a class="link-sweep" href="auction.html">The Lots</a></li>
+        <li><a class="link-sweep" href="artist.html">The Artist</a></li>
+        <li><a class="link-sweep" href="collection.html">The Collection</a></li>
+        <li><a class="link-sweep" href="event.html">The Event</a></li>
+        <li><a class="link-sweep" href="support.html">The Cause</a></li>
+      </ul>
+      <a class="rsvp-pill" href="event.html#rsvp">RSVP · 10.22.26</a>
+      <button class="nav-burger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span></button>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
+    <button class="mobile-menu__close" aria-label="Close menu">&times;</button>
+    <ul class="mobile-menu__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="auction.html">The Lots</a></li>
+      <li><a href="artist.html">The Artist</a></li>
+      <li><a href="collection.html">The Collection</a></li>
+      <li><a href="event.html">The Event</a></li>
+      <li><a href="support.html">The Cause</a></li>
+    </ul>
+    <a class="rsvp-pill" href="event.html#rsvp">RSVP · 10.22.26</a>
+  </nav>
+
+  <main id="main" class="catalogue-head">
+
+    <div class="section-bar">
+      <div class="section-bar__inner">
+        <span class="section-bar__brand">Father Jerome Tupa Auction</span>
+        <h1 class="section-bar__label">The Lots</h1>
+      </div>
+    </div>
+
+    <div class="container catalogue-layout">
+
+      <aside class="filter-rail" aria-label="Filters">
+        <div data-rail-slot>
+          <form id="filter-form">
+            <div class="filter-group">
+              <fieldset>
+                <legend>Category</legend>
+                <div data-cat-options></div>
+              </fieldset>
+            </div>
+            <div class="filter-group">
+              <p class="filter-group__title" id="range-label">Estimate</p>
+              <div class="range-wrap" role="group" aria-labelledby="range-label">
+                <input type="range" name="min" min="0" max="20000" step="500" value="0" aria-label="Minimum estimate">
+                <input type="range" name="max" min="0" max="20000" step="500" value="20000" aria-label="Maximum estimate">
+              </div>
+              <div class="range-values"><span data-range-lo>$0</span><span data-range-hi>$20,000+</span></div>
+            </div>
+            <div class="filter-group">
+              <label class="filter-group__title" for="sort">Sort</label>
+              <select id="sort" name="sort">
+                <option value="lot">Lot number</option>
+                <option value="est-asc">Estimate — low to high</option>
+                <option value="est-desc">Estimate — high to low</option>
+              </select>
+            </div>
+            <button type="button" class="filter-clear">Clear all filters</button>
+          </form>
+        </div>
+      </aside>
+
+      <section aria-label="Lot catalogue">
+        <div class="catalogue-toolbar">
+          <span class="catalogue-toolbar__count" data-result-count aria-live="polite">Loading…</span>
+          <button type="button" class="btn btn--ghost filter-open">Filter &amp; sort</button>
+          <div class="view-toggle" role="group" aria-label="View">
+            <button type="button" data-view="grid" aria-pressed="true">Grid</button>
+            <button type="button" data-view="wall" aria-pressed="false">Wall</button>
+          </div>
+        </div>
+
+        <div class="lot-grid" data-lot-grid data-stagger="0.06"></div>
+
+        <div class="catalogue-empty" data-empty hidden>
+          <p class="display">No lots match.</p>
+          <p>Try widening the estimate range or clearing a category.</p>
+        </div>
+
+        <noscript>
+          <p>The interactive catalogue requires JavaScript. For a full list of lots, please <a href="event.html#rsvp">RSVP</a> and a printed catalogue will be available at the sale.</p>
+        </noscript>
+      </section>
+    </div>
+
+    <dialog class="filter-sheet" id="filter-sheet" aria-label="Filter and sort">
+      <div class="filter-sheet__inner">
+        <div class="filter-sheet__head">
+          <h2>Filter &amp; sort</h2>
+          <button type="button" class="filter-sheet__close" aria-label="Close filters">&times;</button>
+        </div>
+        <div data-sheet-slot></div>
+        <button type="button" class="btn btn--red btn--block" data-sheet-apply>Show results</button>
+      </div>
+    </dialog>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__main">
+      <div>
+        <p class="eyebrow" style="color: var(--tupa-yellow)">Save the date</p>
+        <p class="date-lockup" aria-label="October 22, 2026"><span>10</span><span class="rule" aria-hidden="true"></span><span>22</span><span class="rule" aria-hidden="true"></span><span>26</span></p>
+      </div>
+      <address class="site-footer__venue">
+        <strong>An Evening of Fine Art &amp; Philanthropy</strong><br>
+        featuring Father Jerome Tupa<br><br>
+        Bacio Restaurant · 1571 Plymouth Road<br>
+        Minnetonka, Minnesota 55305<br>
+        Thursday, October 22, 2026 · 4:00–7:30 p.m.<br><br>
+        <a class="rsvp-pill" href="event.html#rsvp">RSVP · 10.22.26</a>
+      </address>
+    </div>
+    <div class="container site-footer__sponsors">
+      <a href="support.html"><img src="assets/brand/sponsor-fidelis.svg" alt="Fidelis Capital" width="240" height="64"></a>
+      <a href="support.html"><img src="assets/brand/sponsor-sju.svg" alt="Saint John's University" width="260" height="64"></a>
+      <a href="support.html"><img src="assets/brand/sponsor-abbey.svg" alt="Saint John's Abbey" width="250" height="64"></a>
+      <a href="support.html"><img src="assets/brand/sponsor-bible.svg" alt="The Saint John's Bible" width="270" height="64"></a>
+    </div>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span class="marquee__item">“We are all on a pilgrimage. That is the human condition.”<span class="sep">·</span>Father Jerome Tupa<span class="sep">·</span></span>
+      </div>
+    </div>
+    <div class="container site-footer__legal">
+      <span>© 2026 Jerome Tupa Fine Art. Benefiting St. John's Abbey &amp; St. John's University.</span>
+      <span><a href="auction.html">The Lots</a> · <a href="event.html">The Event</a> · <a href="support.html">The Cause</a></span>
+    </div>
+  </footer>
+</body>
+</html>

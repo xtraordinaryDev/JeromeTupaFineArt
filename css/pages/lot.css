@@ -1,0 +1,234 @@
+/* Lot detail */
+
+.lot-page { padding-top: var(--nav-h); }
+
+.lot-layout {
+  display: grid;
+  gap: 2.5rem;
+  padding-block: clamp(1.5rem, 3vw, 3rem);
+}
+@media (min-width: 64em) {
+  .lot-layout { grid-template-columns: 60% 1fr; gap: clamp(2rem, 4vw, 4rem); }
+}
+
+/* ---------------------------------------------------------- Image zone */
+
+.lot-stage {
+  position: relative;
+  background: var(--linen);
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  touch-action: none;
+}
+.lot-stage img {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  max-width: 92%;
+  max-height: 92%;
+  width: auto; height: auto;
+  box-shadow: 0 10px 40px rgba(20, 20, 20, 0.18);
+  transform-origin: 0 0;
+  cursor: zoom-in;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.lot-stage.is-zoomed img { cursor: grab; }
+.lot-stage.is-panning img { cursor: grabbing; }
+.lot-stage__hint {
+  position: absolute;
+  left: 1rem; bottom: 1rem;
+  background: rgba(20, 20, 20, 0.75);
+  color: #fff;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  padding: 0.45em 0.9em;
+  pointer-events: none;
+}
+
+/* Room view — painting composited at true relative scale */
+.lot-stage--room {
+  background: url("../../assets/brand/wall.svg") center / cover no-repeat;
+}
+.lot-stage--room img {
+  position: absolute;
+  margin: 0;
+  max-width: none;
+  max-height: none;
+  box-shadow: 0 6px 24px rgba(20, 20, 20, 0.35);
+  cursor: default;
+}
+
+.lot-thumbs {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.lot-thumbs button {
+  appearance: none;
+  border: 2px solid transparent;
+  background: var(--linen);
+  padding: 0;
+  width: 76px; height: 76px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.lot-thumbs button.is-active { border-color: var(--tupa-red); }
+.lot-thumbs img { width: 100%; height: 100%; object-fit: cover; }
+.lot-thumbs .room-toggle {
+  width: auto;
+  padding: 0 1.1em;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1.5px solid var(--ink);
+  background: none;
+}
+.lot-thumbs .room-toggle[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--gallery);
+}
+
+/* ---------------------------------------------------------- Info column */
+
+.lot-info { align-self: start; }
+@media (min-width: 64em) {
+  .lot-info {
+    position: sticky;
+    top: calc(var(--nav-h) + 1.5rem);
+  }
+}
+.lot-info__number {
+  font-size: var(--type-caption);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--tupa-red);
+}
+.lot-info__artist { margin-top: 0.75rem; font-weight: 700; letter-spacing: 0.02em; }
+.lot-info__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  line-height: 1;
+  margin-top: 0.35rem;
+}
+.lot-info__specs {
+  margin: 1.5rem 0 0;
+  border-top: 1px solid rgba(20,20,20,0.12);
+}
+.lot-info__specs > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-block: 0.7rem;
+  border-bottom: 1px solid rgba(20,20,20,0.12);
+  font-size: 0.9375rem;
+}
+.lot-info__specs dt { color: var(--stone); }
+.lot-info__specs dd { margin: 0; text-align: right; }
+.unit-toggle {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  color: var(--tupa-blue);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  margin-left: 0.5em;
+}
+.lot-info__estimate {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+.lot-info__estimate .caption { letter-spacing: 0.18em; }
+.lot-info__estimate strong {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+}
+.lot-info__actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+.lot-info__actions .btn--red { flex: 1; }
+.heart-btn {
+  appearance: none;
+  background: none;
+  border: 1.5px solid var(--ink);
+  width: 52px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+.heart-btn svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; }
+.heart-btn[aria-pressed="true"] { background: var(--tupa-red); border-color: var(--tupa-red); color: #fff; }
+.heart-btn[aria-pressed="true"] svg { fill: currentColor; }
+.lot-info__links {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 0.6rem;
+  font-size: 0.9375rem;
+}
+.lot-info__links a, .lot-info__links button {
+  background: none; border: 0; padding: 0;
+  text-align: left;
+  cursor: pointer;
+  color: var(--tupa-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  width: fit-content;
+}
+.lot-info__note { margin-top: 1.5rem; font-size: 0.8125rem; color: var(--stone); line-height: 1.6; }
+
+/* ---------------------------------------------------------- Below fold */
+
+.lot-essay { max-width: 46rem; }
+.lot-essay h2 { margin-bottom: 1.25rem; }
+.lot-essay p + p { margin-top: 1rem; }
+.lot-provenance { margin-top: 2rem; }
+.lot-provenance h3 { font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.5rem; }
+.lot-provenance p { color: var(--stone); font-size: 0.9375rem; }
+
+.more-rail { overflow: clip; }
+.more-rail h2 { margin-bottom: 2rem; }
+
+/* Mobile sticky action bar */
+.lot-bar {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 56px;
+  background: var(--gallery);
+  border-top: 1px solid rgba(20,20,20,0.15);
+  padding: 0.5rem var(--gutter) calc(0.5rem + env(safe-area-inset-bottom));
+}
+.lot-bar__estimate { line-height: 1.25; }
+.lot-bar__estimate .caption { display: block; letter-spacing: 0.14em; }
+.lot-bar__estimate strong { font-family: var(--font-display); font-weight: 400; font-size: 1.25rem; }
+.lot-bar .btn { margin-left: auto; padding-block: 0.7em; }
+@media (min-width: 64em) { .lot-bar { display: none; } }
+body.has-lot-bar { padding-bottom: 5rem; }
+@media (min-width: 64em) { body.has-lot-bar { padding-bottom: 0; } }
+
+/* Not-found treatment (inline 404) */
+.lot-missing {
+  min-height: 60vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background: var(--tupa-red);
+  color: #fff;
+  padding: 4rem var(--gutter);
+}
+.lot-missing .display { font-size: var(--type-display-l); margin-bottom: 1.5rem; }

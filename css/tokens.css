@@ -1,0 +1,40 @@
+/* Design tokens — Father Jerome Tupa Auction brand system */
+:root {
+  /* Brand — Pantone conversions (PMS 032 / 116 / 2184 / 2400) */
+  --tupa-red:    #EF3340;
+  --tupa-yellow: #FFCD00;
+  --tupa-blue:   #1B75BB;
+  --tupa-teal:   #00A398;
+
+  /* Neutrals */
+  --ink:     #141414;
+  --gallery: #FAFAF7;
+  --stone:   #8A8984;
+  --linen:   #F1EFE8;
+
+  /* Translucent overlay bands (the signature treatment) */
+  --band-teal: rgba(0, 163, 152, 0.85);
+  --band-blue: rgba(27, 117, 187, 0.85);
+  --band-red:  rgba(239, 51, 64, 0.85);
+
+  /* Type */
+  --font-display: "Abril Fatface", "Encorpada Classic Compressed", Georgia, serif;
+  --font-body: "Helvetica Neue", Helvetica, "Inter", Arial, sans-serif;
+
+  --type-display-xl: clamp(3rem, 10vw, 10rem);
+  --type-display-l:  clamp(2.5rem, 6vw, 6rem);
+  --type-display-m:  clamp(1.75rem, 3.5vw, 3rem);
+  --type-h3: 1.5rem;
+  --type-body: 1.0625rem;
+  --type-caption: 0.8125rem;
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-reveal: 0.7s;
+  --dur-curtain: 0.9s;
+
+  /* Layout */
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --max-w: 84rem;
+  --nav-h: 4.5rem;
+}

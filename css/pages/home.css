@@ -1,0 +1,190 @@
+/* Home page */
+
+/* ------------------------------------------------------------- Hero */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  overflow: clip;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+.hero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.hero::before {
+  /* gentle scrim so white nav text always passes contrast */
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 10rem;
+  background: linear-gradient(rgba(20, 20, 20, 0.35), transparent);
+  pointer-events: none;
+}
+
+.hero__band {
+  position: relative;
+  width: 100%;
+  will-change: transform;
+}
+.hero__band--teal {
+  background: var(--band-teal);
+  padding: clamp(1rem, 2.5vw, 1.75rem) var(--gutter);
+  margin-bottom: clamp(1.5rem, 5vh, 4rem);
+}
+.hero__band--blue {
+  background: var(--band-blue);
+  padding: clamp(1.5rem, 3.5vw, 3rem) var(--gutter);
+}
+.hero__band .container { width: min(100%, var(--max-w)); margin-inline: auto; }
+.hero__eyebrow { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; }
+.hero__title { max-width: 18ch; }
+
+.hero__foot {
+  position: absolute;
+  inset: auto 0 0 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 var(--gutter) clamp(1.25rem, 3.5vh, 2.5rem);
+  gap: 2rem;
+}
+.hero__foot .countdown { text-align: right; }
+
+/* --------------------------------------------------------- Invitation */
+
+.invite {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+@media (min-width: 60em) {
+  .invite { grid-template-columns: 1.1fr 1fr; gap: 5rem; }
+}
+.invite__copy > * + * { margin-top: 1.25rem; }
+.invite__formal {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+  line-height: 1.25;
+  max-width: 24ch;
+}
+.invite__panel {
+  background: var(--linen);
+  padding: clamp(2rem, 4vw, 3.5rem);
+  text-align: center;
+  display: grid;
+  gap: 1.5rem;
+  justify-items: center;
+}
+.invite__venue { font-style: normal; line-height: 1.7; }
+.invite__venue strong { display: block; font-size: 1.125rem; }
+
+/* ------------------------------------------------------ Featured rail */
+
+.featured { overflow: clip; }
+.featured__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+/* --------------------------------------------------- Beyond paintings */
+
+.beyond__grid {
+  display: grid;
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+@media (min-width: 48em) {
+  .beyond__grid { grid-template-columns: repeat(3, 1fr); }
+}
+.beyond-card { text-decoration: none; color: inherit; display: block; }
+.beyond-card figure { margin: 0; }
+.beyond-card__frame {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  display: grid;
+}
+.beyond-card__frame img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out-expo);
+}
+.beyond-card:hover .beyond-card__frame img { transform: scale(1.03); }
+.beyond-card__picasso {
+  background: var(--ink);
+  color: var(--gallery);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 1.5rem;
+}
+.beyond-card__picasso .display { font-size: clamp(3rem, 6vw, 5rem); }
+.beyond-card figcaption { padding-top: 1.25rem; }
+.beyond-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  background-image: linear-gradient(var(--tupa-yellow), var(--tupa-yellow));
+  background-repeat: no-repeat;
+  background-size: 0% 3px;
+  background-position: 0 100%;
+  transition: background-size 0.4s var(--ease-out-expo);
+}
+.beyond-card:hover h3 { background-size: 100% 3px; }
+.beyond-card p { color: var(--stone); font-size: 0.9375rem; line-height: 1.55; }
+
+/* ------------------------------------------------------ Artist teaser */
+
+.artist-teaser {
+  position: relative;
+  min-height: 70svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: clip;
+  color: #fff;
+}
+.artist-teaser__img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.artist-teaser__band {
+  width: 100%;
+  background: var(--band-teal);
+  padding: clamp(2rem, 4vw, 3.5rem) var(--gutter);
+}
+.artist-teaser__band .container > * + * { margin-top: 1rem; }
+.artist-teaser__quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 3.25rem);
+  line-height: 1.15;
+  max-width: 22ch;
+}
+.artist-teaser__link {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  text-decoration: none;
+  border-bottom: 2px solid var(--tupa-yellow);
+  padding-bottom: 0.2em;
+}
+.artist-teaser__link:hover { color: var(--tupa-yellow); }
+
+/* ------------------------------------------------------------- Cause */
+
+.cause { text-align: center; }
+.cause .lead { max-width: 44rem; margin: 1.5rem auto 3rem; }

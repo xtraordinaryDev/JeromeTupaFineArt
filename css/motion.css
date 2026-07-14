@@ -1,0 +1,32 @@
+/* Centralized reveal system — paired with js/reveal.js */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--dur-reveal) var(--ease-out-expo),
+              transform var(--dur-reveal) var(--ease-out-expo);
+  transition-delay: var(--reveal-delay, 0s);
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* Curtain wipe — images enter like a curtain lifting off a canvas */
+.curtain {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path var(--dur-curtain) var(--ease-out-expo);
+  transition-delay: var(--reveal-delay, 0s);
+}
+.curtain.is-visible { clip-path: inset(0 0 0% 0); }
+
+/* No-JS: everything visible */
+.no-js .reveal, .no-js .curtain {
+  opacity: 1; transform: none; clip-path: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .curtain {
+    transition: none;
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+  }
+}

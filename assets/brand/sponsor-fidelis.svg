@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" width="240" height="64" role="img" aria-label="Fidelis Capital">
+  <rect x="10" y="14" width="36" height="36" fill="#14568A"/>
+  <path d="M18 42 L28 24 L38 42 Z" fill="#FAFAF7"/>
+  <text x="58" y="34" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" fill="#14568A">FIDELIS</text>
+  <text x="58" y="50" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" letter-spacing="5" fill="#14568A">CAPITAL</text>
+</svg>

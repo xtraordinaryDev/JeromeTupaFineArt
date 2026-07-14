@@ -1,0 +1,402 @@
+/* Shared brand patterns: section bar, date lockup, bands, marquee,
+   lot cards, buttons, countdown, cursor, forms */
+
+/* Red section-header bar — [■] FATHER JEROME TUPA AUCTION · SECTION NAME */
+.section-bar {
+  background: var(--tupa-red);
+  color: #fff;
+  padding-block: 0.9rem;
+}
+.section-bar__inner {
+  width: min(100% - 2 * var(--gutter), var(--max-w));
+  margin-inline: auto;
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+.section-bar__brand {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.section-bar__label {
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.section-bar--blue { background: var(--tupa-blue); }
+.section-bar--teal { background: var(--tupa-teal); }
+.section-bar--ink  { background: var(--ink); }
+
+/* Date lockup — 10 | 22 | 26 */
+.date-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  line-height: 1;
+}
+.date-lockup > span { display: block; }
+.date-lockup .rule {
+  align-self: stretch;
+  width: 2px;
+  background: currentColor;
+  opacity: 0.85;
+}
+.date-lockup--s { font-size: clamp(2rem, 4vw, 3rem); }
+.date-lockup--s .rule { width: 1px; }
+
+/* Translucent overlay bands (the signature treatment) */
+.band {
+  padding: clamp(1rem, 3vw, 2.5rem) var(--gutter);
+  color: #fff;
+}
+.band--teal { background: var(--band-teal); }
+.band--blue { background: var(--band-blue); }
+.band--red  { background: var(--band-red); }
+
+/* Quote marquee — red band, yellow letterspaced caps, CSS-only motion */
+.marquee {
+  background: var(--tupa-red);
+  color: var(--tupa-yellow);
+  overflow: hidden;
+  padding-block: 1.1rem;
+  white-space: nowrap;
+}
+.marquee__track {
+  display: inline-flex;
+  gap: 4rem;
+  padding-right: 4rem;
+  animation: marquee-scroll 28s linear infinite;
+  will-change: transform;
+}
+.marquee__item {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.marquee__item .sep { margin-inline: 2rem; }
+@keyframes marquee-scroll {
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track { animation: none; }
+}
+
+/* ------------------------------------------------------------ Buttons */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  padding: 0.9em 2em;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s var(--ease-out-expo);
+}
+.btn--red { background: var(--tupa-red); color: #fff; }
+.btn--red:hover { background: #d42230; transform: translateY(-2px); }
+.btn--ink { background: var(--ink); color: var(--gallery); }
+.btn--ink:hover { background: #000; transform: translateY(-2px); }
+.btn--ghost {
+  background: transparent;
+  color: currentColor;
+  box-shadow: inset 0 0 0 1.5px currentColor;
+}
+.btn--ghost:hover { background: var(--ink); color: var(--gallery); box-shadow: inset 0 0 0 1.5px var(--ink); }
+.btn--block { display: flex; width: 100%; }
+
+/* ----------------------------------------------------------- Lot card */
+
+.lot-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.lot-card__frame {
+  overflow: hidden;
+  background: var(--linen);
+  aspect-ratio: 4 / 5;
+  display: grid;
+  place-items: center;
+}
+.lot-card__frame img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out-expo);
+}
+.lot-card:hover .lot-card__frame img { transform: scale(1.03); }
+
+/* Missing-image fallback: flat brand block with the title in display face */
+.lot-card__placeholder, .lot-placeholder {
+  width: 100%; height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: var(--ink);
+  color: var(--gallery);
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 3.25rem);
+  line-height: 0.95;
+}
+
+.lot-card__meta { padding-top: 1rem; }
+.lot-card__number {
+  font-size: var(--type-caption);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--tupa-red);
+}
+.lot-card__title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  line-height: 1.05;
+  margin-top: 0.35rem;
+  display: inline;
+  background-image: linear-gradient(var(--tupa-yellow), var(--tupa-yellow));
+  background-repeat: no-repeat;
+  background-size: 0% 3px;
+  background-position: 0 100%;
+  transition: background-size 0.4s var(--ease-out-expo);
+}
+.lot-card:hover .lot-card__title { background-size: 100% 3px; }
+.lot-card__caption { margin-top: 0.4rem; }
+.lot-card__estimate {
+  margin-top: 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.35s ease, transform 0.35s var(--ease-out-expo);
+}
+.lot-card:hover .lot-card__estimate,
+.lot-card:focus-visible .lot-card__estimate { opacity: 1; transform: none; }
+@media (hover: none) {
+  .lot-card__estimate { opacity: 1; transform: none; }
+}
+
+/* Horizontal snap rail (featured lots, "more from this sale") */
+.rail {
+  display: flex;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-inline: var(--gutter);
+  padding-bottom: 1.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--stone) transparent;
+  cursor: grab;
+}
+.rail.is-dragging { cursor: grabbing; scroll-snap-type: none; }
+.rail > * {
+  flex: 0 0 min(85%, 22rem);
+  scroll-snap-align: start;
+}
+.rail .lot-card__frame { aspect-ratio: 3 / 4; }
+.rail-cta {
+  background: var(--tupa-red);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1.1;
+  padding: 2rem;
+  transition: background-color 0.25s ease;
+}
+.rail-cta:hover { background: #d42230; }
+
+/* ---------------------------------------------------- Countdown digits */
+
+.countdown {
+  display: flex;
+  gap: clamp(0.6rem, 1.6vw, 1.25rem);
+  align-items: flex-start;
+}
+.countdown__group { text-align: center; }
+.countdown__digits { display: flex; }
+.countdown__label {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+.countdown__sep {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  line-height: 1;
+  opacity: 0.6;
+}
+/* Odometer: each digit is a masked column of 0–9 */
+.odo {
+  display: block;
+  overflow: hidden;
+  height: 1em;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  line-height: 1;
+}
+.odo__col {
+  display: block;
+  transition: transform 0.55s var(--ease-out-expo);
+}
+.odo__col span { display: block; height: 1em; }
+@media (prefers-reduced-motion: reduce) {
+  .odo__col { transition: none; }
+}
+.countdown__group--sec { display: none; }
+@media (min-width: 48em) {
+  .countdown__group--sec { display: block; }
+}
+
+/* ------------------------------------------------------ Custom cursor */
+
+.cursor-dot {
+  position: fixed;
+  z-index: 300;
+  left: 0; top: 0;
+  width: 10px; height: 10px;
+  margin: -5px 0 0 -5px;
+  border-radius: 50%;
+  background: var(--ink);
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+  color: transparent;
+  font-size: 0;
+  transition: width 0.3s var(--ease-out-expo), height 0.3s var(--ease-out-expo),
+              margin 0.3s var(--ease-out-expo), background-color 0.3s ease,
+              color 0.3s ease, font-size 0.3s ease;
+}
+.cursor-dot.is-label {
+  width: 72px; height: 72px;
+  margin: -36px 0 0 -36px;
+  background: rgba(20, 20, 20, 0.9);
+  color: #fff;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.cursor-dot.is-hidden { opacity: 0; }
+body.has-custom-cursor a, body.has-custom-cursor button { cursor: none; }
+body.has-custom-cursor { cursor: none; }
+
+/* -------------------------------------------------------------- Forms */
+
+.field { display: grid; gap: 0.4rem; }
+.field label { font-weight: 700; font-size: 0.875rem; letter-spacing: 0.04em; }
+.field input[type="text"], .field input[type="email"], .field input[type="tel"],
+.field input[type="number"], .field select, .field textarea {
+  border: 1.5px solid rgba(20, 20, 20, 0.35);
+  background: #fff;
+  padding: 0.8em 1em;
+  border-radius: 0;
+  width: 100%;
+}
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible {
+  outline: 2px solid var(--tupa-blue);
+  outline-offset: 0;
+  border-color: var(--tupa-blue);
+}
+.field.has-error input { border-color: var(--tupa-red); }
+.field__error {
+  color: var(--tupa-red);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  min-height: 1.2em;
+}
+.checkbox {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  font-size: 0.9375rem;
+}
+.checkbox input { width: 1.25rem; height: 1.25rem; margin-top: 0.15rem; accent-color: var(--tupa-red); }
+
+/* ------------------------------------------------------ Sponsor wall */
+
+.sponsor-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem 4rem;
+  align-items: center;
+  justify-content: center;
+}
+.sponsor-row img {
+  height: clamp(2.5rem, 5vw, 3.5rem);
+  width: auto;
+  filter: grayscale(1);
+  opacity: 0.7;
+  transition: filter 0.35s ease, opacity 0.35s ease;
+}
+.sponsor-row a:hover img, .sponsor-row a:focus-visible img { filter: none; opacity: 1; }
+
+/* -------------------------------------------------------- Scroll cue */
+
+.scroll-cue {
+  width: 1px;
+  height: 4.5rem;
+  background: rgba(255, 255, 255, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+.scroll-cue::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  transform-origin: top;
+  animation: cue-draw 2.2s var(--ease-out-expo) infinite;
+}
+@keyframes cue-draw {
+  0% { transform: scaleY(0); transform-origin: top; }
+  45% { transform: scaleY(1); transform-origin: top; }
+  55% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue::after { animation: none; transform: none; }
+}
+
+/* Signature stroke-draw on first load */
+.sig-stroke {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 0;
+}
+.sig-animate .sig-stroke {
+  animation: sig-draw 1.2s var(--ease-out-expo) forwards;
+  stroke-dashoffset: 400;
+}
+.sig-animate .sig-stroke:nth-child(2) { animation-delay: 0.15s; }
+.sig-animate .sig-stroke:nth-child(3) { animation-delay: 0.35s; }
+.sig-animate .sig-stroke:nth-child(4) { animation-delay: 0.55s; }
+.sig-animate .sig-stroke:nth-child(5) { animation-delay: 0.75s; }
+@keyframes sig-draw { to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .sig-animate .sig-stroke { animation: none; stroke-dashoffset: 0; }
+}
+
+/* Painting-crop full-bleed divider */
+.divider-crop {
+  height: clamp(10rem, 28vw, 18rem);
+  background-size: cover;
+  background-position: center;
+}

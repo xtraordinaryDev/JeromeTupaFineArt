@@ -1,0 +1,224 @@
+/* Containers, sections, grid scaffolding, nav, footer */
+
+.container {
+  width: min(100% - 2 * var(--gutter), var(--max-w));
+  margin-inline: auto;
+}
+
+.section { padding-block: clamp(4rem, 9vw, 8rem); }
+.section--linen { background: var(--linen); }
+.section--ink { background: var(--ink); color: var(--gallery); }
+.section--tight { padding-block: clamp(2.5rem, 5vw, 4rem); }
+
+main { display: block; }
+
+/* ---------------------------------------------------------------- Nav */
+
+.site-nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  transition: background-color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  border-bottom: 1px solid transparent;
+}
+.site-nav.is-scrolled {
+  background: var(--gallery);
+  border-bottom-color: rgba(20, 20, 20, 0.12);
+}
+.site-nav__inner {
+  width: min(100% - 2 * var(--gutter), var(--max-w));
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.site-nav__logo { flex: 0 0 auto; display: block; }
+.site-nav__logo svg, .site-nav__logo img { height: 3rem; width: auto; }
+
+/* On dark heroes the un-scrolled nav renders the logo/links in white */
+.site-nav--overlay:not(.is-scrolled) { color: #fff; }
+.site-nav--overlay:not(.is-scrolled) .site-nav__logo :is(path, text) { fill: #fff; stroke: #fff; }
+.site-nav--overlay:not(.is-scrolled) .site-nav__logo path { fill: none; }
+
+.site-nav__links {
+  display: none;
+  list-style: none;
+  margin: 0; padding: 0;
+  margin-left: auto;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  align-items: center;
+}
+.site-nav__links a {
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.site-nav__links a[aria-current="page"] {
+  box-shadow: inset 0 -2px 0 var(--tupa-red);
+}
+
+.rsvp-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  background: var(--tupa-red);
+  color: #fff;
+  border: 0;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
+  padding: 0.7em 1.4em;
+  border-radius: 99px;
+  white-space: nowrap;
+  transition: background-color 0.25s ease, transform 0.25s var(--ease-out-expo);
+}
+.rsvp-pill:hover { background: #d42230; transform: translateY(-1px); }
+.site-nav .rsvp-pill { margin-left: auto; }
+
+.nav-burger {
+  appearance: none;
+  background: none;
+  border: 0;
+  width: 44px; height: 44px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  margin-left: 0.25rem;
+}
+.nav-burger span {
+  display: block;
+  width: 24px; height: 2px;
+  background: currentColor;
+  position: relative;
+}
+.nav-burger span::before, .nav-burger span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 24px; height: 2px;
+  background: currentColor;
+  transition: transform 0.3s var(--ease-out-expo), top 0.3s var(--ease-out-expo);
+}
+.nav-burger span::before { top: -7px; }
+.nav-burger span::after { top: 7px; }
+
+@media (min-width: 60em) {
+  .site-nav__links { display: flex; }
+  .nav-burger { display: none; }
+  .site-nav .rsvp-pill { margin-left: 0; }
+}
+
+/* Mobile overlay menu — the red screenshot moment */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: var(--tupa-red);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: calc(var(--nav-h) + 1rem) var(--gutter) 2rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-out-expo), visibility 0s linear 0.4s;
+}
+.mobile-menu.is-open {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.4s var(--ease-out-expo);
+}
+.mobile-menu__close {
+  position: absolute;
+  top: 0.9rem; right: var(--gutter);
+  appearance: none; background: none; border: 0;
+  color: #fff;
+  width: 44px; height: 44px;
+  font-size: 1.75rem;
+  cursor: pointer;
+  line-height: 1;
+}
+.mobile-menu__links {
+  list-style: none;
+  margin: auto 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 2vh, 1.25rem);
+}
+.mobile-menu__links a {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 9vh, 4.5rem);
+  line-height: 1;
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.5s var(--ease-out-expo), transform 0.5s var(--ease-out-expo);
+}
+.mobile-menu:not(.is-open) .mobile-menu__links a {
+  opacity: 0;
+  transform: translateY(0.4em);
+}
+.mobile-menu.is-open .mobile-menu__links a { opacity: 1; transform: none; }
+.mobile-menu__links a:hover { color: var(--tupa-yellow); }
+.mobile-menu .rsvp-pill {
+  background: #fff;
+  color: var(--tupa-red);
+  align-self: stretch;
+  justify-content: center;
+  padding-block: 1em;
+  margin-bottom: env(safe-area-inset-bottom);
+}
+
+body.menu-open { overflow: hidden; }
+
+/* ------------------------------------------------------------- Footer */
+
+.site-footer {
+  background: var(--ink);
+  color: var(--gallery);
+}
+.site-footer__main {
+  display: grid;
+  gap: 3rem;
+  padding-block: clamp(3rem, 6vw, 5rem);
+}
+@media (min-width: 48em) {
+  .site-footer__main { grid-template-columns: 1fr 1fr; align-items: start; }
+}
+.site-footer .date-lockup { color: var(--gallery); }
+.site-footer__venue { font-style: normal; line-height: 1.7; color: #cfcec9; }
+.site-footer__venue strong { color: var(--gallery); }
+.site-footer__sponsors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 3rem;
+  align-items: center;
+  padding-block: 2.5rem;
+  border-top: 1px solid rgba(250, 250, 247, 0.15);
+}
+.site-footer__sponsors img {
+  height: 2.5rem; width: auto;
+  filter: grayscale(1) invert(1) brightness(1.6);
+  opacity: 0.75;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+.site-footer__sponsors a:hover img, .site-footer__sponsors a:focus-visible img {
+  filter: none;
+  opacity: 1;
+  background: var(--gallery);
+}
+.site-footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  justify-content: space-between;
+  padding-block: 1.5rem;
+  border-top: 1px solid rgba(250, 250, 247, 0.15);
+  font-size: 0.8125rem;
+  color: var(--stone);
+}
+.site-footer__legal a { color: inherit; }

@@ -52,6 +52,9 @@
 }
 .bio__facts dt { color: var(--stone); }
 .bio__facts dd { margin: 0; text-align: right; }
+.bio__figure { margin: 2.5rem 0 0; }
+.bio__figure img { width: 100%; height: auto; display: block; }
+.bio__figure figcaption { margin-top: 0.75rem; color: var(--stone); }
 
 /* Pilgrimage quote — full-screen typographic moment, sticky pin */
 .quote-pin { height: 320vh; position: relative; }
@@ -85,7 +88,7 @@
   transition: opacity 0.8s var(--ease-out-expo);
 }
 .quote-pin__sig.is-lit { opacity: 1; }
-.quote-pin__sig svg { width: min(280px, 60vw); height: auto; }
+.quote-pin__sig img { width: min(280px, 60vw); height: auto; }
 .quote-pin__attr {
   margin-top: 1.5rem;
   opacity: 0;

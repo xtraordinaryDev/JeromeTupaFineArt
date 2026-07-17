@@ -1,4 +1,6 @@
-[
+// Lot data - embedded as a classic script so the site works from file://, any static host, or a local server (no fetch needed).
+// Regenerate with: node scripts/generate-art.mjs
+window.TUPA_LOTS = [
   {
     "id": "001",
     "lotNumber": 1,
@@ -260,4 +262,4 @@
       "assets/lots/lot-013-1.svg"
     ]
   }
-]
+];

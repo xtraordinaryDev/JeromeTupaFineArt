@@ -1,10 +1,18 @@
-// Lot detail — renders from lots.json via ?lot= URL param.
+// Lot detail — renders from the embedded lot data via ?lot= URL param.
 // Deep zoom is hand-rolled (wheel + drag + pinch) to stay dependency-free;
 // swap for @panzoom/panzoom via CDN if richer gestures are ever needed.
+// Classic script; requires data/lots.js, js/data.js, js/reveal.js, js/rail.js.
 
-import { getLots, formatEstimate, lotNumberLabel, altText, buildLotCard } from './data.js';
-import { observeReveals } from './reveal.js';
-import { initRails } from './rail.js';
+(function () {
+'use strict';
+
+const getLots = Tupa.getLots;
+const formatEstimate = Tupa.formatEstimate;
+const lotNumberLabel = Tupa.lotNumberLabel;
+const altText = Tupa.altText;
+const buildLotCard = Tupa.buildLotCard;
+const observeReveals = Tupa.observeReveals;
+const initRails = Tupa.initRails;
 
 const $ = (sel) => document.querySelector(sel);
 const params = new URLSearchParams(location.search);
@@ -63,7 +71,7 @@ function render(lot, lots) {
 
   /* Condition report mailto */
   const cr = $('[data-condition-link]');
-  cr.href = `mailto:info@jerometupafineart.com?subject=${encodeURIComponent(`Condition report request — ${lotNumberLabel(lot)}: ${lot.title}`)}`;
+  cr.href = `mailto:sales@tupa.art?subject=${encodeURIComponent(`Condition report request — ${lotNumberLabel(lot)}: ${lot.title}`)}`;
 
   /* Register to bid (TODO: real registration mechanics pending client) */
   $('[data-register]').href = 'event.html#rsvp';
@@ -253,11 +261,14 @@ function initShare(lot) {
     };
     if (navigator.share) {
       try { await navigator.share(data); } catch { /* user dismissed */ }
-    } else {
+    } else if (navigator.clipboard) {
       await navigator.clipboard.writeText(location.href);
       const old = btn.textContent;
       btn.textContent = 'Link copied';
       setTimeout(() => { btn.textContent = old; }, 2000);
+    } else {
+      // Insecure context (e.g. file://) — no clipboard API; show the URL.
+      window.prompt('Copy this link:', location.href);
     }
   });
 }
@@ -293,3 +304,5 @@ function renderMoreRail(lot, lots) {
   observeReveals(rail.parentElement);
   initRails(rail.parentElement);
 }
+
+})();

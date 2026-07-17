@@ -1,9 +1,10 @@
-// Catalogue — fetch lots.json, filter/sort, render, keep state in the URL
-// so filtered views are shareable. The mobile <dialog> sheet adopts the
-// same filter form node, so there is exactly one set of controls.
+// Catalogue — filter/sort the embedded lot data, render, and keep state in
+// the URL so filtered views are shareable. The mobile <dialog> sheet adopts
+// the same filter form node, so there is exactly one set of controls.
+// Classic script; requires data/lots.js, js/data.js, js/reveal.js.
 
-import { getLots, buildLotCard, CATEGORY_LABELS } from './data.js';
-import { observeReveals } from './reveal.js';
+(function () {
+'use strict';
 
 const grid = document.querySelector('[data-lot-grid]');
 const countEl = document.querySelector('[data-result-count]');
@@ -43,7 +44,9 @@ function writeURL() {
   if (state.sort !== 'lot') q.set('sort', state.sort);
   if (state.view === 'wall') q.set('view', 'wall');
   const qs = q.toString();
-  history.replaceState(null, '', qs ? `?${qs}` : location.pathname);
+  try {
+    history.replaceState(null, '', qs ? `?${qs}` : location.pathname);
+  } catch (e) { /* some browsers disallow replaceState on file:// — filters still work */ }
 }
 
 /* --------------------------------------------------------- Filtering */
@@ -65,10 +68,10 @@ function sorted(list) {
 function render() {
   const visible = sorted(lots.filter(matches));
   grid.innerHTML = '';
-  visible.forEach((lot) => grid.appendChild(buildLotCard(lot)));
+  visible.forEach((lot) => grid.appendChild(Tupa.buildLotCard(lot)));
   countEl.textContent = `${visible.length} ${visible.length === 1 ? 'lot' : 'lots'}`;
   emptyEl.hidden = visible.length > 0;
-  observeReveals(grid.parentElement);
+  Tupa.observeReveals(grid.parentElement);
   writeURL();
 }
 
@@ -78,7 +81,7 @@ function buildCategoryOptions() {
   const wrap = form.querySelector('[data-cat-options]');
   const counts = {};
   lots.forEach((l) => { counts[l.category] = (counts[l.category] || 0) + 1; });
-  Object.entries(CATEGORY_LABELS).forEach(([key, label]) => {
+  Object.entries(Tupa.CATEGORY_LABELS).forEach(([key, label]) => {
     const lab = document.createElement('label');
     lab.className = 'filter-option';
     lab.innerHTML = `<input type="checkbox" name="cat" value="${key}">
@@ -163,7 +166,7 @@ sheet.addEventListener('click', (e) => {
 
 /* ---------------------------------------------------------------- Go */
 
-getLots().then((data) => {
+Tupa.getLots().then((data) => {
   lots = data;
   maxEstimate = Math.ceil(Math.max(...lots.map((l) => l.estimateHigh || 0)) / 1000) * 1000;
   buildCategoryOptions();
@@ -178,3 +181,5 @@ getLots().then((data) => {
   emptyEl.querySelector('p').textContent = 'The catalogue could not be loaded. Please refresh the page.';
   console.error(err);
 });
+
+})();

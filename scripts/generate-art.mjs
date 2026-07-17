@@ -213,9 +213,11 @@ const LOTS = [
   { id: '001', lotNumber: 1, artist: 'Father Jerome Tupa', title: "Pilgrim's Road", year: 2017, medium: 'Oil on canvas', widthIn: 60, heightIn: 40, estimateLow: 9000, estimateHigh: 14000, category: 'tupa', seed: 101, images: 2,
     provenance: 'From the artist\u2019s studio, Saint John\u2019s Abbey, Collegeville, Minnesota.',
     essay: 'Painted after Tupa\u2019s walking pilgrimage along the Camino de Santiago, Pilgrim\u2019s Road compresses weeks of landscape into a single fauvist panorama \u2014 ochre fields, a ribbon of red road, and the high blue of a Spanish sky. The horizon tilts as if seen mid-stride; the paint is applied in the broad, joyful strokes that have become the artist\u2019s signature.' },
-  { id: '002', lotNumber: 2, artist: 'Father Jerome Tupa', title: 'Silver Palace Tiles', year: 2019, medium: 'Oil on canvas', widthIn: 36, heightIn: 48, estimateLow: 8000, estimateHigh: 12000, category: 'tupa', seed: 202, images: 2,
+  { id: '002', lotNumber: 2, artist: 'Father Jerome Tupa', title: 'Silver Palace Tiles', year: 2019, medium: 'Oil on canvas', widthIn: 50, heightIn: 31, estimateLow: 8000, estimateHigh: 12000, category: 'tupa', seed: 202,
+    // Real photography supplied by the client — no placeholder generated.
+    realImages: ['assets/images/silver-palace-tiles.jpg'], images: 0,
     provenance: 'From the artist\u2019s studio, Saint John\u2019s Abbey, Collegeville, Minnesota.',
-    essay: 'A meditation on pattern and light, Silver Palace Tiles takes the geometry of Moorish tilework and lets it dissolve into pure color. Squares of teal and gold interlock, then break rank \u2014 an ordered surface interrupted by paint, the way ritual is interrupted by joy.' },
+    essay: 'Silver Palace Tiles renders a silver-roofed palace as pure celebration \u2014 sweeping rooflines in white and grey, banded tiles of blue and red, and a garden of oversized blossoms pressing in from every edge. Architecture dissolves into pattern, the ordered surface interrupted by paint the way ritual is interrupted by joy.' },
   { id: '003', lotNumber: 3, artist: 'Father Jerome Tupa', title: 'Abbey Bells at Dusk', year: 2021, medium: 'Oil on canvas', widthIn: 48, heightIn: 60, estimateLow: 10000, estimateHigh: 15000, category: 'tupa', seed: 303, images: 2,
     provenance: 'From the artist\u2019s studio, Saint John\u2019s Abbey, Collegeville, Minnesota.',
     essay: 'The banner tower of Saint John\u2019s Abbey \u2014 Marcel Breuer\u2019s great concrete bell banner \u2014 rendered not as architecture but as sound: concentric waves of red and violet ringing outward across a darkening Minnesota sky. One of the largest canvases in the sale.' },
@@ -260,7 +262,7 @@ const CM = (inches) => Math.round(inches * 2.54 * 10) / 10;
 const records = [];
 
 for (const lot of LOTS) {
-  const images = [];
+  const images = [...(lot.realImages ?? [])];
   const px = 1400;
   const w = lot.widthIn >= lot.heightIn ? px : Math.round(px * (lot.widthIn / lot.heightIn));
   const h = lot.widthIn >= lot.heightIn ? Math.round(px * (lot.heightIn / lot.widthIn)) : px;
@@ -286,6 +288,11 @@ for (const lot of LOTS) {
 }
 
 writeFileSync(join(ROOT, 'data/lots.json'), JSON.stringify(records, null, 2));
+writeFileSync(join(ROOT, 'data/lots.js'),
+  '// Lot data - embedded as a classic script so the site works from file://,\n' +
+  '// any static host, or a local server (no fetch needed).\n' +
+  '// Regenerate with: node scripts/generate-art.mjs\n' +
+  'window.TUPA_LOTS = ' + JSON.stringify(records, null, 2) + ';\n');
 
 writeFileSync(join(ROOT, 'assets/brand/portrait-studio.svg'), portraitSVG(1800, 1200));
 writeFileSync(join(ROOT, 'assets/brand/palette.svg'), paletteSVG(1600, 1000));

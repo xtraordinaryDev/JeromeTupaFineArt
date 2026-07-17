@@ -1,0 +1,5 @@
+# Photoshop sources (not used by the static site)
+*.psd
+
+# Duplicate dump of client images (canonical copies live in images/)
+scripts/Links/

@@ -36,12 +36,15 @@ main { display: block; }
   gap: 2rem;
 }
 .site-nav__logo { flex: 0 0 auto; display: block; }
-.site-nav__logo svg, .site-nav__logo img { height: 3rem; width: auto; }
+.site-nav__logo img {
+  height: 3rem; width: auto;
+  /* The brand logo asset is white; render it ink on light nav bars */
+  filter: brightness(0);
+}
 
 /* On dark heroes the un-scrolled nav renders the logo/links in white */
 .site-nav--overlay:not(.is-scrolled) { color: #fff; }
-.site-nav--overlay:not(.is-scrolled) .site-nav__logo :is(path, text) { fill: #fff; stroke: #fff; }
-.site-nav--overlay:not(.is-scrolled) .site-nav__logo path { fill: none; }
+.site-nav--overlay:not(.is-scrolled) .site-nav__logo img { filter: none; }
 
 .site-nav__links {
   display: none;

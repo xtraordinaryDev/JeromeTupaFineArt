@@ -1,10 +1,13 @@
 // Hero band parallax — elements with [data-parallax="rate"] translate at
-// (rate − 1) × scrollY. Hand-rolled rAF handler; no library needed.
+// (rate − 1) × scrollY. Classic script.
 
-const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-const els = [...document.querySelectorAll('[data-parallax]')];
+(function () {
+  'use strict';
 
-if (els.length && !reduced.matches) {
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const els = Array.from(document.querySelectorAll('[data-parallax]'));
+  if (!els.length || reduced.matches) return;
+
   let ticking = false;
   function update() {
     const y = window.scrollY;
@@ -18,4 +21,4 @@ if (els.length && !reduced.matches) {
     if (!ticking) { ticking = true; requestAnimationFrame(update); }
   }, { passive: true });
   update();
-}
+})();

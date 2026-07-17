@@ -18,12 +18,12 @@
     "attribution": "Father Jerome Tupa"
   },
   "rsvpEndpoint": "https://formspree.io/f/REPLACE_ME",
-  "conditionReportEmail": "info@jerometupafineart.com",
+  "conditionReportEmail": "sales@tupa.art",
   "sponsors": [
-    { "name": "Fidelis Capital", "logo": "assets/brand/sponsor-fidelis.svg" },
+    { "name": "Fidelis Capital", "logo": "assets/images/logo-fidelis.png" },
     { "name": "Saint John's University", "logo": "assets/brand/sponsor-sju.svg" },
-    { "name": "Saint John's Abbey", "logo": "assets/brand/sponsor-abbey.svg" },
-    { "name": "The Saint John's Bible", "logo": "assets/brand/sponsor-bible.svg" }
+    { "name": "Saint John's Abbey", "logo": "assets/images/logo-abbey.webp" },
+    { "name": "The Saint John's Bible", "logo": "assets/images/logo-bible.jpg" }
   ],
   "nav": [
     { "label": "The Lots", "href": "auction.html" },

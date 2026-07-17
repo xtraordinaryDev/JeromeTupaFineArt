@@ -1,8 +1,10 @@
 // RSVP form — native validation + inline error messages, fetch POST to the
 // endpoint declared in the form's data-endpoint attribute (Formspree-shaped).
 // Success replaces the form with the stamping date lockup.
+// Classic script; requires js/calendar.js loaded first.
 
-import { bindCalendarButtons } from './calendar.js';
+(function () {
+'use strict';
 
 const form = document.querySelector('[data-rsvp-form]');
 
@@ -77,6 +79,8 @@ function showSuccess() {
       <p>Your RSVP has been received. A confirmation will follow by email.</p>
       <p style="margin-top:1.5rem"><button type="button" class="btn btn--ghost" data-ics>Add to calendar (.ics)</button></p>
     </div>`;
-  bindCalendarButtons(wrap);
+  Tupa.bindCalendarButtons(wrap);
   requestAnimationFrame(() => wrap.querySelector('.rsvp-success__stamp').classList.add('is-stamped'));
 }
+
+})();

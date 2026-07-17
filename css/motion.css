@@ -1,29 +1,27 @@
-/* Centralized reveal system — paired with js/reveal.js */
+/* Centralized reveal system — paired with js/reveal.js.
+   Hidden initial states are gated on the .js class, which reveal.js itself
+   sets. If modules never execute (JS off, or the site opened via file://
+   where browsers block ES modules), content simply renders visible. */
 
-.reveal {
+.js .reveal {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity var(--dur-reveal) var(--ease-out-expo),
               transform var(--dur-reveal) var(--ease-out-expo);
   transition-delay: var(--reveal-delay, 0s);
 }
-.reveal.is-visible { opacity: 1; transform: none; }
+.js .reveal.is-visible { opacity: 1; transform: none; }
 
 /* Curtain wipe — images enter like a curtain lifting off a canvas */
-.curtain {
+.js .curtain {
   clip-path: inset(0 0 100% 0);
   transition: clip-path var(--dur-curtain) var(--ease-out-expo);
   transition-delay: var(--reveal-delay, 0s);
 }
-.curtain.is-visible { clip-path: inset(0 0 0% 0); }
-
-/* No-JS: everything visible */
-.no-js .reveal, .no-js .curtain {
-  opacity: 1; transform: none; clip-path: none;
-}
+.js .curtain.is-visible { clip-path: inset(0 0 0% 0); }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal, .curtain {
+  .js .reveal, .js .curtain {
     transition: none;
     opacity: 1;
     transform: none;

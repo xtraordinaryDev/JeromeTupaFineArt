@@ -1,4 +1,10 @@
 // Add-to-calendar: .ics blob download + Google Calendar link.
+// Classic script.
+
+window.Tupa = window.Tupa || {};
+
+(function () {
+'use strict';
 
 const EVENT = {
   title: 'An Evening of Fine Art & Philanthropy featuring Father Jerome Tupa',
@@ -16,7 +22,7 @@ function icsString() {
     'VERSION:2.0',
     'PRODID:-//Jerome Tupa Fine Art//Auction//EN',
     'BEGIN:VEVENT',
-    `UID:tupa-auction-2026@jerometupafineart.com`,
+    `UID:tupa-auction-2026@tupa.art`,
     `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d+/, '')}`,
     `DTSTART:${EVENT.startUTC}`,
     `DTEND:${EVENT.endUTC}`,
@@ -28,7 +34,8 @@ function icsString() {
   ].join('\r\n');
 }
 
-export function bindCalendarButtons(root = document) {
+Tupa.bindCalendarButtons = function (root) {
+  root = root || document;
   root.querySelectorAll('[data-ics]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const blob = new Blob([icsString()], { type: 'text/calendar' });
@@ -51,6 +58,8 @@ export function bindCalendarButtons(root = document) {
     });
     a.href = `https://calendar.google.com/calendar/render?${q}`;
   });
-}
+};
 
-bindCalendarButtons();
+Tupa.bindCalendarButtons();
+
+})();

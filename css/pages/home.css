@@ -13,10 +13,16 @@
 }
 .hero__img {
   position: absolute;
-  inset: 0;
-  width: 100%; height: 100%;
+  left: 0; right: 0;
+  top: -8%;
+  width: 100%;
+  height: 116%;
   object-fit: cover;
-  z-index: -1;
+  object-position: center 40%;
+  z-index: -2;
+  will-change: transform;
+  /* Black-light mood: deepen shadows, punch the Pantone palette */
+  filter: brightness(0.82) contrast(1.12) saturate(1.28);
 }
 .hero::before {
   /* gentle scrim so white nav text always passes contrast */
@@ -24,8 +30,20 @@
   position: absolute;
   inset: 0 0 auto 0;
   height: 10rem;
-  background: linear-gradient(rgba(20, 20, 20, 0.35), transparent);
+  background: linear-gradient(rgba(20, 20, 20, 0.45), transparent);
   pointer-events: none;
+  z-index: 0;
+}
+.hero::after {
+  /* cool UV / black-light cast over the painting */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(160deg, rgba(18, 6, 48, 0.42) 0%, rgba(0, 50, 80, 0.22) 50%, rgba(12, 0, 36, 0.35) 100%),
+    radial-gradient(ellipse at 70% 25%, rgba(140, 60, 255, 0.18), transparent 55%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .hero__band {
@@ -84,6 +102,18 @@
 }
 .invite__venue { font-style: normal; line-height: 1.7; }
 .invite__venue strong { display: block; font-size: 1.125rem; }
+.invite__map {
+  width: 100%;
+  overflow: hidden;
+  background: var(--gallery);
+}
+.invite__map iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border: 0;
+  filter: grayscale(0.45);
+}
 
 /* ------------------------------------------------------ Featured rail */
 
@@ -147,7 +177,7 @@
 
 .artist-teaser {
   position: relative;
-  min-height: 70svh;
+  min-height: 85svh;
   display: flex;
   align-items: flex-end;
   overflow: clip;
@@ -155,15 +185,33 @@
 }
 .artist-teaser__img {
   position: absolute;
-  inset: 0;
-  width: 100%; height: 100%;
+  left: 0; right: 0;
+  top: -6%;
+  width: 100%;
+  height: 112%;
   object-fit: cover;
+  /* Face sits below the sticky nav; crown of head stays in frame */
+  object-position: center 18%;
+  z-index: -2;
+  will-change: transform;
+  filter: brightness(0.85) contrast(1.06) saturate(1.1);
+}
+.artist-teaser::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(10, 4, 28, 0.38) 0%, transparent 42%, rgba(0, 28, 40, 0.2) 100%),
+    radial-gradient(ellipse at 55% 18%, rgba(100, 40, 210, 0.16), transparent 52%);
+  pointer-events: none;
   z-index: -1;
 }
 .artist-teaser__band {
+  position: relative;
   width: 100%;
   background: var(--band-teal);
   padding: clamp(2rem, 4vw, 3.5rem) var(--gutter);
+  z-index: 1;
 }
 .artist-teaser__band .container > * + * { margin-top: 1rem; }
 .artist-teaser__quote {

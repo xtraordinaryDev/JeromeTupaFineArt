@@ -1,6 +1,6 @@
 # Father Jerome Tupa Auction - Event Microsite
 
-Premium single-event auction site for **"An Evening of Fine Art & Philanthropy featuring Father Jerome Tupa"** - Thursday, October 22, 2026, Bacio Restaurant, Minnetonka, MN. Benefiting St. John's Abbey & St. John's University.
+Premium single-event auction site for **"An Evening of Fine Art & Philanthropy featuring Father Jerome Tupa"** - Thursday, October 22, 2026, The Hutton House, Medicine Lake, MN. Benefiting St. John's Abbey & St. John's University.
 
 Static site: plain HTML5, hand-written CSS, vanilla JavaScript. No frameworks, no build step, zero runtime dependencies.
 
@@ -37,7 +37,8 @@ Header/footer markup is static in each page (kept in sync by hand) rather than J
 ## Real content already in place
 
 - **Logo:** the real white signature logo (`assets/images/logo-tupa-white.png`) is used in the nav on every page (rendered dark via CSS filter on light nav bars) and in the artist-page quote moment.
-- **Photography:** *Silver Palace Tiles* (lot 002) uses the real painting photo and correct 50 × 31 in dimensions; it is also the home-page hero. Three photos of Father Tupa appear on the home artist teaser, the artist-page hero and biography.
+- **Photography:** all 11 Tupa lots (lots 1–11), all 3 Bresnahan pottery lots (14–16), the Picasso *Toros en Vallauris* linocut (lot 17) and Yusuf's *Three Seated Women* (lot 18) use real client-supplied photos from `assets/images/`. Only the two Saint John's Bible folios (12–13) and two private-collection paintings (19–20) still use generated placeholders. Three photos of Father Tupa appear on the home artist teaser, the artist-page hero and biography; *Silver Palace Tiles* is the home-page hero.
+- **Note:** Tupa lot titles, years and dimensions are descriptive placeholders written from the photos — confirm the final lot list with the client.
 - **Sponsor logos:** Fidelis Capital, Saint John's Abbey and The Saint John's Bible are real; Saint John's University is still a placeholder.
 
 ## Swapping in remaining real content

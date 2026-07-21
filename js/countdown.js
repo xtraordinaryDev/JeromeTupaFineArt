@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  const TARGET = new Date('2026-10-22T16:00:00-05:00');
+  const TARGET = new Date('2026-10-22T16:30:00-05:00');
 
   function makeDigit() {
     const odo = document.createElement('span');

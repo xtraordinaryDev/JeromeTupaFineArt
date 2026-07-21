@@ -1,16 +1,17 @@
 {
   "event": {
     "name": "An Evening of Fine Art & Philanthropy featuring Father Jerome Tupa",
-    "dateISO": "2026-10-22T16:00:00-05:00",
-    "endISO": "2026-10-22T19:30:00-05:00",
+    "dateISO": "2026-10-22T16:30:00-05:00",
+    "endISO": "2026-10-22T21:00:00-05:00",
     "dateDisplay": "Thursday, October 22, 2026",
-    "timeDisplay": "4:00 p.m. \u2013 7:30 p.m.",
+    "timeDisplay": "4:30 p.m. \u2013 9:00 p.m.",
     "host": "John Pellegrene",
     "venue": {
-      "name": "Bacio Restaurant",
-      "address1": "1571 Plymouth Road",
-      "address2": "Minnetonka, Minnesota 55305",
-      "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=Bacio+Restaurant,+1571+Plymouth+Road,+Minnetonka,+MN+55305"
+      "name": "The Hutton House",
+      "address1": "10715 South Shore Drive",
+      "address2": "Medicine Lake, Minnesota 55441",
+      "phone": "952-470-0788",
+      "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=The+Hutton+House,+10715+South+Shore+Drive,+Medicine+Lake,+MN+55441"
     }
   },
   "quote": {

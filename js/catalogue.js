@@ -19,6 +19,7 @@ let maxEstimate = 20000;
 
 const state = {
   cats: new Set(),
+  artists: new Set(),
   min: 0,
   max: Infinity,
   sort: 'lot',
@@ -30,6 +31,7 @@ const state = {
 function readURL() {
   const q = new URLSearchParams(location.search);
   state.cats = new Set((q.get('cat') || '').split(',').filter(Boolean));
+  state.artists = new Set((q.get('artist') || '').split('|').filter(Boolean));
   state.min = +q.get('min') || 0;
   state.max = +q.get('max') || maxEstimate;
   state.sort = q.get('sort') || 'lot';
@@ -39,6 +41,7 @@ function readURL() {
 function writeURL() {
   const q = new URLSearchParams();
   if (state.cats.size) q.set('cat', [...state.cats].join(','));
+  if (state.artists.size) q.set('artist', [...state.artists].join('|'));
   if (state.min > 0) q.set('min', state.min);
   if (state.max < maxEstimate) q.set('max', state.max);
   if (state.sort !== 'lot') q.set('sort', state.sort);
@@ -53,6 +56,7 @@ function writeURL() {
 
 function matches(lot) {
   if (state.cats.size && !state.cats.has(lot.category)) return false;
+  if (state.artists.size && !state.artists.has(lot.artist)) return false;
   if (lot.estimateLow == null) return true; // "estimate on request" always shows
   return lot.estimateHigh >= state.min && lot.estimateLow <= state.max;
 }
@@ -90,9 +94,33 @@ function buildCategoryOptions() {
   });
 }
 
+function buildArtistOptions() {
+  const wrap = form.querySelector('[data-artist-options]');
+  const counts = new Map(); // insertion order follows lot order
+  lots.forEach((l) => { counts.set(l.artist, (counts.get(l.artist) || 0) + 1); });
+  counts.forEach((count, artist) => {
+    const lab = document.createElement('label');
+    lab.className = 'filter-option';
+    const cb = document.createElement('input');
+    cb.type = 'checkbox';
+    cb.name = 'artist';
+    cb.value = artist;
+    const name = document.createElement('span');
+    name.textContent = artist;
+    const num = document.createElement('span');
+    num.className = 'count';
+    num.textContent = count;
+    lab.append(cb, name, num);
+    wrap.appendChild(lab);
+  });
+}
+
 function syncControls() {
   form.querySelectorAll('input[name="cat"]').forEach((cb) => {
     cb.checked = state.cats.has(cb.value);
+  });
+  form.querySelectorAll('input[name="artist"]').forEach((cb) => {
+    cb.checked = state.artists.has(cb.value);
   });
   const lo = form.querySelector('[name="min"]');
   const hi = form.querySelector('[name="max"]');
@@ -112,6 +140,7 @@ function updateRangeLabel() {
 
 form.addEventListener('input', () => {
   state.cats = new Set([...form.querySelectorAll('input[name="cat"]:checked')].map((c) => c.value));
+  state.artists = new Set([...form.querySelectorAll('input[name="artist"]:checked')].map((c) => c.value));
   let lo = +form.querySelector('[name="min"]').value;
   let hi = +form.querySelector('[name="max"]').value;
   if (lo > hi) [lo, hi] = [hi, lo];
@@ -126,6 +155,7 @@ form.addEventListener('submit', (e) => e.preventDefault());
 
 document.querySelector('.filter-clear').addEventListener('click', () => {
   state.cats.clear();
+  state.artists.clear();
   state.min = 0;
   state.max = maxEstimate;
   state.sort = 'lot';
@@ -170,6 +200,7 @@ Tupa.getLots().then((data) => {
   lots = data;
   maxEstimate = Math.ceil(Math.max(...lots.map((l) => l.estimateHigh || 0)) / 1000) * 1000;
   buildCategoryOptions();
+  buildArtistOptions();
   readURL();
   if (state.max === Infinity) state.max = maxEstimate;
   syncControls();

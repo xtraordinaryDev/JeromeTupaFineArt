@@ -60,9 +60,35 @@
   background: var(--band-blue);
   padding: clamp(1.5rem, 3.5vw, 3rem) var(--gutter);
 }
+.hero__band--red {
+  background: var(--band-red);
+  padding: clamp(0.85rem, 2vw, 1.25rem) var(--gutter);
+  margin-top: clamp(1rem, 3vh, 2rem);
+}
 .hero__band .container { width: min(100%, var(--max-w)); margin-inline: auto; }
 .hero__eyebrow { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; }
 .hero__title { max-width: 18ch; }
+.hero__cause {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  margin: 0;
+  font-size: clamp(0.8125rem, 1.4vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+.hero__cause-link {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 2px solid var(--tupa-yellow);
+  padding-bottom: 0.1em;
+  white-space: nowrap;
+}
+.hero__cause-link:hover { color: var(--tupa-yellow); }
 
 .hero__foot {
   position: absolute;
@@ -124,6 +150,23 @@
   justify-content: space-between;
   gap: 2rem;
   margin-bottom: 2.5rem;
+}
+.featured__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 0.85rem;
+  color: var(--ink);
+  font-size: var(--type-caption);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.featured__logo {
+  height: 1.75rem;
+  width: auto;
+  /* White logo asset → ink on the linen section */
+  filter: brightness(0);
 }
 
 /* --------------------------------------------------- Beyond paintings */

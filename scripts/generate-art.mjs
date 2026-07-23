@@ -210,8 +210,14 @@ function wallSVG(w, h) {
 /* ------------------------------------------------------------ lot data */
 
 // Lots with `realImages` use client-supplied photography (no placeholder is
-// generated). Titles/years/dimensions for the Tupa canvases are descriptive
-// placeholders until the client confirms the final lot list.
+// generated).
+//
+// ⚠️ STALE DATA WARNING (2026-07): The catalogue in data/lots.js and
+// data/lots.json has since been updated by hand with the client's REAL titles,
+// years, dimensions, mediums, estimates and essays (Tupa paintings + the
+// Picasso). The LOTS array below still holds the OLD placeholder text, so
+// re-running this generator will OVERWRITE lots.json and revert those edits.
+// Update the entries below to match data/lots.json before regenerating.
 const LOTS = [
   // Note: images/TupaArt/01_red_cityscape_tower.jpg is the same painting as
   // silver-palace-tiles.jpg (already lot 001) — not listed twice.

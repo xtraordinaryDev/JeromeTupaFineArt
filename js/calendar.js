@@ -8,8 +8,8 @@ window.Tupa = window.Tupa || {};
 
 const EVENT = {
   title: 'An Evening of Fine Art & Philanthropy featuring Father Jerome Tupa',
-  // 4:30–9:00 p.m. Central (CDT, UTC-5) on 2026-10-22
-  startUTC: '20261022T213000Z',
+  // 4:00–9:00 p.m. Central (CDT, UTC-5) on 2026-10-22
+  startUTC: '20261022T210000Z',
   endUTC: '20261023T020000Z',
   location: 'The Hutton House, 10715 South Shore Drive, Medicine Lake, Minnesota 55441',
   description: 'A live fundraising auction of original paintings by Father Jerome Tupa, illuminated pages from the St. John\u2019s Bible, pottery by Richard Bresnahan, and an original work by Pablo Picasso \u2014 benefiting St. John\u2019s Abbey & St. John\u2019s University.',

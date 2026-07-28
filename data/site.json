@@ -1,10 +1,10 @@
 {
   "event": {
     "name": "An Evening of Fine Art & Philanthropy featuring Father Jerome Tupa",
-    "dateISO": "2026-10-22T16:30:00-05:00",
+    "dateISO": "2026-10-22T16:00:00-05:00",
     "endISO": "2026-10-22T21:00:00-05:00",
     "dateDisplay": "Thursday, October 22, 2026",
-    "timeDisplay": "4:30 p.m. \u2013 9:00 p.m.",
+    "timeDisplay": "4:00 p.m. \u2013 9:00 p.m.",
     "host": "John Pellegrene",
     "venue": {
       "name": "The Hutton House",
@@ -22,7 +22,6 @@
   "conditionReportEmail": "sales@tupa.art",
   "sponsors": [
     { "name": "Fidelis Capital", "logo": "assets/images/logo-fidelis.png" },
-    { "name": "Saint John's University", "logo": "assets/brand/sponsor-sju.svg" },
     { "name": "Saint John's Abbey", "logo": "assets/images/logo-abbey.webp" },
     { "name": "The Saint John's Bible", "logo": "assets/images/logo-bible.jpg" }
   ],

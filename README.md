@@ -39,7 +39,7 @@ Header/footer markup is static in each page (kept in sync by hand) rather than J
 - **Logo:** the real white signature logo (`assets/images/logo-tupa-white.png`) is used in the nav on every page (rendered dark via CSS filter on light nav bars) and in the artist-page quote moment.
 - **Photography:** all 11 Tupa lots (lots 1–11), all 3 Bresnahan pottery lots (14–16), the Picasso *Toros en Vallauris* linocut (lot 17) and Yusuf's *Three Seated Women* (lot 18) use real client-supplied photos from `assets/images/`. Only the two Saint John's Bible folios (12–13) and two private-collection paintings (19–20) still use generated placeholders. Three photos of Father Tupa appear on the home artist teaser, the artist-page hero and biography; *Silver Palace Tiles* is the home-page hero.
 - **Note:** Tupa lot titles, years and dimensions are descriptive placeholders written from the photos — confirm the final lot list with the client.
-- **Sponsor logos:** Fidelis Capital, Saint John's Abbey and The Saint John's Bible are real; Saint John's University is still a placeholder.
+- **Sponsor logos:** Fidelis Capital, Saint John's Abbey and The Saint John's Bible - all real. The Saint John's University logo is deliberately not used anywhere on the site.
 
 ## Swapping in remaining real content
 
@@ -62,4 +62,3 @@ Artist biography, quotes, exhibition history and contact details on the artist/h
 6. RSVP destination - Formspree vs. client email/CRM
 7. Run-of-show times (program timeline on event.html is marked TODO)
 8. Buyer's premium / shipping terms wording
-9. Saint John's University logo file (only sponsor still using a placeholder)

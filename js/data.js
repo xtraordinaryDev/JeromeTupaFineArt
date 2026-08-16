@@ -21,17 +21,28 @@ window.Tupa = window.Tupa || {};
     private: 'Private Collections',
   };
 
+  Tupa.SALE_LABELS = {
+    live: 'Live Auction',
+    silent: 'Silent Auction',
+  };
+
   const money = new Intl.NumberFormat('en-US', {
     style: 'currency', currency: 'USD', maximumFractionDigits: 0,
   });
 
+  Tupa.formatMoney = (n) => money.format(n);
+
   Tupa.formatEstimate = function (lot) {
     if (lot.estimateLow == null) return 'Estimate on request';
+    if (lot.estimateHigh == null || lot.estimateHigh === lot.estimateLow) {
+      return money.format(lot.estimateLow);
+    }
     return `${money.format(lot.estimateLow)} \u2013 ${money.format(lot.estimateHigh)}`;
   };
 
   Tupa.lotNumberLabel = function (lot) {
-    return `LOT ${String(lot.lotNumber).padStart(3, '0')}`;
+    const prefix = lot.sale === 'silent' ? 'SILENT' : 'LIVE';
+    return `${prefix} LOT ${String(lot.lotNumber).padStart(2, '0')}`;
   };
 
   Tupa.altText = function (lot) {

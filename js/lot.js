@@ -49,9 +49,11 @@ function render(lot, lots) {
   const specs = $('[data-lot-specs]');
   const dims = `<span data-dims>${lot.dimensionsIn}</span><button type="button" class="unit-toggle" data-unit-toggle aria-label="Show dimensions in centimeters">cm</button>`;
   const rows = [
+    ['Auction', Tupa.SALE_LABELS[lot.sale] || 'Live Auction'],
     ['Year', lot.year ?? 'To be announced'],
     ['Medium', lot.medium],
     ['Dimensions', dims],
+    ...(lot.reserve != null ? [['Reserve', Tupa.formatMoney(lot.reserve)]] : []),
     ['Provenance', lot.provenance || 'Available on request'],
   ];
   specs.innerHTML = rows.map(([dt, dd]) => `<div><dt>${dt}</dt><dd>${dd}</dd></div>`).join('');

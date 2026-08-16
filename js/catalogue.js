@@ -18,6 +18,7 @@ let lots = [];
 let maxEstimate = 20000;
 
 const state = {
+  sales: new Set(),
   cats: new Set(),
   artists: new Set(),
   min: 0,
@@ -30,6 +31,7 @@ const state = {
 
 function readURL() {
   const q = new URLSearchParams(location.search);
+  state.sales = new Set((q.get('sale') || '').split(',').filter(Boolean));
   state.cats = new Set((q.get('cat') || '').split(',').filter(Boolean));
   state.artists = new Set((q.get('artist') || '').split('|').filter(Boolean));
   state.min = +q.get('min') || 0;
@@ -40,6 +42,7 @@ function readURL() {
 
 function writeURL() {
   const q = new URLSearchParams();
+  if (state.sales.size) q.set('sale', [...state.sales].join(','));
   if (state.cats.size) q.set('cat', [...state.cats].join(','));
   if (state.artists.size) q.set('artist', [...state.artists].join('|'));
   if (state.min > 0) q.set('min', state.min);
@@ -55,6 +58,7 @@ function writeURL() {
 /* --------------------------------------------------------- Filtering */
 
 function matches(lot) {
+  if (state.sales.size && !state.sales.has(lot.sale)) return false;
   if (state.cats.size && !state.cats.has(lot.category)) return false;
   if (state.artists.size && !state.artists.has(lot.artist)) return false;
   if (lot.estimateLow == null) return true; // "estimate on request" always shows
@@ -72,7 +76,15 @@ function sorted(list) {
 function render() {
   const visible = sorted(lots.filter(matches));
   grid.innerHTML = '';
-  visible.forEach((lot) => grid.appendChild(Tupa.buildLotCard(lot)));
+  Object.entries(Tupa.SALE_LABELS).forEach(([key, label]) => {
+    const items = visible.filter((l) => l.sale === key);
+    if (!items.length) return;
+    const head = document.createElement('h2');
+    head.className = 'lot-group-head';
+    head.innerHTML = `${label} <span class="lot-group-head__count">${items.length} ${items.length === 1 ? 'lot' : 'lots'}</span>`;
+    grid.appendChild(head);
+    items.forEach((lot) => grid.appendChild(Tupa.buildLotCard(lot)));
+  });
   countEl.textContent = `${visible.length} ${visible.length === 1 ? 'lot' : 'lots'}`;
   emptyEl.hidden = visible.length > 0;
   Tupa.observeReveals(grid.parentElement);
@@ -80,6 +92,19 @@ function render() {
 }
 
 /* ----------------------------------------------------- Control wiring */
+
+function buildSaleOptions() {
+  const wrap = form.querySelector('[data-sale-options]');
+  const counts = {};
+  lots.forEach((l) => { counts[l.sale] = (counts[l.sale] || 0) + 1; });
+  Object.entries(Tupa.SALE_LABELS).forEach(([key, label]) => {
+    const lab = document.createElement('label');
+    lab.className = 'filter-option';
+    lab.innerHTML = `<input type="checkbox" name="sale" value="${key}">
+      <span>${label}</span><span class="count">${counts[key] || 0}</span>`;
+    wrap.appendChild(lab);
+  });
+}
 
 function buildCategoryOptions() {
   const wrap = form.querySelector('[data-cat-options]');
@@ -116,6 +141,9 @@ function buildArtistOptions() {
 }
 
 function syncControls() {
+  form.querySelectorAll('input[name="sale"]').forEach((cb) => {
+    cb.checked = state.sales.has(cb.value);
+  });
   form.querySelectorAll('input[name="cat"]').forEach((cb) => {
     cb.checked = state.cats.has(cb.value);
   });
@@ -139,6 +167,7 @@ function updateRangeLabel() {
 }
 
 form.addEventListener('input', () => {
+  state.sales = new Set([...form.querySelectorAll('input[name="sale"]:checked')].map((c) => c.value));
   state.cats = new Set([...form.querySelectorAll('input[name="cat"]:checked')].map((c) => c.value));
   state.artists = new Set([...form.querySelectorAll('input[name="artist"]:checked')].map((c) => c.value));
   let lo = +form.querySelector('[name="min"]').value;
@@ -154,6 +183,7 @@ form.addEventListener('input', () => {
 form.addEventListener('submit', (e) => e.preventDefault());
 
 document.querySelector('.filter-clear').addEventListener('click', () => {
+  state.sales.clear();
   state.cats.clear();
   state.artists.clear();
   state.min = 0;
@@ -199,6 +229,7 @@ sheet.addEventListener('click', (e) => {
 Tupa.getLots().then((data) => {
   lots = data;
   maxEstimate = Math.ceil(Math.max(...lots.map((l) => l.estimateHigh || 0)) / 1000) * 1000;
+  buildSaleOptions();
   buildCategoryOptions();
   buildArtistOptions();
   readURL();

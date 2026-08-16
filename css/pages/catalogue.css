@@ -147,6 +147,28 @@
   gap: 2.5rem 1.5rem;
   grid-template-columns: repeat(2, 1fr);
 }
+
+/* Live / Silent auction section headers span the full grid */
+.lot-group-head {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 0.75rem;
+  margin-top: 1.5rem;
+}
+.lot-group-head:first-child { margin-top: 0; }
+.lot-group-head__count {
+  font-family: var(--font-body, inherit);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
 @media (min-width: 48em) { .lot-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (min-width: 75em) { .lot-grid { grid-template-columns: repeat(4, 1fr); } }
 

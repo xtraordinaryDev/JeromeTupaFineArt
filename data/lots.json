@@ -83,7 +83,9 @@
     "category": "tupa",
     "provenance": "From the artist’s studio, Saint John’s Abbey, Collegeville, Minnesota.",
     "essay": "Like a Fallen Leaf evokes the fragile beauty of a life moment suspended between presence and disappearance. Organic forms and expressive color suggest a leaf drifting gently from the tree, becoming a quiet meditation on change, mortality, and renewal. The work invites us to see beauty not only in what endures, but also in the graceful passing of time.",
-    "images": []
+    "images": [
+      "assets/images/like-a-fallen-leaf.png"
+    ]
   },
   {
     "id": "L05",
@@ -389,7 +391,9 @@
     "category": "private",
     "provenance": null,
     "essay": "The Brother series is a body of work that lays bare the artist’s bond with fleeting moments from his childhood in an African homestead. These memories return not as gentle whispers, but as sudden flashes — summoning visions of family, belonging, and a time when life was whole and unburdened. In the faces of the children around him, the artist beholds his own reflection. He sees the dust beneath bare feet, the careless laughter, the unmeasured days. They stand where he once stood, heirs to a simplicity he can no longer claim. This work is an inquiry into loss — the slow and inevitable theft committed by time itself. Yet, in deliberate defiance of his years, the artist chooses to see the world through the eyes of these children. Though they dwell amid hardship, their narrow horizon shields them from the full measure of what they lack. In this fragile unknowing, their joy endures. Thus, the work becomes both witness and reckoning — a meditation on what time steals and what knowledge unveils, and the quiet burden of seeing the world as it truly is.",
-    "images": []
+    "images": [
+      "assets/images/yusuf-brother.jpg"
+    ]
   },
   {
     "id": "S08",

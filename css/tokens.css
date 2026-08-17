@@ -17,9 +17,12 @@
   --band-blue: rgba(27, 117, 187, 0.85);
   --band-red:  rgba(239, 51, 64, 0.85);
 
-  /* Type */
-  --font-display: "Abril Fatface", "Encorpada Classic Compressed", Georgia, serif;
-  --font-body: "Helvetica Neue", Helvetica, "Inter", Arial, sans-serif;
+  /* Type — per brand guidelines: Bodoni 72 for display, Encorpada Classic
+     Compressed for the gala title, Helvetica Neue for labels and body.
+     Bodoni Moda (Google Fonts) is the web equivalent of Bodoni 72. */
+  --font-display: "Bodoni Moda", "Bodoni 72", Didot, Georgia, serif;
+  --font-gala: "Encorpada Classic Compressed", "Bodoni Moda", Georgia, serif;
+  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --type-display-xl: clamp(3rem, 10vw, 10rem);
   --type-display-l:  clamp(2.5rem, 6vw, 6rem);

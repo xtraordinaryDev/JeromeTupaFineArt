@@ -288,7 +288,7 @@ const LOTS = [
     provenance: 'Distinguished private collection.',
     essay: 'Picasso\u2019s celebrated linocut poster for the 1954 bullfights at Vallauris \u2014 the arena, the crowd and the charging bull carved in bold black and white, signed in the block. Offered from a distinguished private collection; full catalogue details available at the evening sale.' },
   { id: '018', lotNumber: 18, artist: 'Yusuf', title: 'Three Seated Women', year: null, medium: 'Oil on canvas', widthIn: 60, heightIn: 42, estimateLow: 6000, estimateHigh: 9000, category: 'private', seed: 1717,
-    realImages: ['assets/images/yusuf-three-women.jpg'], images: 0,
+    realImages: ['assets/images/lots/live-07-face-of-hope.jpg'], images: 0,
     provenance: 'Distinguished private collection.',
     essay: 'Three women in red, yellow and white sit in quiet dignity against a field of sage green and terracotta, their forms built from a mosaic of textured strokes. A commanding modern figurative canvas consigned from a distinguished private collection.' },
   { id: '019', lotNumber: 19, artist: 'Private collection', title: 'Lakeshore, Minnesota', year: 1954, medium: 'Oil on board', widthIn: 32, heightIn: 24, estimateLow: 3000, estimateHigh: 5000, category: 'private', seed: 1212, images: 1,
@@ -344,7 +344,7 @@ writeFileSync(join(ROOT, 'assets/brand/portrait-studio.svg'), portraitSVG(1800, 
 writeFileSync(join(ROOT, 'assets/brand/palette.svg'), paletteSVG(1600, 1000));
 writeFileSync(join(ROOT, 'assets/brand/hero.svg'), paintingSVG(20260, 2400, 1400, { base: '#1B75BB' }));
 writeFileSync(join(ROOT, 'assets/brand/texture-1.svg'), paintingSVG(31, 2000, 700));
-writeFileSync(join(ROOT, 'assets/brand/texture-2.svg'), paintingSVG(47, 2000, 700, { base: '#00A398' }));
+writeFileSync(join(ROOT, 'assets/images/site/tupa-painting.jpg'), paintingSVG(47, 2000, 700, { base: '#00A398' }));
 writeFileSync(join(ROOT, 'assets/brand/texture-3.svg'), paintingSVG(59, 2000, 700, { base: '#EF3340' }));
 writeFileSync(join(ROOT, 'assets/brand/wall.svg'), wallSVG(1600, 1000));
 

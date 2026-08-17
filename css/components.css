@@ -37,6 +37,7 @@
   align-items: center;
   gap: clamp(0.75rem, 2vw, 1.5rem);
   font-family: var(--font-display);
+  font-weight: 700;
   font-size: clamp(3rem, 8vw, 6.5rem);
   line-height: 1;
 }
@@ -161,6 +162,7 @@
 }
 .lot-card__title {
   font-family: var(--font-display);
+  font-weight: 700;
   font-size: 1.75rem;
   line-height: 1.05;
   margin-top: 0.35rem;
@@ -275,7 +277,10 @@
   width: 10px; height: 10px;
   margin: -5px 0 0 -5px;
   border-radius: 50%;
-  background: var(--ink);
+  /* White + difference blend inverts against the page, keeping the dot
+     visible on both dark heroes and the light gallery background. */
+  background: #fff;
+  mix-blend-mode: difference;
   pointer-events: none;
   display: grid;
   place-items: center;
@@ -288,6 +293,7 @@
 .cursor-dot.is-label {
   width: 72px; height: 72px;
   margin: -36px 0 0 -36px;
+  mix-blend-mode: normal;
   background: rgba(20, 20, 20, 0.9);
   color: #fff;
   font-size: 0.6875rem;

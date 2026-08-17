@@ -1,9 +1,14 @@
 /* Reset + typography + global element styles */
 
-/* TODO: swap to Encorpada Classic Compressed (licensed MyFonts woff2) when
-   the webfont files land in /assets/fonts/. Abril Fatface (Google Fonts,
-   loaded per-page via <link>) is a temporary stand-in — do not ship without
-   resolving the license. */
+/* Gala title face — client-supplied license, packaged with the brand
+   guidelines. Used only for the "Works of Heart" lockup (via --font-gala). */
+@font-face {
+  font-family: "Encorpada Classic Compressed";
+  src: url("../assets/fonts/EncorpadaClassicComp-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -37,10 +42,10 @@ a { color: inherit; }
 
 h1, h2, h3, h4 { line-height: 1; font-weight: 400; }
 
-/* Display face */
+/* Display face — Bodoni 72 Bold direction per brand guidelines */
 .display {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 0.95;
   letter-spacing: 0.005em;
 }

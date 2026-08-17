@@ -21,8 +21,8 @@
   object-position: center 40%;
   z-index: -2;
   will-change: transform;
-  /* Black-light mood: deepen shadows, punch the Pantone palette */
-  filter: brightness(0.82) contrast(1.12) saturate(1.28);
+  /* Brand direction: show the painting bright and true to color */
+  filter: saturate(1.08);
 }
 .hero::before {
   /* gentle scrim so white nav text always passes contrast */
@@ -33,17 +33,6 @@
   background: linear-gradient(rgba(20, 20, 20, 0.45), transparent);
   pointer-events: none;
   z-index: 0;
-}
-.hero::after {
-  /* cool UV / black-light cast over the painting */
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(160deg, rgba(18, 6, 48, 0.42) 0%, rgba(0, 50, 80, 0.22) 50%, rgba(12, 0, 36, 0.35) 100%),
-    radial-gradient(ellipse at 70% 25%, rgba(140, 60, 255, 0.18), transparent 55%);
-  pointer-events: none;
-  z-index: -1;
 }
 
 .hero__band {
@@ -67,13 +56,42 @@
 }
 .hero__band .container { width: min(100%, var(--max-w)); margin-inline: auto; }
 .hero__eyebrow { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; }
-.hero__title { max-width: 18ch; }
+
+/* Gala title lockup — "Works of Heart" left, "GALA & AUCTION" right */
+.hero__lockup {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: clamp(1rem, 4vw, 3.5rem);
+}
+.hero__gala {
+  font-family: var(--font-gala);
+  font-weight: 400;
+  font-size: clamp(3.25rem, 11vw, 12.5rem);
+  line-height: 0.82;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+.hero__gala em {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.52em;
+  letter-spacing: 0;
+  vertical-align: 0.12em;
+}
+.hero__gala-sub {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.05rem, 3vw, 3.5rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: right;
+  margin: 0;
+  justify-self: end;
+}
 .hero__cause {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.75rem 1.5rem;
   margin: 0;
   font-size: clamp(0.8125rem, 1.4vw, 1rem);
   font-weight: 700;
@@ -81,14 +99,6 @@
   text-transform: uppercase;
   line-height: 1.4;
 }
-.hero__cause-link {
-  color: #fff;
-  text-decoration: none;
-  border-bottom: 2px solid var(--tupa-yellow);
-  padding-bottom: 0.1em;
-  white-space: nowrap;
-}
-.hero__cause-link:hover { color: var(--tupa-yellow); }
 
 .hero__foot {
   position: absolute;
@@ -114,6 +124,7 @@
 .invite__copy > * + * { margin-top: 1.25rem; }
 .invite__formal {
   font-family: var(--font-display);
+  font-weight: 700;
   font-size: clamp(1.5rem, 2.6vw, 2.25rem);
   line-height: 1.25;
   max-width: 24ch;

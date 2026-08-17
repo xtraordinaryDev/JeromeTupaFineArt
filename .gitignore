@@ -3,3 +3,7 @@
 
 # Duplicate dump of client images (canonical copies live in images/)
 scripts/Links/
+
+# Originals, designer files, and unused photos — keep locally, never deploy
+_source/
+.tmp-preview/

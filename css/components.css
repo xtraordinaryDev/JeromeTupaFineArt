@@ -37,9 +37,13 @@
   align-items: center;
   gap: clamp(0.75rem, 2vw, 1.5rem);
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 500;
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 48, "wght" 500;
   font-size: clamp(3rem, 8vw, 6.5rem);
   line-height: 1;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-rendering: geometricPrecision;
 }
 .date-lockup > span { display: block; }
 .date-lockup .rule {
@@ -72,9 +76,10 @@
   display: inline-flex;
   gap: 4rem;
   padding-right: 4rem;
-  animation: marquee-scroll 28s linear infinite;
+  animation: marquee-scroll 72s linear infinite;
   will-change: transform;
 }
+.marquee:hover .marquee__track { animation-play-state: paused; }
 .marquee__item {
   font-weight: 700;
   font-size: 0.9375rem;
@@ -162,11 +167,15 @@
 }
 .lot-card__title {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 500;
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 28, "wght" 500;
   font-size: 1.75rem;
   line-height: 1.05;
   margin-top: 0.35rem;
   display: inline;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-rendering: geometricPrecision;
   background-image: linear-gradient(var(--tupa-yellow), var(--tupa-yellow));
   background-repeat: no-repeat;
   background-size: 0% 3px;
@@ -175,19 +184,6 @@
 }
 .lot-card:hover .lot-card__title { background-size: 100% 3px; }
 .lot-card__caption { margin-top: 0.4rem; }
-.lot-card__estimate {
-  margin-top: 0.5rem;
-  font-size: 0.9375rem;
-  font-weight: 500;
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 0.35s ease, transform 0.35s var(--ease-out-expo);
-}
-.lot-card:hover .lot-card__estimate,
-.lot-card:focus-visible .lot-card__estimate { opacity: 1; transform: none; }
-@media (hover: none) {
-  .lot-card__estimate { opacity: 1; transform: none; }
-}
 
 /* Horizontal snap rail (featured lots, "more from this sale") */
 .rail {

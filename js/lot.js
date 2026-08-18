@@ -7,7 +7,6 @@
 'use strict';
 
 const getLots = Tupa.getLots;
-const formatEstimate = Tupa.formatEstimate;
 const lotNumberLabel = Tupa.lotNumberLabel;
 const altText = Tupa.altText;
 const buildLotCard = Tupa.buildLotCard;
@@ -42,8 +41,6 @@ function render(lot, lots) {
   $('[data-lot-number]').textContent = lotNumberLabel(lot);
   $('[data-lot-artist]').textContent = lot.artist;
   $('[data-lot-title]').textContent = lot.title;
-  $('[data-lot-estimate]').textContent = formatEstimate(lot);
-  $('[data-bar-estimate]').textContent = formatEstimate(lot);
 
   /* Specs list */
   const specs = $('[data-lot-specs]');
@@ -53,7 +50,6 @@ function render(lot, lots) {
     ['Year', lot.year ?? 'To be announced'],
     ['Medium', lot.medium],
     ['Dimensions', dims],
-    ...(lot.reserve != null ? [['Reserve', Tupa.formatMoney(lot.reserve)]] : []),
     ['Provenance', lot.provenance || 'Available on request'],
   ];
   specs.innerHTML = rows.map(([dt, dd]) => `<div><dt>${dt}</dt><dd>${dd}</dd></div>`).join('');
@@ -76,8 +72,8 @@ function render(lot, lots) {
   cr.href = `mailto:sales@tupa.art?subject=${encodeURIComponent(`Condition report request — ${lotNumberLabel(lot)}: ${lot.title}`)}`;
 
   /* Register to bid (TODO: real registration mechanics pending client) */
-  $('[data-register]').href = 'event.html#rsvp';
-  $('[data-bar-register]').href = 'event.html#rsvp';
+  $('[data-register]').href = 'event.html#tickets';
+  $('[data-bar-register]').href = 'event.html#tickets';
 
   initStage(lot);
   initHeart(lot);

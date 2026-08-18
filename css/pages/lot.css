@@ -109,9 +109,14 @@
 .lot-info__artist { margin-top: 0.75rem; font-weight: 700; letter-spacing: 0.02em; }
 .lot-info__title {
   font-family: var(--font-display);
+  font-weight: 500;
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 36, "wght" 500;
   font-size: clamp(2.25rem, 4vw, 3.5rem);
   line-height: 1;
   margin-top: 0.35rem;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-rendering: geometricPrecision;
 }
 .lot-info__specs {
   margin: 1.5rem 0 0;
@@ -138,19 +143,6 @@
   text-decoration: underline;
   text-underline-offset: 2px;
   margin-left: 0.5em;
-}
-.lot-info__estimate {
-  margin-top: 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1rem;
-}
-.lot-info__estimate .caption { letter-spacing: 0.18em; }
-.lot-info__estimate strong {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(1.5rem, 2.4vw, 2rem);
 }
 .lot-info__actions {
   display: flex;
@@ -213,9 +205,6 @@
   border-top: 1px solid rgba(20,20,20,0.15);
   padding: 0.5rem var(--gutter) calc(0.5rem + env(safe-area-inset-bottom));
 }
-.lot-bar__estimate { line-height: 1.25; }
-.lot-bar__estimate .caption { display: block; letter-spacing: 0.14em; }
-.lot-bar__estimate strong { font-family: var(--font-display); font-weight: 400; font-size: 1.25rem; }
 .lot-bar .btn { margin-left: auto; padding-block: 0.7em; }
 @media (min-width: 64em) { .lot-bar { display: none; } }
 body.has-lot-bar { padding-bottom: 5rem; }

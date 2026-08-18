@@ -57,12 +57,15 @@
 .hero__band .container { width: min(100%, var(--max-w)); margin-inline: auto; }
 .hero__eyebrow { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; }
 
-/* Gala title lockup — "Works of Heart" left, "GALA & AUCTION" right */
+/* Gala title lockup — the two lines sit as one unit, not stretched apart */
 .hero__lockup {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  column-gap: clamp(1rem, 4vw, 3.5rem);
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: clamp(0.6rem, 1.4vw, 1.15rem);
+  width: fit-content;
+  max-width: 100%;
 }
 .hero__gala {
   font-family: var(--font-gala);
@@ -82,14 +85,17 @@
 }
 .hero__gala-sub {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 500;
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 36, "wght" 500;
   font-size: clamp(1.05rem, 3vw, 3.5rem);
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   white-space: nowrap;
-  text-align: right;
-  margin: 0;
-  justify-self: end;
+  text-align: left;
+  margin: 0 0 0.12em;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-rendering: geometricPrecision;
 }
 .hero__cause {
   margin: 0;
@@ -100,16 +106,31 @@
   line-height: 1.4;
 }
 
+.hero::after {
+  /* Light lift under the countdown — replaces the old dark UV blend
+     so the painting stays bright and the white digits still read. */
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 11rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.22) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
 .hero__foot {
   position: absolute;
   inset: auto 0 0 0;
+  z-index: 1;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   padding: 0 var(--gutter) clamp(1.25rem, 3.5vh, 2.5rem);
   gap: 2rem;
 }
-.hero__foot .countdown { text-align: right; }
+.hero__foot .countdown {
+  text-align: right;
+  text-shadow: 0 1px 18px rgba(255, 255, 255, 0.35);
+}
 
 /* --------------------------------------------------------- Invitation */
 
@@ -124,7 +145,9 @@
 .invite__copy > * + * { margin-top: 1.25rem; }
 .invite__formal {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 500;
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 28, "wght" 500;
   font-size: clamp(1.5rem, 2.6vw, 2.25rem);
   line-height: 1.25;
   max-width: 24ch;
@@ -158,6 +181,15 @@
   font-family: var(--font-display);
   font-size: 1.0625rem;
   min-width: 3.25rem;
+}
+.invite__std {
+  display: block;
+  width: min(100%, 22rem);
+}
+.invite__std img {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 8px 28px rgba(20, 20, 20, 0.18);
 }
 .invite__rsvp-by {
   font-size: var(--type-caption);
@@ -296,9 +328,14 @@
 .artist-teaser__band .container > * + * { margin-top: 1rem; }
 .artist-teaser__quote {
   font-family: var(--font-display);
+  font-weight: 500;
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 36, "wght" 500;
   font-size: clamp(1.75rem, 4vw, 3.25rem);
   line-height: 1.15;
   max-width: 22ch;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-rendering: geometricPrecision;
 }
 .artist-teaser__link {
   color: #fff;

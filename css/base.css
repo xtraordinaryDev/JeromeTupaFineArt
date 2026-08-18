@@ -42,12 +42,17 @@ a { color: inherit; }
 
 h1, h2, h3, h4 { line-height: 1; font-weight: 400; }
 
-/* Display face — Bodoni 72 Bold direction per brand guidelines */
+/* Display face — Bodoni 72 direction. Weight 500 + a mid optical size
+   keeps hairlines and serifs visible on screen; 700 was filling them in. */
 .display {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 500;
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 36, "wght" 500;
   line-height: 0.95;
-  letter-spacing: 0.005em;
+  letter-spacing: 0;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-rendering: geometricPrecision;
 }
 .display-xl { font-size: var(--type-display-xl); }
 .display-l  { font-size: var(--type-display-l); }

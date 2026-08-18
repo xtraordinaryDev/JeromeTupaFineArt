@@ -10,7 +10,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -43,7 +43,7 @@
         <li><a class="link-sweep" href="event.html">The Event</a></li>
         <li><a class="link-sweep" href="support.html">The Cause</a></li>
       </ul>
-      <a class="rsvp-pill" href="event.html#rsvp">RSVP · 10.8.2026</a>
+      <a class="rsvp-pill" href="event.html#tickets">Tickets</a>
       <button class="nav-burger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span></button>
     </div>
   </header>
@@ -59,7 +59,7 @@
       <li><a href="event.html">The Event</a></li>
       <li><a href="support.html">The Cause</a></li>
     </ul>
-    <a class="rsvp-pill" href="event.html#rsvp">RSVP · 10.8.2026</a>
+    <a class="rsvp-pill" href="event.html#tickets">Tickets</a>
   </nav>
 
   <main id="main" class="catalogue-head">
@@ -94,22 +94,6 @@
                 <div data-artist-options></div>
               </fieldset>
             </div>
-            <div class="filter-group">
-              <p class="filter-group__title" id="range-label">Estimate</p>
-              <div class="range-wrap" role="group" aria-labelledby="range-label">
-                <input type="range" name="min" min="0" max="20000" step="500" value="0" aria-label="Minimum estimate">
-                <input type="range" name="max" min="0" max="20000" step="500" value="20000" aria-label="Maximum estimate">
-              </div>
-              <div class="range-values"><span data-range-lo>$0</span><span data-range-hi>$20,000+</span></div>
-            </div>
-            <div class="filter-group">
-              <label class="filter-group__title" for="sort">Sort</label>
-              <select id="sort" name="sort">
-                <option value="lot">Lot number</option>
-                <option value="est-asc">Estimate — low to high</option>
-                <option value="est-desc">Estimate — high to low</option>
-              </select>
-            </div>
             <button type="button" class="filter-clear">Clear all filters</button>
           </form>
         </div>
@@ -118,7 +102,7 @@
       <section aria-label="Lot catalogue">
         <div class="catalogue-toolbar">
           <span class="catalogue-toolbar__count" data-result-count aria-live="polite">Loading…</span>
-          <button type="button" class="btn btn--ghost filter-open">Filter &amp; sort</button>
+          <button type="button" class="btn btn--ghost filter-open">Filter</button>
           <div class="view-toggle" role="group" aria-label="View">
             <button type="button" data-view="grid" aria-pressed="true">Grid</button>
             <button type="button" data-view="wall" aria-pressed="false">Wall</button>
@@ -129,19 +113,19 @@
 
         <div class="catalogue-empty" data-empty hidden>
           <p class="display">No lots match.</p>
-          <p>Try widening the estimate range or clearing a category or artist.</p>
+          <p>Try clearing a category or artist.</p>
         </div>
 
         <noscript>
-          <p>The interactive catalogue requires JavaScript. For a full list of lots, please <a href="event.html#rsvp">RSVP</a> and a printed catalogue will be available at the sale.</p>
+          <p>The interactive catalogue requires JavaScript. A printed catalogue will be available at the sale.</p>
         </noscript>
       </section>
     </div>
 
-    <dialog class="filter-sheet" id="filter-sheet" aria-label="Filter and sort">
+    <dialog class="filter-sheet" id="filter-sheet" aria-label="Filter">
       <div class="filter-sheet__inner">
         <div class="filter-sheet__head">
-          <h2>Filter &amp; sort</h2>
+          <h2>Filter</h2>
           <button type="button" class="filter-sheet__close" aria-label="Close filters">&times;</button>
         </div>
         <div data-sheet-slot></div>
@@ -164,7 +148,7 @@
         Medicine Lake, Minnesota 55441<br>
         Thursday, October 22, 2026 · 4:00–9:00 p.m.<br><br>
         Enquiries: <a href="mailto:sales@tupa.art">sales@tupa.art</a> · (320) 443-5799<br><br>
-        <a class="rsvp-pill" href="event.html#rsvp">RSVP · 10.8.2026</a>
+        <a class="rsvp-pill" href="event.html#tickets">Tickets</a>
       </address>
     </div>
     <div class="container site-footer__sponsors">
@@ -178,7 +162,7 @@
       </div>
     </div>
     <div class="container site-footer__legal">
-      <span>© 2026 Jerome Tupa Fine Art. Benefiting St. John's Abbey &amp; St. John's University.</span>
+      <span>© 2026 Jerome Tupa Fine Art. Benefiting St. John's Abbey.</span>
       <span><a href="auction.html">The Lots</a> · <a href="event.html">The Event</a> · <a href="support.html">The Cause</a></span>
     </div>
   </footer>

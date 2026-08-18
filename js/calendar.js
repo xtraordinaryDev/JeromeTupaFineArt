@@ -12,7 +12,7 @@ const EVENT = {
   startUTC: '20261022T210000Z',
   endUTC: '20261023T020000Z',
   location: 'The Hutton House, 10715 South Shore Drive, Medicine Lake, Minnesota 55441',
-  description: 'A live fundraising auction of original paintings by Father Jerome Tupa, illuminated pages from the St. John\u2019s Bible, pottery by Richard Bresnahan, and an original work by Pablo Picasso \u2014 benefiting St. John\u2019s Abbey & St. John\u2019s University.',
+  description: 'A live fundraising auction of original paintings by Father Jerome Tupa, illuminated pages from the St. John\u2019s Bible, pottery by Richard Bresnahan, and an original work by Pablo Picasso \u2014 benefiting St. John\u2019s Abbey.',
 };
 
 function icsString() {

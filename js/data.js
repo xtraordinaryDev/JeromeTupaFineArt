@@ -90,11 +90,7 @@ window.Tupa = window.Tupa || {};
     cap.textContent = [lot.artist, lot.medium, lot.dimensionsIn]
       .filter(Boolean).join(' \u00B7 ');
 
-    const est = document.createElement('div');
-    est.className = 'lot-card__estimate';
-    est.textContent = Tupa.formatEstimate(lot);
-
-    meta.append(num, title, cap, est);
+    meta.append(num, title, cap);
     a.append(frame, meta);
     return a;
   };

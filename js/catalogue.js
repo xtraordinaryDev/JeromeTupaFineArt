@@ -15,15 +15,11 @@ const sheet = document.getElementById('filter-sheet');
 const sheetSlot = sheet.querySelector('[data-sheet-slot]');
 
 let lots = [];
-let maxEstimate = 20000;
 
 const state = {
   sales: new Set(),
   cats: new Set(),
   artists: new Set(),
-  min: 0,
-  max: Infinity,
-  sort: 'lot',
   view: 'grid',
 };
 
@@ -34,9 +30,6 @@ function readURL() {
   state.sales = new Set((q.get('sale') || '').split(',').filter(Boolean));
   state.cats = new Set((q.get('cat') || '').split(',').filter(Boolean));
   state.artists = new Set((q.get('artist') || '').split('|').filter(Boolean));
-  state.min = +q.get('min') || 0;
-  state.max = +q.get('max') || maxEstimate;
-  state.sort = q.get('sort') || 'lot';
   state.view = q.get('view') === 'wall' ? 'wall' : 'grid';
 }
 
@@ -45,9 +38,6 @@ function writeURL() {
   if (state.sales.size) q.set('sale', [...state.sales].join(','));
   if (state.cats.size) q.set('cat', [...state.cats].join(','));
   if (state.artists.size) q.set('artist', [...state.artists].join('|'));
-  if (state.min > 0) q.set('min', state.min);
-  if (state.max < maxEstimate) q.set('max', state.max);
-  if (state.sort !== 'lot') q.set('sort', state.sort);
   if (state.view === 'wall') q.set('view', 'wall');
   const qs = q.toString();
   try {
@@ -61,16 +51,11 @@ function matches(lot) {
   if (state.sales.size && !state.sales.has(lot.sale)) return false;
   if (state.cats.size && !state.cats.has(lot.category)) return false;
   if (state.artists.size && !state.artists.has(lot.artist)) return false;
-  if (lot.estimateLow == null) return true; // "estimate on request" always shows
-  return lot.estimateHigh >= state.min && lot.estimateLow <= state.max;
+  return true;
 }
 
 function sorted(list) {
-  const c = [...list];
-  if (state.sort === 'est-asc') c.sort((a, b) => (a.estimateLow ?? Infinity) - (b.estimateLow ?? Infinity));
-  else if (state.sort === 'est-desc') c.sort((a, b) => (b.estimateHigh ?? -1) - (a.estimateHigh ?? -1));
-  else c.sort((a, b) => a.lotNumber - b.lotNumber);
-  return c;
+  return [...list].sort((a, b) => a.lotNumber - b.lotNumber);
 }
 
 function render() {
@@ -150,33 +135,12 @@ function syncControls() {
   form.querySelectorAll('input[name="artist"]').forEach((cb) => {
     cb.checked = state.artists.has(cb.value);
   });
-  const lo = form.querySelector('[name="min"]');
-  const hi = form.querySelector('[name="max"]');
-  lo.max = hi.max = maxEstimate;
-  lo.value = state.min;
-  hi.value = Math.min(state.max, maxEstimate);
-  form.querySelector('[name="sort"]').value = state.sort;
-  updateRangeLabel();
-}
-
-function updateRangeLabel() {
-  const fmt = (n) => '$' + (+n).toLocaleString('en-US');
-  form.querySelector('[data-range-lo]').textContent = fmt(state.min);
-  form.querySelector('[data-range-hi]').textContent =
-    state.max >= maxEstimate ? fmt(maxEstimate) + '+' : fmt(state.max);
 }
 
 form.addEventListener('input', () => {
   state.sales = new Set([...form.querySelectorAll('input[name="sale"]:checked')].map((c) => c.value));
   state.cats = new Set([...form.querySelectorAll('input[name="cat"]:checked')].map((c) => c.value));
   state.artists = new Set([...form.querySelectorAll('input[name="artist"]:checked')].map((c) => c.value));
-  let lo = +form.querySelector('[name="min"]').value;
-  let hi = +form.querySelector('[name="max"]').value;
-  if (lo > hi) [lo, hi] = [hi, lo];
-  state.min = lo;
-  state.max = hi;
-  state.sort = form.querySelector('[name="sort"]').value;
-  updateRangeLabel();
   render();
 });
 
@@ -186,9 +150,6 @@ document.querySelector('.filter-clear').addEventListener('click', () => {
   state.sales.clear();
   state.cats.clear();
   state.artists.clear();
-  state.min = 0;
-  state.max = maxEstimate;
-  state.sort = 'lot';
   syncControls();
   render();
 });
@@ -228,12 +189,10 @@ sheet.addEventListener('click', (e) => {
 
 Tupa.getLots().then((data) => {
   lots = data;
-  maxEstimate = Math.ceil(Math.max(...lots.map((l) => l.estimateHigh || 0)) / 1000) * 1000;
   buildSaleOptions();
   buildCategoryOptions();
   buildArtistOptions();
   readURL();
-  if (state.max === Infinity) state.max = maxEstimate;
   syncControls();
   applyView();
   render();

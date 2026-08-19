@@ -63,8 +63,16 @@ function render(lot, lots) {
     e.target.setAttribute('aria-label', metric ? 'Show dimensions in inches' : 'Show dimensions in centimeters');
   });
 
-  /* Essay + provenance */
-  $('[data-lot-essay]').textContent = lot.essay || 'A full catalogue note for this lot will be available at the evening sale.';
+  /* Essay + provenance — blank lines in the catalogue copy become paragraphs */
+  const essay = $('[data-lot-essay]');
+  essay.textContent = '';
+  (lot.essay || 'A full catalogue note for this lot will be available at the evening sale.')
+    .split('\n\n')
+    .forEach((para) => {
+      const p = document.createElement('p');
+      p.textContent = para;
+      essay.appendChild(p);
+    });
   $('[data-lot-provenance]').textContent = lot.provenance || 'Provenance details available on request.';
 
   /* Condition report mailto */

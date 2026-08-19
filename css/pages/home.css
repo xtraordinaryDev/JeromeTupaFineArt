@@ -51,8 +51,17 @@
 }
 .hero__band--red {
   background: var(--band-red);
-  padding: clamp(0.85rem, 2vw, 1.25rem) var(--gutter);
+  padding: clamp(0.7rem, 1.6vw, 1.1rem) var(--gutter);
   margin-top: clamp(1rem, 3vh, 2rem);
+}
+/* The countdown rides in the red band so the digits always hold against
+   solid colour instead of the painting. */
+.hero__red-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem clamp(1rem, 3vw, 2.5rem);
 }
 .hero__band .container { width: min(100%, var(--max-w)); margin-inline: auto; }
 .hero__eyebrow { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; }
@@ -106,30 +115,13 @@
   line-height: 1.4;
 }
 
-.hero::after {
-  /* Light lift under the countdown — replaces the old dark UV blend
-     so the painting stays bright and the white digits still read. */
-  content: "";
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 11rem;
-  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.22) 100%);
-  pointer-events: none;
-  z-index: 0;
-}
 .hero__foot {
   position: absolute;
   inset: auto 0 0 0;
   z-index: 1;
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
   padding: 0 var(--gutter) clamp(1.25rem, 3.5vh, 2.5rem);
-  gap: 2rem;
-}
-.hero__foot .countdown {
-  text-align: right;
-  text-shadow: 0 1px 18px rgba(255, 255, 255, 0.35);
 }
 
 /* --------------------------------------------------------- Invitation */

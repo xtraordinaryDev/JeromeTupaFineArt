@@ -58,10 +58,8 @@
    solid colour instead of the painting. */
 .hero__red-row {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem clamp(1rem, 3vw, 2.5rem);
+  justify-content: flex-end;
 }
 .hero__band .container { width: min(100%, var(--max-w)); margin-inline: auto; }
 .hero__eyebrow { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; }
@@ -106,15 +104,6 @@
   -webkit-font-smoothing: subpixel-antialiased;
   text-rendering: geometricPrecision;
 }
-.hero__cause {
-  margin: 0;
-  font-size: clamp(0.8125rem, 1.4vw, 1rem);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  line-height: 1.4;
-}
-
 .hero__foot {
   position: absolute;
   inset: auto 0 0 0;

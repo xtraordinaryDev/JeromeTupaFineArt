@@ -26,7 +26,9 @@
   function setDigit(odo, val) {
     if (odo._val === val) return;
     odo._val = val;
-    odo._col.style.transform = `translateY(-${val}em)`;
+    // Percent of the column (10 digits): more reliable than `em` in iOS Safari,
+    // especially once webfonts finish loading and change metrics.
+    odo._col.style.transform = `translate3d(0, ${-val * 10}%, 0)`;
   }
 
   function remaining() {
@@ -87,8 +89,27 @@
       el.setAttribute('aria-label',
         `${r.days} days, ${r.hrs} hours, ${r.min} minutes until the auction`);
     }
+
+    function forceTick() {
+      // Clear cached values so a post-font-load pass repositions every column.
+      Object.keys(digitMap).forEach((key) => {
+        digitMap[key].forEach((odo) => { odo._val = -1; });
+      });
+      tick();
+    }
+
     tick();
     setInterval(tick, 1000);
+
+    // iOS often paints before Bodoni Moda loads; re-sync once fonts are ready.
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(forceTick).catch(function () {});
+    }
+
+    // Timers throttle in background tabs; catch up when the page is visible again.
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'visible') forceTick();
+    });
   }
 
   document.querySelectorAll('[data-countdown]').forEach(initCountdown);

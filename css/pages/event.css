@@ -53,6 +53,38 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
+/* The Evening — split teal/white panels (Black Direction R3) */
+.evening { display: grid; }
+@media (min-width: 60em) { .evening { grid-template-columns: 1fr 1fr; } }
+.evening__left {
+  background: var(--tupa-teal);
+  color: #fff;
+}
+.evening__right { background: var(--gallery); }
+.evening__left, .evening__right {
+  padding: clamp(3rem, 6vw, 5rem) var(--gutter);
+}
+.evening__inner {
+  max-width: 36rem;
+  margin-inline: auto;
+  display: grid;
+  gap: 2.5rem;
+  align-content: start;
+}
+@media (min-width: 60em) {
+  /* Line the panel content up with the sitewide container edges */
+  .evening__left .evening__inner {
+    margin-left: max(0rem, calc((100vw - var(--max-w)) / 2 - var(--gutter)));
+    margin-right: clamp(1rem, 4vw, 4rem);
+  }
+  .evening__right .evening__inner {
+    margin-right: max(0rem, calc((100vw - var(--max-w)) / 2 - var(--gutter)));
+    margin-left: clamp(1rem, 4vw, 4rem);
+  }
+}
+.evening__left .logistics__cell h3 { color: #fff; }
+.evening__left .program { border-top-color: #fff; }
+
 /* Logistics grid */
 .logistics {
   display: grid;

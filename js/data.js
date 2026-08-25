@@ -26,6 +26,32 @@ window.Tupa = window.Tupa || {};
     silent: 'Silent Auction',
   };
 
+  /* Work title is always italic. Matches "The Saint John's Bible" / "St. John's Bible"
+     with straight or curly apostrophes. */
+  const BIBLE_NAME_RE = /(The )?(?:Saint|St\.) John['\u2019]s Bible/g;
+
+  Tupa.appendWithBibleItalics = function (el, text) {
+    if (text == null || text === '') return el;
+    const str = String(text);
+    const re = new RegExp(BIBLE_NAME_RE.source, 'g');
+    let last = 0;
+    let m;
+    while ((m = re.exec(str)) !== null) {
+      if (m.index > last) el.appendChild(document.createTextNode(str.slice(last, m.index)));
+      const em = document.createElement('em');
+      em.textContent = m[0];
+      el.appendChild(em);
+      last = re.lastIndex;
+    }
+    if (last < str.length) el.appendChild(document.createTextNode(str.slice(last)));
+    return el;
+  };
+
+  Tupa.setWithBibleItalics = function (el, text) {
+    el.textContent = '';
+    return Tupa.appendWithBibleItalics(el, text);
+  };
+
   const money = new Intl.NumberFormat('en-US', {
     style: 'currency', currency: 'USD', maximumFractionDigits: 0,
   });
@@ -70,7 +96,9 @@ window.Tupa = window.Tupa || {};
     } else {
       const ph = document.createElement('div');
       ph.className = 'lot-card__placeholder';
-      ph.textContent = lot.artist === 'Pablo Picasso' ? 'Picasso' : lot.title;
+      ph.textContent = '';
+      if (lot.artist === 'Pablo Picasso') ph.textContent = 'Picasso';
+      else Tupa.appendWithBibleItalics(ph, lot.title);
       frame.appendChild(ph);
     }
 
@@ -83,12 +111,12 @@ window.Tupa = window.Tupa || {};
 
     const title = document.createElement('h3');
     title.className = 'lot-card__title';
-    title.textContent = lot.title;
+    Tupa.appendWithBibleItalics(title, lot.title);
 
     const cap = document.createElement('div');
     cap.className = 'caption lot-card__caption';
-    cap.textContent = [lot.artist, lot.medium, lot.dimensionsIn]
-      .filter(Boolean).join(' \u00B7 ');
+    Tupa.appendWithBibleItalics(cap, [lot.artist, lot.medium, lot.dimensionsIn]
+      .filter(Boolean).join(' \u00B7 '));
 
     meta.append(num, title, cap);
     a.append(frame, meta);

@@ -98,8 +98,16 @@ function buildCategoryOptions() {
   Object.entries(Tupa.CATEGORY_LABELS).forEach(([key, label]) => {
     const lab = document.createElement('label');
     lab.className = 'filter-option';
-    lab.innerHTML = `<input type="checkbox" name="cat" value="${key}">
-      <span>${label}</span><span class="count">${counts[key] || 0}</span>`;
+    const cb = document.createElement('input');
+    cb.type = 'checkbox';
+    cb.name = 'cat';
+    cb.value = key;
+    const name = document.createElement('span');
+    Tupa.appendWithBibleItalics(name, label);
+    const num = document.createElement('span');
+    num.className = 'count';
+    num.textContent = counts[key] || 0;
+    lab.append(cb, name, num);
     wrap.appendChild(lab);
   });
 }
@@ -116,7 +124,7 @@ function buildArtistOptions() {
     cb.name = 'artist';
     cb.value = artist;
     const name = document.createElement('span');
-    name.textContent = artist;
+    Tupa.appendWithBibleItalics(name, artist);
     const num = document.createElement('span');
     num.className = 'count';
     num.textContent = count;

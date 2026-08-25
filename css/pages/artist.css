@@ -56,11 +56,44 @@
   padding: 0.08em 0.12em 0 0;
   color: var(--tupa-red);
 }
-.bio__facts {
-  margin-top: 2rem;
-  border-top: 2px solid var(--ink);
-  font-size: 0.9375rem;
+/* Photo collage below the bio text — stacked pair left, tall portrait right */
+.bio-gallery {
+  display: grid;
+  gap: clamp(1rem, 2.2vw, 1.75rem);
+  margin-top: clamp(2.5rem, 5vw, 4.5rem);
 }
+@media (min-width: 48em) {
+  .bio-gallery { grid-template-columns: 1fr 1.05fr; }
+}
+.bio-gallery__left {
+  display: grid;
+  gap: clamp(1rem, 2.2vw, 1.75rem);
+}
+.bio-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* The tall portrait fills whatever height the left stack produces */
+.bio-gallery__tall { position: relative; min-height: 24rem; }
+.bio-gallery__tall img {
+  position: absolute;
+  inset: 0;
+}
+@media (max-width: 47.9375em) {
+  .bio-gallery__tall img { position: static; }
+  .bio-gallery__tall { min-height: 0; }
+}
+
+/* Facts panel — white card on the cream band below the black bio (mockup) */
+.bio__panel {
+  max-width: 34rem;
+  background: var(--gallery);
+  color: var(--ink);
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+}
+.bio__facts { font-size: 0.9375rem; }
 .bio__facts div {
   display: flex;
   justify-content: space-between;
@@ -68,11 +101,9 @@
   padding-block: 0.7rem;
   border-bottom: 1px solid rgba(20,20,20,0.12);
 }
+.bio__facts div:first-child { border-top: 1px solid rgba(20,20,20,0.12); }
 .bio__facts dt { color: var(--stone); }
 .bio__facts dd { margin: 0; text-align: right; }
-.bio__figure { margin: 2.5rem 0 0; }
-.bio__figure img { width: 100%; height: auto; display: block; }
-.bio__figure figcaption { margin-top: 0.75rem; color: var(--stone); }
 
 /* Pilgrimage quote — full-screen typographic moment, sticky pin */
 .quote-pin { height: 320vh; position: relative; }

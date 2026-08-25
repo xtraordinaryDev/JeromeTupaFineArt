@@ -133,8 +133,10 @@
   line-height: 1.25;
   max-width: 24ch;
 }
+/* Teal panel per the Black Direction splash mockup */
 .invite__panel {
-  background: var(--linen);
+  background: var(--tupa-teal);
+  color: #fff;
   padding: clamp(2rem, 4vw, 3.5rem);
   text-align: center;
   display: grid;
@@ -149,14 +151,14 @@
   width: 100%;
   max-width: 22rem;
   text-align: left;
-  border-top: 1px solid rgba(20, 20, 20, 0.18);
+  border-top: 1px solid rgba(255, 255, 255, 0.45);
 }
 .invite__schedule li {
   display: flex;
   gap: 1.25rem;
   align-items: baseline;
   padding-block: 0.6rem;
-  border-bottom: 1px solid rgba(20, 20, 20, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 .invite__schedule time {
   font-family: var(--font-display);
@@ -215,16 +217,16 @@
 .featured__logo {
   height: 1.75rem;
   width: auto;
-  /* White logo asset → ink on the linen section */
-  filter: brightness(0);
 }
+/* Featured section sits on black; brand line renders white, lot numbers red */
+.featured.on-dark .featured__brand { color: inherit; }
+.featured .lot-card__number { color: var(--tupa-red); }
 
 /* --------------------------------------------------- Beyond paintings */
 
 .beyond__grid {
   display: grid;
   gap: 2.5rem;
-  margin-top: 3rem;
 }
 @media (min-width: 48em) {
   .beyond__grid { grid-template-columns: repeat(3, 1fr); }
@@ -264,7 +266,7 @@
   transition: background-size 0.4s var(--ease-out-expo);
 }
 .beyond-card:hover h3 { background-size: 100% 3px; }
-.beyond-card p { color: var(--stone); font-size: 0.9375rem; line-height: 1.55; }
+.beyond-card p { color: #A9A8A2; font-size: 0.9375rem; line-height: 1.55; }
 
 /* ------------------------------------------------------ Artist teaser */
 

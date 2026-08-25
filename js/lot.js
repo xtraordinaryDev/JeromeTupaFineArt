@@ -39,20 +39,30 @@ function render(lot, lots) {
   document.title = `${lotNumberLabel(lot)} · ${lot.title} — Father Jerome Tupa Auction`;
 
   $('[data-lot-number]').textContent = lotNumberLabel(lot);
-  $('[data-lot-artist]').textContent = lot.artist;
-  $('[data-lot-title]').textContent = lot.title;
+  $('[data-lot-artist]').textContent = '';
+  Tupa.appendWithBibleItalics($('[data-lot-artist]'), lot.artist);
+  $('[data-lot-title]').textContent = '';
+  Tupa.appendWithBibleItalics($('[data-lot-title]'), lot.title);
 
   /* Specs list */
   const specs = $('[data-lot-specs]');
+  specs.textContent = '';
+  const addSpec = (label, value, html) => {
+    const wrap = document.createElement('div');
+    const dt = document.createElement('dt');
+    dt.textContent = label;
+    const dd = document.createElement('dd');
+    if (html) dd.innerHTML = value;
+    else Tupa.appendWithBibleItalics(dd, value);
+    wrap.append(dt, dd);
+    specs.appendChild(wrap);
+  };
   const dims = `<span data-dims>${lot.dimensionsIn}</span><button type="button" class="unit-toggle" data-unit-toggle aria-label="Show dimensions in centimeters">cm</button>`;
-  const rows = [
-    ['Auction', Tupa.SALE_LABELS[lot.sale] || 'Live Auction'],
-    ['Year', lot.year ?? 'To be announced'],
-    ['Medium', lot.medium],
-    ['Dimensions', dims],
-    ['Provenance', lot.provenance || 'Available on request'],
-  ];
-  specs.innerHTML = rows.map(([dt, dd]) => `<div><dt>${dt}</dt><dd>${dd}</dd></div>`).join('');
+  addSpec('Auction', Tupa.SALE_LABELS[lot.sale] || 'Live Auction');
+  addSpec('Year', String(lot.year ?? 'To be announced'));
+  addSpec('Medium', lot.medium);
+  addSpec('Dimensions', dims, true);
+  addSpec('Provenance', lot.provenance || 'Available on request');
 
   /* in ⇄ cm toggle */
   let metric = false;
@@ -70,14 +80,16 @@ function render(lot, lots) {
     .split('\n\n')
     .forEach((para) => {
       const p = document.createElement('p');
-      p.textContent = para;
+      Tupa.appendWithBibleItalics(p, para);
       essay.appendChild(p);
     });
-  $('[data-lot-provenance]').textContent = lot.provenance || 'Provenance details available on request.';
+  const provenanceEl = $('[data-lot-provenance]');
+  provenanceEl.textContent = '';
+  Tupa.appendWithBibleItalics(provenanceEl, lot.provenance || 'Provenance details available on request.');
 
   /* Condition report mailto */
   const cr = $('[data-condition-link]');
-  cr.href = `mailto:sales@tupa.art?subject=${encodeURIComponent(`Condition report request — ${lotNumberLabel(lot)}: ${lot.title}`)}`;
+  cr.href = `mailto:John@JohnPellegrene.com?subject=${encodeURIComponent(`Condition report request — ${lotNumberLabel(lot)}: ${lot.title}`)}`;
 
   /* Register to bid (TODO: real registration mechanics pending client) */
   $('[data-register]').href = 'event.html#tickets';
@@ -102,7 +114,11 @@ function initStage(lot) {
   let currentSrc = lot.images[0] || null;
 
   if (!currentSrc) {
-    stage.innerHTML = `<div class="lot-placeholder">${lot.artist === 'Pablo Picasso' ? 'Picasso' : lot.title}</div>`;
+    const ph = document.createElement('div');
+    ph.className = 'lot-placeholder';
+    if (lot.artist === 'Pablo Picasso') ph.textContent = 'Picasso';
+    else Tupa.appendWithBibleItalics(ph, lot.title);
+    stage.replaceChildren(ph);
     $('.room-toggle')?.remove();
     return;
   }

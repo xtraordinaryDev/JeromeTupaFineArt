@@ -15,7 +15,7 @@
 
 .lot-stage {
   position: relative;
-  background: var(--linen);
+  background: #232320;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   touch-action: none;
@@ -68,7 +68,7 @@
 .lot-thumbs button {
   appearance: none;
   border: 2px solid transparent;
-  background: var(--linen);
+  background: #232320;
   padding: 0;
   width: 76px; height: 76px;
   cursor: pointer;
@@ -83,12 +83,13 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  border: 1.5px solid var(--ink);
+  border: 1.5px solid currentColor;
   background: none;
 }
 .lot-thumbs .room-toggle[aria-pressed="true"] {
-  background: var(--ink);
-  color: var(--gallery);
+  background: var(--gallery);
+  border-color: var(--gallery);
+  color: var(--ink);
 }
 
 /* ---------------------------------------------------------- Info column */
@@ -104,7 +105,7 @@
   font-size: var(--type-caption);
   font-weight: 700;
   letter-spacing: 0.22em;
-  color: var(--tupa-red);
+  color: var(--tupa-yellow);
 }
 .lot-info__artist { margin-top: 0.75rem; font-weight: 700; letter-spacing: 0.02em; }
 .lot-info__title {
@@ -120,24 +121,24 @@
 }
 .lot-info__specs {
   margin: 1.5rem 0 0;
-  border-top: 1px solid rgba(20,20,20,0.12);
+  border-top: 1px solid rgba(250,250,247,0.18);
 }
 .lot-info__specs > div {
   display: flex;
   justify-content: space-between;
   gap: 1.5rem;
   padding-block: 0.7rem;
-  border-bottom: 1px solid rgba(20,20,20,0.12);
+  border-bottom: 1px solid rgba(250,250,247,0.18);
   font-size: 0.9375rem;
 }
-.lot-info__specs dt { color: var(--stone); }
+.lot-info__specs dt { color: #A9A8A2; }
 .lot-info__specs dd { margin: 0; text-align: right; }
 .unit-toggle {
   background: none;
   border: 0;
   padding: 0;
   cursor: pointer;
-  color: var(--tupa-blue);
+  color: #6FB1E8;
   font-size: 0.8125rem;
   font-weight: 700;
   text-decoration: underline;
@@ -153,7 +154,7 @@
 .heart-btn {
   appearance: none;
   background: none;
-  border: 1.5px solid var(--ink);
+  border: 1.5px solid currentColor;
   width: 52px;
   display: grid;
   place-items: center;
@@ -173,12 +174,12 @@
   background: none; border: 0; padding: 0;
   text-align: left;
   cursor: pointer;
-  color: var(--tupa-blue);
+  color: #6FB1E8;
   text-decoration: underline;
   text-underline-offset: 3px;
   width: fit-content;
 }
-.lot-info__note { margin-top: 1.5rem; font-size: 0.8125rem; color: var(--stone); line-height: 1.6; }
+.lot-info__note { margin-top: 1.5rem; font-size: 0.8125rem; color: #A9A8A2; line-height: 1.6; }
 
 /* ---------------------------------------------------------- Below fold */
 
@@ -187,7 +188,7 @@
 .lot-essay p + p { margin-top: 1rem; }
 .lot-provenance { margin-top: 2rem; }
 .lot-provenance h3 { font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.5rem; }
-.lot-provenance p { color: var(--stone); font-size: 0.9375rem; }
+.lot-provenance p { color: #A9A8A2; font-size: 0.9375rem; }
 
 .more-rail { overflow: clip; }
 .more-rail h2 { margin-bottom: 2rem; }
@@ -201,8 +202,9 @@
   align-items: center;
   gap: 1rem;
   min-height: 56px;
-  background: var(--gallery);
-  border-top: 1px solid rgba(20,20,20,0.15);
+  background: var(--ink);
+  color: var(--gallery);
+  border-top: 1px solid rgba(250,250,247,0.2);
   padding: 0.5rem var(--gutter) calc(0.5rem + env(safe-area-inset-bottom));
 }
 .lot-bar .btn { margin-left: auto; padding-block: 0.7em; }

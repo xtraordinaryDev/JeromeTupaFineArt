@@ -11,7 +11,7 @@
   .catalogue-layout { grid-template-columns: 16rem 1fr; }
 }
 
-/* Filter rail (desktop) */
+/* Filter rail (desktop) — cream panel against the black catalogue */
 .filter-rail { display: none; }
 @media (min-width: 64em) {
   .filter-rail {
@@ -21,6 +21,9 @@
     align-self: start;
     max-height: calc(100vh - var(--nav-h) - 3rem);
     overflow-y: auto;
+    background: var(--linen);
+    color: var(--ink);
+    padding: 1.5rem;
   }
 }
 .filter-group { padding-block: 1.5rem; border-bottom: 1px solid rgba(20,20,20,0.12); }
@@ -118,10 +121,21 @@
   gap: 1rem;
   margin-bottom: 2rem;
 }
-.catalogue-toolbar__count { color: var(--stone); font-size: 0.9375rem; }
+.catalogue-toolbar__count {
+  color: var(--tupa-red);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
 .view-toggle {
   display: inline-flex;
   border: 1.5px solid var(--ink);
+}
+.catalogue-dark .view-toggle { border-color: var(--gallery); }
+.catalogue-dark .view-toggle button[aria-pressed="true"] {
+  background: var(--gallery);
+  color: var(--ink);
 }
 .view-toggle button {
   appearance: none;
@@ -161,13 +175,14 @@
   margin-top: 1.5rem;
 }
 .lot-group-head:first-child { margin-top: 0; }
+.catalogue-dark .lot-group-head { border-bottom-color: rgba(250, 250, 247, 0.35); }
 .lot-group-head__count {
   font-family: var(--font-body, inherit);
   font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--stone);
+  color: var(--tupa-red);
 }
 @media (min-width: 48em) { .lot-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (min-width: 75em) { .lot-grid { grid-template-columns: repeat(4, 1fr); } }

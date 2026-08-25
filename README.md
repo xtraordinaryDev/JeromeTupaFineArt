@@ -58,7 +58,7 @@ Artist biography, quotes, exhibition history and contact details on the artist/h
 1. Encorpada Classic Compressed webfont license files
 2. High-res photography for the remaining lots + final lot list with estimates (lot 002 resolved)
 3. Online/absentee bidding? (v1 = RSVP + register-interest only)
-4. ~~Condition-report contact~~ - resolved: sales@tupa.art / (320) 443-5799, from the artist's official site (tupa.art)
+4. ~~Condition-report contact~~ - resolved: John@JohnPellegrene.com, from the artist's official site (tupa.art)
 5. Picasso image licensing (currently typographic treatment, per spec)
 6. RSVP destination - Formspree vs. client email/CRM
 7. Run-of-show times (program timeline on event.html is marked TODO)

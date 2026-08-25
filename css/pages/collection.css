@@ -10,10 +10,10 @@
   color: #fff;
   padding: clamp(2rem, 5vw, 3.5rem) 0;
 }
-.chapter__intro--blue { background: var(--band-blue); }
-.chapter__intro--teal { background: var(--band-teal); }
-.chapter__intro--red  { background: var(--band-red); }
-.chapter__intro--ink  { background: var(--ink); }
+/* Solid brand colours — the bands sit on black in the R3 direction */
+.chapter__intro--blue { background: var(--tupa-blue); }
+.chapter__intro--teal { background: var(--tupa-teal); }
+.chapter__intro--red  { background: var(--tupa-red); }
 .chapter__intro .display { max-width: 20ch; }
 
 .chapter__body {
@@ -50,16 +50,40 @@
 }
 .support-hero .display { max-width: 14ch; }
 .support-hero .lead { max-width: 40rem; margin-top: 1.5rem; color: #cfcec9; }
+/* The Cause hero is blue in the black direction; the Bible hero stays ink */
+.support-hero--blue { background: var(--tupa-blue); color: #fff; }
+.support-hero--blue .lead { color: #EAF2FA; }
 
-.mission-grid {
-  display: grid;
-  gap: 3rem;
-  max-width: 40rem;
+/* Abbey split — black copy panel left, full-bleed church photo right (mockup) */
+.abbey-split { display: grid; }
+@media (min-width: 60em) {
+  .abbey-split { grid-template-columns: 1fr 1.1fr; }
 }
-.mission-card { border-top: 3px solid var(--tupa-red); padding-top: 1.5rem; }
-.mission-card:nth-child(2) { border-top-color: var(--tupa-blue); }
-.mission-card h3 { font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem; }
-.mission-card p + p { margin-top: 1rem; }
+.abbey-split__copy {
+  padding: clamp(3rem, 6vw, 5.5rem) var(--gutter);
+  display: grid;
+  align-content: center;
+}
+.abbey-split__inner {
+  max-width: 32rem;
+  margin-inline: auto;
+}
+@media (min-width: 60em) {
+  /* Line the copy up with the sitewide container's left edge */
+  .abbey-split__inner {
+    margin-left: max(0rem, calc((100vw - var(--max-w)) / 2 - var(--gutter)));
+    margin-right: clamp(1rem, 4vw, 4rem);
+  }
+}
+.abbey-split__inner h2 { margin-bottom: 1.5rem; }
+.abbey-split__inner p + p { margin-top: 1rem; }
+.abbey-split__img {
+  width: 100%;
+  height: 100%;
+  min-height: 20rem;
+  object-fit: cover;
+  display: block;
+}
 
 .sponsor-wall {
   display: grid;

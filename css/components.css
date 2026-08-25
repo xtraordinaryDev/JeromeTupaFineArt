@@ -251,27 +251,38 @@
   font-family: var(--font-display);
   font-size: clamp(2rem, 4.5vw, 3.5rem);
   line-height: 1;
+  /* Avoid iOS text inflation shifting the 1em mask vs the column */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 .odo__col {
   display: block;
   transition: transform 0.55s var(--ease-out-expo);
+  will-change: transform;
 }
-.odo__col span { display: block; height: 1em; }
+.odo__col span {
+  display: block;
+  height: 1em;
+  line-height: 1;
+}
 @media (prefers-reduced-motion: reduce) {
   .odo__col { transition: none; }
 }
+/* Hide seconds on narrow viewports for the large (non-band) countdown */
 .countdown__group--sec { display: none; }
 @media (min-width: 48em) {
   .countdown__group--sec { display: block; }
 }
 
-/* Band variant: smaller digits so the timer fits a colour band inline */
+/* Band variant: smaller digits so the timer fits a colour band inline.
+   Always show seconds here — on iPhone the minute-only view looked frozen. */
 .countdown--band {
   align-items: center;
-  gap: clamp(0.4rem, 1.1vw, 0.9rem);
+  gap: clamp(0.35rem, 1.1vw, 0.9rem);
 }
+.countdown--band .countdown__group--sec { display: block; }
 .countdown--band .odo,
-.countdown--band .countdown__sep { font-size: clamp(1.375rem, 2.6vw, 2.125rem); }
+.countdown--band .countdown__sep { font-size: clamp(1.25rem, 2.6vw, 2.125rem); }
 .countdown--band .countdown__label {
   margin-top: 0.1rem;
   font-size: 0.5625rem;

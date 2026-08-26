@@ -416,6 +416,20 @@ body.has-custom-cursor { cursor: none; }
   opacity: 0.85;
 }
 
+/* Tina's signature color pattern — full-bleed painting strip (splash + event) */
+.color-pattern {
+  line-height: 0;
+  overflow: hidden;
+  background: var(--ink);
+}
+.color-pattern img {
+  width: 100%;
+  height: clamp(4.5rem, 11vw, 8.5rem);
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
 /* -------------------------------------------------------- Scroll cue */
 
 .scroll-cue {

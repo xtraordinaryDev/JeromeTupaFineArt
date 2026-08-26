@@ -209,10 +209,10 @@ body.menu-open { overflow: hidden; }
   opacity: 0.75;
   transition: filter 0.3s ease, opacity 0.3s ease;
 }
+/* Avoid a white box on hover for logos that are already transparent PNGs */
 .site-footer__sponsors a:hover img, .site-footer__sponsors a:focus-visible img {
-  filter: none;
+  filter: grayscale(1) invert(1) brightness(1.6);
   opacity: 1;
-  background: var(--gallery);
 }
 .site-footer__legal {
   display: flex;

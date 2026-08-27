@@ -97,7 +97,7 @@ window.Tupa = window.Tupa || {};
       const ph = document.createElement('div');
       ph.className = 'lot-card__placeholder';
       ph.textContent = '';
-      if (lot.artist === 'Pablo Picasso') ph.textContent = 'Picasso';
+      if (lot.artist === 'Pablo Picasso' || String(lot.artist).startsWith('Pablo Picasso')) ph.textContent = 'Picasso';
       else Tupa.appendWithBibleItalics(ph, lot.title);
       frame.appendChild(ph);
     }
@@ -115,7 +115,7 @@ window.Tupa = window.Tupa || {};
 
     const cap = document.createElement('div');
     cap.className = 'caption lot-card__caption';
-    Tupa.appendWithBibleItalics(cap, [lot.artist, lot.medium, lot.dimensionsIn]
+    Tupa.appendWithBibleItalics(cap, [lot.artist, lot.medium, (lot.dimensionsIn || '').replace(/\s*\n\s*/g, ' · ')]
       .filter(Boolean).join(' \u00B7 '));
 
     meta.append(num, title, cap);

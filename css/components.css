@@ -113,6 +113,11 @@
 }
 .btn--red { background: var(--tupa-red); color: #fff; }
 .btn--red:hover { background: #d42230; transform: translateY(-2px); }
+.btn[aria-disabled="true"] {
+  cursor: default;
+  pointer-events: none;
+  transform: none;
+}
 .btn--ink { background: var(--ink); color: var(--gallery); }
 .btn--ink:hover { background: #000; transform: translateY(-2px); }
 .btn--ghost {

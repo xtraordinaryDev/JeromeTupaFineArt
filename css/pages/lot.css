@@ -133,6 +133,12 @@
 }
 .lot-info__specs dt { color: #A9A8A2; }
 .lot-info__specs dd { margin: 0; text-align: right; }
+.lot-info__specs [data-dims] { white-space: pre-line; }
+.lot-info__specs > div.is-stacked {
+  display: grid;
+  gap: 0.4rem;
+}
+.lot-info__specs > div.is-stacked dd { text-align: left; }
 .unit-toggle {
   background: none;
   border: 0;

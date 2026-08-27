@@ -149,7 +149,6 @@
   display: grid;
   gap: 1.5rem;
 }
-@media (min-width: 32em) { .ticket-prices { grid-template-columns: 1fr 1fr; gap: 2rem; } }
 .ticket-prices__amt {
   font-family: var(--font-display);
   font-weight: 500;

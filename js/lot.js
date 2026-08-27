@@ -47,8 +47,9 @@ function render(lot, lots) {
   /* Specs list */
   const specs = $('[data-lot-specs]');
   specs.textContent = '';
-  const addSpec = (label, value, html) => {
+  const addSpec = (label, value, html, stacked) => {
     const wrap = document.createElement('div');
+    if (stacked) wrap.className = 'is-stacked';
     const dt = document.createElement('dt');
     dt.textContent = label;
     const dd = document.createElement('dd');
@@ -62,6 +63,8 @@ function render(lot, lots) {
   addSpec('Year', String(lot.year ?? 'To be announced'));
   addSpec('Medium', lot.medium);
   addSpec('Dimensions', dims, true);
+  if (lot.catalogueRefs) addSpec('Catalogue', lot.catalogueRefs);
+  if (lot.inscription) addSpec('Inscription', lot.inscription, false, true);
   addSpec('Provenance', lot.provenance || 'Available on request');
 
   /* in ⇄ cm toggle */
@@ -91,16 +94,11 @@ function render(lot, lots) {
   const cr = $('[data-condition-link]');
   cr.href = `mailto:John@JohnPellegrene.com?subject=${encodeURIComponent(`Condition report request — ${lotNumberLabel(lot)}: ${lot.title}`)}`;
 
-  /* Register to bid (TODO: real registration mechanics pending client) */
-  $('[data-register]').href = 'event.html#tickets';
-  $('[data-bar-register]').href = 'event.html#tickets';
-
   initStage(lot);
   initHeart(lot);
   initShare(lot);
   injectSchema(lot);
   renderMoreRail(lot, lots);
-  document.body.classList.add('has-lot-bar');
 }
 
 /* ------------------------------------------------- Image stage + zoom */
@@ -116,7 +114,7 @@ function initStage(lot) {
   if (!currentSrc) {
     const ph = document.createElement('div');
     ph.className = 'lot-placeholder';
-    if (lot.artist === 'Pablo Picasso') ph.textContent = 'Picasso';
+    if (lot.artist === 'Pablo Picasso' || String(lot.artist).startsWith('Pablo Picasso')) ph.textContent = 'Picasso';
     else Tupa.appendWithBibleItalics(ph, lot.title);
     stage.replaceChildren(ph);
     $('.room-toggle')?.remove();

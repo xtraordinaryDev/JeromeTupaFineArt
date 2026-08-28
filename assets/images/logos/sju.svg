@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" width="300" height="80" role="img" aria-label="Saint John's University">
+  <text x="150" y="38" text-anchor="middle" font-family="'Bodoni Moda', Didot, Georgia, 'Times New Roman', serif" font-size="28" font-weight="700" fill="#1A1A1A">SAINT JOHN&#8217;S</text>
+  <line x1="46" y1="50" x2="254" y2="50" stroke="#1A1A1A" stroke-width="1.5"/>
+  <text x="150" y="68" text-anchor="middle" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" letter-spacing="7" fill="#1A1A1A">UNIVERSITY</text>
+</svg>

@@ -3,8 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Lots — Father Jerome Tupa Auction | October 22, 2026</title>
-  <meta name="description" content="Browse the live and silent auction catalogues for An Evening of Fine Art &amp; Philanthropy: original paintings by Father Jerome Tupa, The Saint John's Bible Heritage and Apostles Editions with Unbound Collection folios, Bresnahan pottery, an original Picasso, and works by Yusuf Mirumbe.">
+  <title>The Menu — Dinner by Bacio | Father Jerome Tupa Auction</title>
+  <meta name="description" content="Dinner for Works of Heart is prepared by Bacio. View the menu for the evening of Thursday, October 22, 2026 at The Hutton House. Meal choice available with ticket purchase.">
+  <meta property="og:title" content="The Menu — Dinner by Bacio">
+  <meta property="og:description" content="Dinner by Bacio at Works of Heart, Thursday, October 22, 2026 · The Hutton House, Medicine Lake.">
+  <meta property="og:type" content="website">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
@@ -16,20 +19,17 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/motion.css">
-  <link rel="stylesheet" href="css/pages/catalogue.css">
+  <link rel="stylesheet" href="css/pages/collection.css">
+  <link rel="stylesheet" href="css/pages/menu.css">
   <script defer src="js/reveal.js"></script>
   <script defer src="js/nav.js"></script>
   <script defer src="js/marquee.js"></script>
-  <script defer src="js/rail.js"></script>
   <script defer src="js/countdown.js"></script>
-  <script defer src="data/lots.js"></script>
-  <script defer src="js/data.js"></script>
-  <script defer src="js/catalogue.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-nav">
+  <header class="site-nav site-nav--overlay">
     <div class="site-nav__inner">
       <a class="site-nav__logo" href="index.html" aria-label="Jerome Tupa Fine Art — home">
         <img src="assets/images/logos/tupa-white.png" alt="" width="1273" height="683">
@@ -63,78 +63,45 @@
     <span class="rsvp-pill" aria-disabled="true">Tickets</span>
   </nav>
 
-  <main id="main" class="catalogue-head">
+  <main id="main">
 
-    <div class="section-bar">
-      <div class="section-bar__inner">
-        <span class="section-bar__brand">Father Jerome Tupa Auction</span>
-        <h1 class="section-bar__label">The Lots</h1>
+    <section class="support-hero support-hero--blue">
+      <div class="container">
+        <p class="eyebrow reveal">The Evening · Dinner at 5:00 p.m.</p>
+        <h1 class="display display-xl reveal">The Menu.</h1>
+        <p class="lead reveal">Dinner is prepared and served by <a href="https://baciomn.com" target="_blank" rel="noopener">Bacio</a> at The Hutton House.</p>
       </div>
-    </div>
+    </section>
 
-    <div class="catalogue-dark on-dark">
-    <div class="container catalogue-layout">
+    <section class="section menu-page on-dark">
+      <div class="container">
 
-      <aside class="filter-rail" aria-label="Filters">
-        <div data-rail-slot>
-          <form id="filter-form">
-            <div class="filter-group">
-              <fieldset>
-                <legend>Auction</legend>
-                <div data-sale-options></div>
-              </fieldset>
-            </div>
-            <div class="filter-group">
-              <fieldset>
-                <legend>Category</legend>
-                <div data-cat-options></div>
-              </fieldset>
-            </div>
-            <div class="filter-group">
-              <fieldset>
-                <legend>Artist</legend>
-                <div data-artist-options></div>
-              </fieldset>
-            </div>
-            <button type="button" class="filter-clear">Clear all filters</button>
-          </form>
-        </div>
-      </aside>
+        <p class="menu-note reveal">Meal choice available with ticket purchase.</p>
 
-      <section aria-label="Lot catalogue">
-        <div class="catalogue-toolbar">
-          <span class="catalogue-toolbar__count" data-result-count aria-live="polite">Loading…</span>
-          <button type="button" class="btn btn--ghost filter-open">Filter</button>
-          <div class="view-toggle" role="group" aria-label="View">
-            <button type="button" data-view="grid" aria-pressed="true">Grid</button>
-            <button type="button" data-view="wall" aria-pressed="false">Wall</button>
+        <figure class="menu-sheet reveal">
+          <div class="menu-sheet__pending">
+            <p class="eyebrow">Coming shortly</p>
+            <p>The full dinner menu will be posted here.</p>
           </div>
+        </figure>
+
+        <div class="menu-credit reveal">
+          <p class="caption">Dinner by</p>
+          <a class="menu-credit__logo" href="https://baciomn.com" target="_blank" rel="noopener" aria-label="Bacio — opens in a new tab">
+            <img src="assets/images/logos/bacio.webp" alt="Bacio" width="400" height="71">
+          </a>
         </div>
 
-        <div class="lot-grid" data-lot-grid data-stagger="0.06"></div>
+        <p class="reveal" style="margin-top: 3rem; text-align: center">
+          <a class="btn btn--ghost" href="event.html">Back to the evening</a>
+        </p>
 
-        <div class="catalogue-empty" data-empty hidden>
-          <p class="display">No lots match.</p>
-          <p>Try clearing a category or artist.</p>
-        </div>
-
-        <noscript>
-          <p>The interactive catalogue requires JavaScript. A printed catalogue will be available at the sale.</p>
-        </noscript>
-      </section>
-    </div>
-    </div>
-
-    <dialog class="filter-sheet" id="filter-sheet" aria-label="Filter">
-      <div class="filter-sheet__inner">
-        <div class="filter-sheet__head">
-          <h2>Filter</h2>
-          <button type="button" class="filter-sheet__close" aria-label="Close filters">&times;</button>
-        </div>
-        <div data-sheet-slot></div>
-        <button type="button" class="btn btn--red btn--block" data-sheet-apply>Show results</button>
       </div>
-    </dialog>
+    </section>
+
+    <div class="color-pattern" aria-hidden="true">
+      <img src="assets/images/site/color-pattern.jpg" alt="" width="1508" height="175" loading="lazy">
+    </div>
 
   </main>
 
@@ -159,7 +126,6 @@
       <a href="support.html"><img src="assets/images/logos/abbey.webp" alt="Saint John's Abbey" width="242" height="127"></a>
       <a href="support.html"><img src="assets/images/logos/sju.svg" alt="Saint John's University" width="300" height="80"></a>
       <a href="support.html"><img src="assets/images/logos/bible.png" alt="The Saint John's Bible" width="480" height="586"></a>
-      <a href="support.html"><img src="assets/images/logos/bacio.webp" alt="Bacio" width="400" height="71"></a>
     </div>
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">

@@ -59,9 +59,18 @@ main { display: block; }
   font-size: 0.9375rem;
   font-weight: 500;
   letter-spacing: 0.02em;
+  /* Tab state reads as a rule under the label, not a highlight through it */
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  background-position: 0 100%;
+  padding-bottom: 0.35em;
+  transition: background-size 0.3s var(--ease-out-expo);
 }
+.site-nav__links a:hover, .site-nav__links a:focus-visible { background-size: 100% 2px; }
 .site-nav__links a[aria-current="page"] {
-  box-shadow: inset 0 -2px 0 var(--tupa-red);
+  background-image: linear-gradient(var(--tupa-red), var(--tupa-red));
+  background-size: 100% 2px;
 }
 
 .rsvp-pill {
@@ -119,6 +128,12 @@ main { display: block; }
   .nav-burger { display: none; }
   .site-nav .rsvp-pill { margin-left: 0; }
 }
+/* Seven tabs plus the pill only breathe on wider desktops */
+@media (min-width: 60em) and (max-width: 78em) {
+  .site-nav__inner { gap: 1.25rem; }
+  .site-nav__links { gap: 1rem; }
+  .site-nav__links a { font-size: 0.875rem; }
+}
 
 /* Mobile overlay menu — the red screenshot moment */
 .mobile-menu {
@@ -155,12 +170,17 @@ main { display: block; }
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: clamp(0.5rem, 2vh, 1.25rem);
+  gap: clamp(0.4rem, 1.6vh, 1rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  min-height: 0;
+  scrollbar-width: none;
 }
+.mobile-menu__links::-webkit-scrollbar { display: none; }
 .mobile-menu__links a {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 9vh, 4.5rem);
-  line-height: 1;
+  font-size: clamp(1.6rem, 5.4vh, 3rem);
+  line-height: 1.05;
   color: #fff;
   text-decoration: none;
   transition: opacity 0.5s var(--ease-out-expo), transform 0.5s var(--ease-out-expo);
@@ -171,6 +191,11 @@ main { display: block; }
 }
 .mobile-menu.is-open .mobile-menu__links a { opacity: 1; transform: none; }
 .mobile-menu__links a:hover { color: var(--tupa-yellow); }
+.mobile-menu__links a[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.14em;
+}
 .mobile-menu .rsvp-pill {
   background: #fff;
   color: var(--tupa-red);

@@ -81,7 +81,6 @@ window.Tupa = window.Tupa || {};
     const a = document.createElement('a');
     a.className = 'lot-card' + (reveal ? ' reveal' : '');
     a.href = `lot.html?lot=${lot.id}`;
-    a.setAttribute('data-cursor', 'View');
 
     const frame = document.createElement('div');
     frame.className = 'lot-card__frame';

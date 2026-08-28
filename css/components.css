@@ -1,5 +1,5 @@
 /* Shared brand patterns: section bar, date lockup, bands, marquee,
-   lot cards, buttons, countdown, cursor, forms */
+   lot cards, buttons, countdown, forms */
 
 /* Red section-header bar — [■] FATHER JEROME TUPA AUCTION · SECTION NAME */
 .section-bar {
@@ -325,43 +325,6 @@
 .head-band--red  { background: var(--tupa-red); }
 .head-band--teal { background: var(--tupa-teal); }
 
-/* ------------------------------------------------------ Custom cursor */
-
-.cursor-dot {
-  position: fixed;
-  z-index: 300;
-  left: 0; top: 0;
-  width: 10px; height: 10px;
-  margin: -5px 0 0 -5px;
-  border-radius: 50%;
-  /* White + difference blend inverts against the page, keeping the dot
-     visible on both dark heroes and the light gallery background. */
-  background: #fff;
-  mix-blend-mode: difference;
-  pointer-events: none;
-  display: grid;
-  place-items: center;
-  color: transparent;
-  font-size: 0;
-  transition: width 0.3s var(--ease-out-expo), height 0.3s var(--ease-out-expo),
-              margin 0.3s var(--ease-out-expo), background-color 0.3s ease,
-              color 0.3s ease, font-size 0.3s ease;
-}
-.cursor-dot.is-label {
-  width: 72px; height: 72px;
-  margin: -36px 0 0 -36px;
-  mix-blend-mode: normal;
-  background: rgba(20, 20, 20, 0.9);
-  color: #fff;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-.cursor-dot.is-hidden { opacity: 0; }
-body.has-custom-cursor a, body.has-custom-cursor button { cursor: none; }
-body.has-custom-cursor { cursor: none; }
-
 /* -------------------------------------------------------------- Forms */
 
 .field { display: grid; gap: 0.4rem; }
@@ -413,13 +376,48 @@ body.has-custom-cursor { cursor: none; }
 .sponsor-row a:hover img, .sponsor-row a:focus-visible img { filter: none; opacity: 1; }
 
 /* Sponsor wall row — large logos with red rules (Cause page, black direction) */
-.sponsor-row--wall { gap: 0; }
-.sponsor-row--wall a { padding-inline: clamp(1.5rem, 4vw, 3.5rem); }
-.sponsor-row--wall a + a { border-left: 3px solid var(--tupa-red); }
+.sponsor-row--wall {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.75rem, 4vw, 3rem) 0;
+}
+.sponsor-row--wall a {
+  display: grid;
+  place-items: center;
+  padding-inline: clamp(1rem, 3vw, 2.5rem);
+}
 .sponsor-row--wall img {
-  height: clamp(3rem, 7vw, 4.5rem);
+  height: clamp(2.5rem, 6vw, 4rem);
+  max-width: 100%;
+  object-fit: contain;
   opacity: 0.85;
 }
+@media (max-width: 59.999em) {
+  .sponsor-row--wall a:nth-child(2n) { border-left: 3px solid var(--tupa-red); }
+  /* An odd logo out centres across the pair rather than hanging left */
+  .sponsor-row--wall a:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+@media (min-width: 60em) {
+  .sponsor-row--wall { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .sponsor-row--wall a + a { border-left: 3px solid var(--tupa-red); }
+}
+
+/* Partner wordmark set inline in a line of copy (e.g. "Dinner by [Bacio]") */
+.inline-logo {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 0;
+  background-image: none;
+}
+.inline-logo img {
+  height: 1.9em;
+  width: auto;
+  vertical-align: middle;
+  transition: opacity 0.3s ease;
+}
+.inline-logo:hover img, .inline-logo:focus-visible img { opacity: 0.7; }
+/* Knock the mark back to white where it sits on a saturated brand band */
+.inline-logo--invert img { filter: brightness(0) invert(1); }
 
 /* Tina's signature color pattern — full-bleed painting strip (splash + event) */
 .color-pattern {

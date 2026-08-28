@@ -18,6 +18,16 @@
     "text": "We are all on a pilgrimage. That is the human condition.",
     "attribution": "Father Jerome Tupa"
   },
+  "approvedQuotes": {
+    "note": "Client-approved: these are the ONLY quotes permitted anywhere on the site. Do not add others, including any sourced from tupa.art.",
+    "attribution": "Fr. Jerome Tupa",
+    "texts": [
+      "We are all on a pilgrimage. That is the human condition.",
+      "I paint so that viewers can see in a new way not only my journey but the monumental pathways of this beautiful world.",
+      "I see so many chapters written in oil on canvas\u2014many of them telling of beauty, and thus the Spirit of life itself.",
+      "Every painting tells a story about a place or about people, and every painting teaches a lesson about faith and those who came before us."
+    ]
+  },
   "rsvpEndpoint": "https://formspree.io/f/REPLACE_ME",
   "conditionReportEmail": "John@JohnPellegrene.com",
   "sponsors": [

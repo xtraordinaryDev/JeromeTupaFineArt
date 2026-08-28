@@ -87,16 +87,17 @@ em { font-style: italic; }
   font-style: italic;
 }
 
-/* Yellow highlighter-sweep link hover */
+/* Link hover — a rule that draws itself in under the words */
 .link-sweep {
   text-decoration: none;
-  background-image: linear-gradient(var(--tupa-yellow), var(--tupa-yellow));
+  background-image: linear-gradient(currentColor, currentColor);
   background-repeat: no-repeat;
-  background-size: 0% 0.55em;
-  background-position: 0 78%;
+  background-size: 0% 2px;
+  background-position: 0 100%;
+  padding-bottom: 0.14em;
   transition: background-size 0.3s var(--ease-out-expo);
 }
-.link-sweep:hover, .link-sweep:focus-visible { background-size: 100% 0.55em; }
+.link-sweep:hover, .link-sweep:focus-visible { background-size: 100% 2px; }
 
 /* Focus visibility (sitewide) */
 :focus-visible {

@@ -25,7 +25,6 @@
   <script defer src="js/reveal.js"></script>
   <script defer src="js/nav.js"></script>
   <script defer src="js/marquee.js"></script>
-  <script defer src="js/cursor.js"></script>
   <script defer src="js/rail.js"></script>
   <script defer src="js/countdown.js"></script>
   <script defer src="js/parallax.js"></script>
@@ -66,12 +65,13 @@
         <img src="assets/images/logos/tupa-white.png" alt="" width="1273" height="683">
       </a>
       <ul class="site-nav__links">
-        <li><a class="link-sweep" href="auction.html">The Lots</a></li>
-        <li><a class="link-sweep" href="artist.html">The Artist</a></li>
-        <li><a class="link-sweep" href="collection.html">The Collection</a></li>
-        <li><a class="link-sweep" href="bible.html">The Bible</a></li>
-        <li><a class="link-sweep" href="event.html">The Event</a></li>
-        <li><a class="link-sweep" href="support.html">The Cause</a></li>
+        <li><a href="auction.html">The Lots</a></li>
+        <li><a href="artist.html">The Artist</a></li>
+        <li><a href="collection.html">The Collection</a></li>
+        <li><a href="bible.html">The Bible</a></li>
+        <li><a href="event.html">The Event</a></li>
+        <li><a href="menu.html">The Menu</a></li>
+        <li><a href="support.html">The Cause</a></li>
       </ul>
       <span class="rsvp-pill" aria-disabled="true">Tickets</span>
       <button class="nav-burger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span></button>
@@ -87,6 +87,7 @@
       <li><a href="collection.html">The Collection</a></li>
       <li><a href="bible.html">The Bible</a></li>
       <li><a href="event.html">The Event</a></li>
+      <li><a href="menu.html">The Menu</a></li>
       <li><a href="support.html">The Cause</a></li>
     </ul>
     <span class="rsvp-pill" aria-disabled="true">Tickets</span>
@@ -136,9 +137,8 @@
         </div>
         <div class="invite__panel reveal">
           <p class="eyebrow">Save the date</p>
-          <a class="invite__std" href="event.html">
-            <img src="assets/images/site/save-the-date.jpg" alt="Save the Date — Works of Heart Gala &amp; Auction, Thursday, October 22, 2026, 4:00–9:00 p.m. at The Hutton House, Medicine Lake" width="1600" height="2209">
-          </a>
+          <p class="date-lockup date-lockup--s" aria-label="Thursday, October 22, 2026"><span>10</span><span class="rule" aria-hidden="true"></span><span>22</span><span class="rule" aria-hidden="true"></span><span>26</span></p>
+          <p class="invite__more"><a href="event.html">Click here for more details</a></p>
           <address class="invite__venue">
             <strong>The Hutton House</strong>
             10715 South Shore Drive<br>
@@ -148,11 +148,12 @@
           </address>
           <ol class="invite__schedule">
             <li><time>4:00</time><span>Cocktail hour &amp; art preview</span></li>
-            <li><time>5:00</time><span>Dinner by <a href="https://baciomn.com" target="_blank" rel="noopener">Bacio</a></span></li>
+            <li><time>5:00</time><span>Dinner by <a class="inline-logo inline-logo--invert" href="https://baciomn.com" target="_blank" rel="noopener" aria-label="Bacio — opens in a new tab"><img src="assets/images/logos/bacio.webp" alt="Bacio" width="400" height="71"></a></span></li>
             <li><time>6:30</time><span>Auction</span></li>
             <li><time>8:00</time><span>Entertainment — Amy Grant</span></li>
           </ol>
           <span class="rsvp-pill" aria-disabled="true">Tickets</span>
+          <p class="caption invite__note">Meal choice available with ticket purchase. <a href="menu.html">View the menu</a></p>
           <div class="invite__map">
             <iframe title="Map to The Hutton House, 10715 South Shore Drive, Medicine Lake" src="https://www.google.com/maps?q=The+Hutton+House,+10715+South+Shore+Drive,+Medicine+Lake,+MN+55441&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
           </div>
@@ -174,13 +175,16 @@
         </div>
         <a class="link-sweep reveal" href="auction.html" style="font-weight:700">Browse the catalogue →</a>
       </div>
-      <div class="rail" data-featured-rail data-cursor="Drag" data-stagger="0.06"></div>
+      <div class="rail" data-featured-rail data-stagger="0.06"></div>
     </section>
 
     <!-- Quote marquee -->
-    <div class="marquee" aria-label="We are all on a pilgrimage. That is the human condition. — Father Jerome Tupa">
+    <div class="marquee" aria-label="Quotations from Father Jerome Tupa">
       <div class="marquee__track">
         <span class="marquee__item">“We are all on a pilgrimage. That is the human condition.”<span class="sep" aria-hidden="true">·</span>Father Jerome Tupa<span class="sep" aria-hidden="true">·</span></span>
+        <span class="marquee__item">“I paint so that viewers can see in a new way not only my journey but the monumental pathways of this beautiful world.”<span class="sep" aria-hidden="true">·</span>Father Jerome Tupa<span class="sep" aria-hidden="true">·</span></span>
+        <span class="marquee__item">“I see so many chapters written in oil on canvas—many of them telling of beauty, and thus the Spirit of life itself.”<span class="sep" aria-hidden="true">·</span>Father Jerome Tupa<span class="sep" aria-hidden="true">·</span></span>
+        <span class="marquee__item">“Every painting tells a story about a place or about people, and every painting teaches a lesson about faith and those who came before us.”<span class="sep" aria-hidden="true">·</span>Father Jerome Tupa<span class="sep" aria-hidden="true">·</span></span>
       </div>
     </div>
 
@@ -252,7 +256,9 @@
         <div class="sponsor-row reveal" data-stagger="0.08">
           <a href="support.html"><img src="assets/images/logos/fidelis.png" alt="Fidelis Capital" width="1280" height="373"></a>
           <a href="support.html"><img src="assets/images/logos/abbey.webp" alt="Saint John's Abbey" width="242" height="127"></a>
+          <a href="support.html"><img src="assets/images/logos/sju.svg" alt="Saint John's University" width="300" height="80"></a>
           <a href="support.html"><img src="assets/images/logos/bible.png" alt="The Saint John's Bible" width="480" height="586"></a>
+          <a href="support.html"><img src="assets/images/logos/bacio.webp" alt="Bacio" width="400" height="71"></a>
         </div>
         <p class="reveal" style="margin-top: 3rem"><a class="btn btn--ghost" href="support.html">About the cause</a></p>
       </div>
@@ -284,11 +290,16 @@
     <div class="container site-footer__sponsors">
       <a href="support.html"><img src="assets/images/logos/fidelis.png" alt="Fidelis Capital" width="1280" height="373"></a>
       <a href="support.html"><img src="assets/images/logos/abbey.webp" alt="Saint John's Abbey" width="242" height="127"></a>
+      <a href="support.html"><img src="assets/images/logos/sju.svg" alt="Saint John's University" width="300" height="80"></a>
       <a href="support.html"><img src="assets/images/logos/bible.png" alt="The Saint John's Bible" width="480" height="586"></a>
+      <a href="support.html"><img src="assets/images/logos/bacio.webp" alt="Bacio" width="400" height="71"></a>
     </div>
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
         <span class="marquee__item">“We are all on a pilgrimage. That is the human condition.”<span class="sep">·</span>Father Jerome Tupa<span class="sep">·</span></span>
+        <span class="marquee__item">“I paint so that viewers can see in a new way not only my journey but the monumental pathways of this beautiful world.”<span class="sep">·</span>Father Jerome Tupa<span class="sep">·</span></span>
+        <span class="marquee__item">“I see so many chapters written in oil on canvas—many of them telling of beauty, and thus the Spirit of life itself.”<span class="sep">·</span>Father Jerome Tupa<span class="sep">·</span></span>
+        <span class="marquee__item">“Every painting tells a story about a place or about people, and every painting teaches a lesson about faith and those who came before us.”<span class="sep">·</span>Father Jerome Tupa<span class="sep">·</span></span>
       </div>
     </div>
     <div class="container site-footer__legal">

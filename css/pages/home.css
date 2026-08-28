@@ -165,15 +165,27 @@
   font-size: 1.0625rem;
   min-width: 3.25rem;
 }
-.invite__std {
-  display: block;
-  width: min(100%, 22rem);
+.invite__note {
+  margin: -0.75rem 0 0;
+  max-width: 24rem;
+  color: rgba(255, 255, 255, 0.85);
 }
-.invite__std img {
-  width: 100%;
-  height: auto;
-  box-shadow: 0 8px 28px rgba(20, 20, 20, 0.18);
+.invite__note a { color: #fff; }
+.invite__panel .date-lockup { margin: -0.5rem 0 0; }
+.invite__more {
+  margin: -0.75rem 0 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
+.invite__more a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 2px solid var(--tupa-yellow);
+  padding-bottom: 0.2em;
+}
+.invite__more a:hover, .invite__more a:focus-visible { color: var(--tupa-yellow); }
 .invite__rsvp-by {
   font-size: var(--type-caption);
   letter-spacing: 0.14em;

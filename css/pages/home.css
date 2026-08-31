@@ -124,6 +124,9 @@
   .invite { grid-template-columns: 1.1fr 1fr; gap: 5rem; }
 }
 .invite__copy > * + * { margin-top: 1.25rem; }
+/* The envelope leads the column; give it a generous pause before the copy */
+.invite__copy > .invite-opener:first-child { margin-top: 0; }
+.invite__copy > .invite-opener:first-child + * { margin-top: clamp(3.25rem, 7vw, 5.75rem); }
 .invite__formal {
   font-family: var(--font-display);
   font-weight: 500;

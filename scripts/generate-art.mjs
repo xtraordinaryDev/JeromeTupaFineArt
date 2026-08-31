@@ -288,7 +288,7 @@ const LOTS = [
     provenance: 'Distinguished private collection.',
     essay: 'Picasso\u2019s celebrated linocut poster for the 1954 bullfights at Vallauris \u2014 the arena, the crowd and the charging bull carved in bold black and white, signed in the block. Offered from a distinguished private collection; full catalogue details available at the evening sale.' },
   { id: '018', lotNumber: 18, artist: 'Yusuf', title: 'Three Seated Women', year: null, medium: 'Oil on canvas', widthIn: 60, heightIn: 42, estimateLow: 6000, estimateHigh: 9000, category: 'private', seed: 1717,
-    realImages: ['assets/images/lots/live-07-face-of-hope.jpg'], images: 0,
+    realImages: ['assets/images/lots-cropped/live-07-face-of-hope.jpg'], images: 0,
     provenance: 'Distinguished private collection.',
     essay: 'Three women in red, yellow and white sit in quiet dignity against a field of sage green and terracotta, their forms built from a mosaic of textured strokes. A commanding modern figurative canvas consigned from a distinguished private collection.' },
   { id: '019', lotNumber: 19, artist: 'Private collection', title: 'Lakeshore, Minnesota', year: 1954, medium: 'Oil on board', widthIn: 32, heightIn: 24, estimateLow: 3000, estimateHigh: 5000, category: 'private', seed: 1212, images: 1,

@@ -25,7 +25,8 @@ css/        tokens, base, layout, components, motion + pages/*.css
 js/         classic scripts (reveal, nav, countdown, catalogue, lot, …)
 data/       lots.js (embedded catalogue), lots.json, site.json
 assets/
-  images/lots/    web-sized auction photos (live-01 … silent-13)
+  images/lots-cropped/  web-sized auction photos, white backdrops trimmed (live-01 … silent-13) — the set the site loads
+  images/lots/          the untrimmed originals of the same 32 filenames, kept for reference
   images/site/    hero, portraits, Bible illuminations
   images/logos/   Tupa signature + sponsor marks
   fonts/          Encorpada Classic Compressed
@@ -38,16 +39,22 @@ Header/footer markup is static in each page (kept in sync by hand) rather than J
 ## Real content already in place
 
 - **Logo:** the real white signature logo (`assets/images/logo-tupa-white.png`) is used in the nav on every page (rendered dark via CSS filter on light nav bars) and in the artist-page quote moment.
-- **Photography:** live and silent lots use web-sized photos in `assets/images/lots/`. Site photography (hero, portraits, illuminations) is in `assets/images/site/`. Live Lot 07 (*The Face of Hope*) still uses a stand-in until the client supplies that painting.
+- **Photography:** live and silent lots use web-sized photos in `assets/images/lots-cropped/`. Site photography (hero, portraits, illuminations) is in `assets/images/site/`. Live Lot 07 (*The Face of Hope*) still uses a stand-in until the client supplies that painting.
 - **Note:** Tupa lot titles, years and dimensions are descriptive placeholders written from the photos — confirm the final lot list with the client.
-- **Sponsor logos:** Fidelis Capital, Saint John's Abbey, The Saint John's Bible and Bacio are the real marks. `logos/sju.svg` (Saint John's University) is a typographic stand-in — replace that file in place, keeping the filename, when the client supplies the artwork. It is drawn in ink so the footer's invert filter renders it light on dark; a light-on-transparent original will need that filter revisited.
+- **Sponsor logos:** all five marks are now the real artwork — Fidelis Capital, Saint John's Abbey, Saint John's University, The Saint John's Bible and Bacio. Each is drawn in ink on transparency so the footer's invert filter renders it light on dark; a light-on-transparent original would need that filter revisited.
+  `logos/sju.png` is derived from the client's `logos/stjohnslogo.png` (kept as the untouched supply): the white ground was converted to alpha, the mark trimmed, then re-padded by 22% of its height so it carries the same optical margin as the neighbouring marks and does not dominate the sponsor row. The wordmark is only 128 px tall at source, which is marginal for the 4 rem slot on a 2× display — **ask the client for vector or higher-resolution artwork.**
 - **Bacio:** `logos/bacio.webp` (transparent, 400 × 71) appears as a sponsor, on the menu page, and inline in both programmes via `.inline-logo`. On the teal invite panel `.inline-logo--invert` knocks it back to a white silhouette; on the black menu page it keeps its colour on a white plaque.
 - **Menu page:** `menu.html` is live with a placeholder card (`.menu-sheet__pending`). When the client sends the menu, replace that `<div>` with `<img src="assets/images/site/menu.jpg" alt="…">` inside the same `<figure class="menu-sheet">`.
+- **The printed invitation:** the homepage teaser is a linen envelope with the 7 × 7 card peeking out. `.invite-opener` is a link to `assets/tupa-gala-invitation.pdf` that `js/invitation.js` upgrades into `#invitation-viewer`. The overlay opens the envelope, draws the card (front and back), then unfolds the zig-zag booklet one fold at a time — matching the physical mailer (card on top, accordion booklet behind it). Without JavaScript the link just opens the card PDF.
+  The card files are generated from `assets/More Tupa Website Black Direction pages/Tupa 7 x 7 Invitation Card V2 Update.ai`: `images/site/invitation-front.jpg`, `images/site/invitation-back.jpg` and `assets/tupa-gala-invitation.pdf`. The booklet panels in `images/site/zigzag/` (`a1`–`a6` one side, `b1`–`b6` the other) and `assets/tupa-gala-booklet.pdf` come from `Tupa Zig Zag Invitation Booklet PA.ai`. Re-render them together if either file is revised (`python .tmp-preview/render_invite.py` is the current recipe). Keep the `alt` text on both card faces and every panel in step with the artwork, since it is the only way a screen reader gets the content.
+- **Films about the Bible:** the Today Show and PBS NewsHour pieces run as `.film-card` thumbnails (a shared component in `components.css`) beneath the first image on `bible.html` and on the two Edition lot pages. On lot pages they come from an optional `videos` array in the lot data (`title`, `source`, `url`, `poster`) that `initFilms` in `js/lot.js` reads; add the array to any other lot to give it a film row. Poster frames are local copies in `images/site/bible-video-*.jpg` so nothing depends on YouTube's CDN — re-pull them if either video is replaced.
 
 ## Swapping in remaining real content
 
-- **Artwork photography:** drop web-sized JPGs into `assets/images/lots/` and update the `images` paths in `data/lots.js` (and `lots.json`). Keep the two files in sync. Originals belong in `_source/`, not in `assets/`.
+- **Artwork photography:** drop web-sized JPGs into `assets/images/lots-cropped/` — that is the folder the site loads, so a re-crop dropped in under the same filename goes live with no code change. Keep the `images` paths in `data/lots.js` and `lots.json` in sync. Untouched camera originals belong in `_source/`, not in `assets/`.
+  Cards and lot pages use `object-fit: contain` on a transparent frame, so a photo trimmed to the artwork edge letterboxes into the black page rather than being cut off — tighter crops are always safe. Note that the Saint John's Bible folios (`live-10-word-made-flesh`, `live-10-tree-of-life`, `silent-10-b`, `silent-11`, `silent-12`, `silent-13`) keep their pale vellum margins on purpose; that white is the page, not a backdrop.
 - **Lot data:** `data/lots.js` (a classic script setting `window.TUPA_LOTS`) feeds the catalogue, lot pages, home rail and artist gallery; `data/lots.json` mirrors it for reference. Edit both or re-run the generator.
+  Heads-up: the client swapped live lots 10 and 11 after the photographs were named, so the numeric prefix on four filenames is now stale — Lot 10 (Apostles Edition) loads `live-11-apostles-*.jpg` and Lot 11 (Gospels and Acts) loads `live-10-word-made-flesh.jpg` / `live-10-tree-of-life.jpg`. The descriptive half of each filename is still correct; go by that, not by the number.
 - **RSVP endpoint:** set the real Formspree (or other) endpoint in the `data-endpoint` attribute of the form in `event.html`.
 - **Display font:** Abril Fatface is a stand-in. Buy/collect the **Encorpada Classic Compressed** webfont (MyFonts), place woff2 files in `assets/fonts/`, and add the `@font-face` at the top of `css/base.css` (TODO comment marks the spot).
 - **PSD files:** `images/Father Tupa Portrait.psd` and `images/Tupa Black logo.psd` can't be shown in a browser - export them as JPG/PNG to use them.
@@ -67,3 +74,6 @@ Artist biography, exhibition history and contact details on the artist/home page
 6. RSVP destination - Formspree vs. client email/CRM
 7. Run-of-show times (program timeline on event.html is marked TODO)
 8. Buyer's premium / shipping terms wording
+9. Vector or higher-resolution Saint John's University artwork (the supplied PNG is 128 px tall)
+10. Final 7×7 invitation card — V2 is live (`Tupa 7 x 7 Invitation Card V2 Update.ai`, reverse now reads worksofheart.us); the client said a final card may still follow
+11. Impact language for The Cause page, and the paragraph replacing "Founded in 1856…" (both awaiting approval)

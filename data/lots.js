@@ -22,7 +22,7 @@ window.TUPA_LOTS = [
     "provenance": "From the artist’s studio, Saint John’s Abbey, Collegeville, Minnesota.",
     "essay": "Ravenna’s ancient Basilica of Sant’Apollinare in Classe becomes a radiant meeting of architecture, mosaic, and nature. The sweeping acanthus forms echo the wind-blown capitals of the basilica, while the brilliant geometric foreground evokes the shimmering tesserae of its celebrated Byzantine mosaics. The painting transforms this sacred sixth-century setting into a lively contemporary vision of faith, beauty, and enduring memory.",
     "images": [
-      "assets/images/lots/live-01-apollinare.jpg"
+      "assets/images/lots-cropped/live-01-apollinare.jpg"
     ]
   },
   {
@@ -44,7 +44,7 @@ window.TUPA_LOTS = [
     "provenance": "From the artist’s studio, Saint John’s Abbey, Collegeville, Minnesota.",
     "essay": "Painted in 1992, The Embrace is a powerful meditation on human love, protection, and belonging.\n\nThe oversized hands and arms wrap around the figures, becoming symbols of safety, touch, and devotion. The clothing and bodies dissolve into flecked corals, reds, oranges, and greens, giving the figures an almost incandescent quality. The faces remain calm and serene, contrasting with the turbulent brushwork of the garments. Deep indigo and midnight blue ground the composition, providing a quiet foundation beneath the warmth of the embrace.",
     "images": [
-      "assets/images/lots/live-02-the-embrace.jpg"
+      "assets/images/lots-cropped/live-02-the-embrace.jpg"
     ]
   },
   {
@@ -66,7 +66,7 @@ window.TUPA_LOTS = [
     "provenance": "From the artist’s studio, Saint John’s Abbey, Collegeville, Minnesota.",
     "essay": "The painting of Prague unfolds as a lively meeting of sacred architecture and everyday city life. The soaring Cathedral of St. Wenceslaus rises above a vibrant square filled with movement, cafés, vehicles, and richly colored buildings. Warm evening light unites the historic and the contemporary, capturing Prague as a living city where the past continues to shape the present.",
     "images": [
-      "assets/images/lots/live-03-prague-wenceslaus.jpg"
+      "assets/images/lots-cropped/live-03-prague-wenceslaus.jpg"
     ]
   },
   {
@@ -88,7 +88,7 @@ window.TUPA_LOTS = [
     "provenance": "From the artist’s studio, Saint John’s Abbey, Collegeville, Minnesota.",
     "essay": "Like a Fallen Leaf evokes the fragile beauty of a life moment suspended between presence and disappearance. Organic forms and expressive color suggest a leaf drifting gently from the tree, becoming a quiet meditation on change, mortality, and renewal. The work invites us to see beauty not only in what endures, but also in the graceful passing of time.",
     "images": [
-      "assets/images/lots/live-04-like-a-fallen-leaf.jpg"
+      "assets/images/lots-cropped/live-04-like-a-fallen-leaf.jpg"
     ]
   },
   {
@@ -110,7 +110,7 @@ window.TUPA_LOTS = [
     "provenance": "From the artist’s studio, Saint John’s Abbey, Collegeville, Minnesota.",
     "essay": "Every sacred city bears witness to the many peoples who have shaped its history. In Palermo, Christian, Byzantine, Norman, and Islamic traditions came together to create an architecture unlike any other in Europe. This painting celebrates that remarkable inheritance, revealing how faith is enriched through dialogue with diverse cultures while remaining rooted in its enduring truth.\n\nThe composition is anchored by an expansive geometric foreground inspired by traditional Moorish design. Rich patterns of red, green, gold, and black unfold like an illuminated carpet, inviting the viewer to enter the painting as a pilgrim crossing a sacred threshold. Beyond this patterned plaza, elegant arcades, fortified towers, and soaring facades rise into a radiant Sicilian sky, their forms gently bending with expressive vitality.\n\nFr. Jerome Tupa transforms architecture into movement. Buildings seem to breathe beneath the brilliant Mediterranean light, while luminous yellows and warm oranges bathe the cathedral in an atmosphere of quiet transcendence. The expressive distortions are not departures from reality but invitations to experience the city through memory and contemplation rather than through measured observation alone.\n\nThe Moorish motifs woven throughout the composition remind us that beauty often emerges where cultures meet. Palermo’s cathedral stands as a lasting testimony to centuries of artistic exchange, demonstrating that sacred architecture can preserve the wisdom of many civilizations while directing every gaze toward God.\n\nFor the pilgrim, this city becomes more than a destination. It is a lesson in hospitality, reminding us that the road to holiness is often enriched by encounters with traditions beyond our own. In celebrating Palermo’s layered history, the painting offers a vision of unity, where diversity is transformed into harmony through the enduring presence of the sacred.",
     "images": [
-      "assets/images/lots/live-05-palermo-cathedral.jpg"
+      "assets/images/lots-cropped/live-05-palermo-cathedral.jpg"
     ]
   },
   {
@@ -132,7 +132,7 @@ window.TUPA_LOTS = [
     "provenance": "Saint John’s Pottery, Collegeville, Minnesota.",
     "essay": "The large coiled and Paddled Jar uses a circular wooden anvil on the interior which gives the pattern. The exterior is a fine grain wood pattern. Iron Slip Painted then hand carved Big Blue Stem grass pattern carved over the whole surface. Natural ash glaze from the front chamber fills in the carving lines with natural glaze. The Jar was fired to 2420 degrees Fahrenheit.",
     "images": [
-      "assets/images/lots/live-06-bresnahan-large-vase.jpg"
+      "assets/images/lots-cropped/live-06-bresnahan-large-vase.jpg"
     ]
   },
   {
@@ -154,7 +154,7 @@ window.TUPA_LOTS = [
     "provenance": null,
     "essay": "The Face of Hope is a work that dwells in those solemn moments when hope is all that remains. The artist recalls watching adults lost in deep thought, their eyes fixed on distant horizons he could not see. As a child, he could not grasp the weight of their silence, yet he longed to understand their burdens. In place of answers, they offered gentle smiles before returning to that long, searching gaze, as though reality itself might yield from the distance.\n\nAmong these memories are visions of his mother in troubled reflection. He paints these moments from memory — not to solve their mystery, but to preserve them. Her struggles remain unknowable to him, like many quiet wars fought behind brave faces.\n\nThus, the work stands as a testament to unseen battles, to love concealed within silence, and to hope — fragile, enduring, and often the last light to remain when certainty fades.",
     "images": [
-      "assets/images/lots/live-07-face-of-hope.jpg"
+      "assets/images/lots-cropped/live-07-face-of-hope.jpg"
     ]
   },
   {
@@ -176,8 +176,9 @@ window.TUPA_LOTS = [
     "provenance": "Directly from the estate of Pierre Raybaud, owner of Raybaudy Press, Vallauris, France.",
     "essay": "An important early linocut by Pablo Picasso, Toros en Vallauris was created in 1954 during the artist's celebrated Vallauris period. The image depicts the drama of the bullring in an extraordinarily forceful composition of black and white, in which Picasso transforms the traditional subject of the corrida into a dynamic arrangement of sweeping curves, angular figures, bold areas of black and rapidly carved white lines.\n\nThe bull, horse, matador and spectators appear to emerge from the dense black field of the composition. Picasso uses the resistance and simplicity of the linoleum block to exceptional effect, creating a sense of movement and excitement through the contrast between solid masses and rapidly articulated linear passages. The architecture of the arena curves around the central action, drawing the viewer's eye continuously through the composition.\n\nToros en Vallauris was Picasso's first poster for the bullfighting festivals of Vallauris and was the only subject in this series executed on the large-format printing press. The work was printed by Hidalgo Arnéra in Vallauris and published by the Association des Potiers de Vallauris. Contemporary catalogue records describe an edition of 100 signed impressions together with approximately 140 unsigned impressions.\n\nThe present impression is distinguished by an exceptionally significant contemporary inscription on the verso, signed by Pierre Raybaud, together with a stamped mark of Imprimerie Robaudy.",
     "images": [
-      "assets/images/lots/live-08-toros-en-vallauris.jpg",
-      "assets/images/lots/live-08-picasso-inscription.jpg"
+      "assets/images/lots-cropped/live-08-toros-en-vallauris.jpg",
+      "assets/images/lots-cropped/live-08-toros-framed.jpg",
+      "assets/images/lots-cropped/live-08-picasso-inscription.jpg"
     ],
     "catalogueRefs": "Bloch 1264; Baer 1027; Czwiklitzer 13",
     "inscription": "Hand-signed and inscribed by master printer Pierre Raybaud on the reverse: \"I the undersigned attest that I worked with Pablo Picasso when we pulled the first print of this matrix. Subsequently Picasso made several changes before printing the full run. Pierre Raybaud 1954\""
@@ -186,7 +187,7 @@ window.TUPA_LOTS = [
     "id": "L09",
     "lotNumber": 9,
     "sale": "live",
-    "artist": "Donald Jackson & the Saint John’s Bible team",
+    "artist": "Donald Jackson & The Saint John’s Bible team",
     "title": "The Saint John’s Bible — Heritage Edition",
     "year": 2011,
     "medium": "Seven-volume fine art edition, bound in Italian leather with gold and silver embossed illuminations",
@@ -199,41 +200,32 @@ window.TUPA_LOTS = [
     "reserve": 200000,
     "category": "bible",
     "provenance": "Saint John’s Abbey and University, Collegeville, Minnesota.",
-    "essay": "At the onset of a new millennium, Saint John’s Abbey and University in Collegeville, Minnesota sought to ignite the spiritual imagination of people throughout the world by commissioning a work of art that illuminates the Word of God for the world today. Its construction paralleled that of its medieval predecessors, written on vellum, using quills, natural handmade inks, hand-ground pigments, and gold leaf while incorporating modern themes, images and technology of the 21st century.\n\nThe Bible is the collaborative work of an international team of associates, scribes, and artists under the direction of scribe and illuminator, Donald Jackson—former Senior Scribe to Her Majesty Queen Elizabeth’s Crown Office. The artistic team worked closely with theologians and scholars at Saint John’s Abbey & University to create over 160 illuminations used to depict the scripture passages with an eye to interpreting them for our time. Working in a scriptorium in Monmouth, Wales, Mr. Jackson and his team began work in 1995 and completed the final pages in 2011. The completed artwork is an 1,120-page, seven volume achievement in the book arts that continually inspires people of all cultures and creeds with the spirit and beauty of this historic undertaking—unprecedented in over 500 years, since the invention of the printing press.\n\nCommunities around the world experience this gift of sacred art through the Heritage and Apostles Editions of The Saint John’s Bible, the only full-size, fine art recreations of the original manuscript. Each page and illumination was scrupulously compared to its original counterpart to guarantee accurate reproduction and maintain the awe-inspiring artistic intent of the original. Leading manuscript experts around the world who have seen the Heritage and Apostles Editions recognize them as the highest quality reproductions ever made.\n\nIn all, only 299 seven-volume sets of the Heritage Edition have been created. No more can ever be created. Each has received special hand-treatments making each set unique—numbered and authenticated by Donald Jackson. To date over 170 Heritage Editions have been acquired by families, churches, schools, libraries, universities, healthcare centers, and retreat centers.",
+    "essay": "At the onset of a new millennium, Saint John’s Abbey and University in Collegeville, Minnesota sought to ignite the spiritual imagination of people throughout the world by commissioning a work of art that illuminates the Word of God for the world today. Its construction paralleled that of its medieval predecessors, written on vellum, using quills, natural handmade inks, hand-ground pigments, and gold leaf while incorporating modern themes, images and technology of the 21st century.\n\nThe Bible is the collaborative work of an international team of associates, scribes, and artists under the direction of scribe and illuminator, Donald Jackson—former Senior Scribe to Her Majesty Queen Elizabeth’s Crown Office. The artistic team worked closely with theologians and scholars at Saint John’s Abbey & University to create over 160 illuminations used to depict the scripture passages with an eye to interpreting them for our time. Working in a scriptorium in Monmouth, Wales, Mr. Jackson and his team began work in 1995 and completed the final pages in 2011. The completed artwork is an 1,120-page, seven volume achievement in the book arts that continually inspires people of all cultures and creeds with the spirit and beauty of this historic undertaking—unprecedented in over 500 years, since the invention of the printing press.\n\nCommunities around the world experience this gift of sacred art through the Heritage and Apostles Editions of The Saint John’s Bible, the only full-size, fine art recreations of the original manuscript. Each page and illumination was scrupulously compared to its original counterpart to guarantee accurate reproduction and maintain the awe-inspiring artistic intent of the original. Leading manuscript experts around the world who have seen the Heritage and Apostles Editions recognize them as the highest quality reproductions ever made.\n\nIn all, only 299 seven-volume sets of the Heritage Edition have been created. No more can ever be created. Each has received special hand-treatments making each set unique—numbered and authenticated by Donald Jackson. To date over 170 Heritage Editions have been acquired by families, churches, schools, libraries, universities, healthcare centers, and retreat centers. Less than 125 of these rare sets remain available for acquisition.",
     "images": [
-      "assets/images/lots/live-09-heritage-gospels-acts.jpg",
-      "assets/images/lots/live-09-heritage-road-to-emmaus.jpg",
-      "assets/images/lots/live-09-heritage-luke-anthology.jpg"
+      "assets/images/lots-cropped/live-09-heritage-gospels-acts.jpg",
+      "assets/images/lots-cropped/live-09-heritage-road-to-emmaus.jpg",
+      "assets/images/lots-cropped/live-09-heritage-luke-anthology.jpg"
+    ],
+    "videos": [
+      {
+        "title": "The Saint John’s Bible on the Today Show",
+        "source": "TODAY",
+        "url": "https://youtu.be/mqW5oTBtjsU",
+        "poster": "assets/images/site/bible-video-today.jpg"
+      },
+      {
+        "title": "The Saint John’s Bible on PBS NewsHour",
+        "source": "PBS NewsHour",
+        "url": "https://youtu.be/Js9x-9YCg_s",
+        "poster": "assets/images/site/bible-video-newshour.jpg"
+      }
     ]
   },
   {
     "id": "L10",
     "lotNumber": 10,
     "sale": "live",
-    "artist": "Donald Jackson & scribes",
-    "title": "Gospels and Acts — Word Made Flesh (John Frontispiece) & Tree of Life",
-    "year": 2002,
-    "medium": "Offset lithograph with gold and silver foil embossing on 100% uncoated cotton archival paper",
-    "dimensionsIn": "24 ½ × 32 in (unframed) · 34 × 41 ½ in (framed)",
-    "dimensionsCm": "62.2 × 81.3 cm (unframed) · 86.4 × 105.4 cm (framed)",
-    "widthIn": 24.5,
-    "heightIn": 32,
-    "estimateLow": null,
-    "estimateHigh": null,
-    "reserve": 4950,
-    "category": "bible",
-    "provenance": "The Unbound Collection — authentic, hand-numbered and authenticated pages from the Heritage Edition of The Saint John’s Bible; one of only 15 numbered impressions of this page. Saint John’s University, Collegeville, Minnesota.",
-    "essay": "Word Made Flesh (John Frontispiece)\n\nThe words from Colossians 1:15-20 emerge from the shadows. The Living Word steps from the darkness which recalls the chaos and nothingness of the Creation story and moves toward light and order. The texture behind and above the head of Christ is inspired from an image taken from the Hubble Space Telescope and lends a breathtaking cosmic character to the whole action taking place.\n\nTree of Life Carpet Page\n\nSally Mae Joseph used a series of stamps to create the Tree of Life carpet page which functions to transition the reader from the Gospel of Luke to the Gospel of John.\n\nWord Made Flesh (John Frontispiece) and John Incipit, Scribe and Artist: Donald Jackson; John 1:31 – 2:14 and Call of the Disciples, and Tree of Life Carpet Page, Artists: Donald Jackson and Sally Mae Joseph; Scribe: Sally Mae Joseph, ©2002 The Saint John’s Bible, Saint John’s University, Collegeville, Minnesota, USA. Scripture quotations are from the New Revised Standard Version of the Bible, Catholic Edition, © 1993, 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved. Offset Lithograph, high-quality 10-micron stochastic hybrid printing with fade-resistant ultraviolet inks, silver and gold foils, on acid-free uncoated 100% archival cotton Monadnock paper.",
-    "images": [
-      "assets/images/lots/live-10-word-made-flesh.jpg",
-      "assets/images/lots/live-10-tree-of-life.jpg"
-    ]
-  },
-  {
-    "id": "L11",
-    "lotNumber": 11,
-    "sale": "live",
-    "artist": "Donald Jackson & the Saint John’s Bible team",
+    "artist": "Donald Jackson & The Saint John’s Bible team",
     "title": "The Saint John’s Bible — Apostles Edition",
     "year": 2011,
     "medium": "Seven-volume fine art edition, hand-stitched and bound in the UK, with Deluxe Viewing Stand and Cabinet",
@@ -248,8 +240,45 @@ window.TUPA_LOTS = [
     "provenance": "Saint John’s Abbey and University, Collegeville, Minnesota.",
     "essay": "There are only 12, seven-volume sets of the Apostles Edition in existence. Of those, only 4 remain available for acquisition and no more can ever be created. This hyper-rare version of The Saint John’s Bible is hand-stitched and bound in the UK. It comes with a custom-designed and crafted dedication page, and an exquisite hand-made Deluxe Viewing Stand and Cabinet from Abbey Woodworking.\n\nMost notably, every Apostles Edition includes a companion Heritage Edition which the benefactor may keep for their own collection or donate to a beloved institution. Apostles Editions are presently housed in such prominent locations as the Vatican Library (Rome), Washington National Cathedral (DC), Morgan Library & Museum (NYC), Lambeth Palace (London), Library of Congress (DC), St. Patrick’s Cathedral (NYC) and one private home.\n\nThanks to the creative leadership of Donald Jackson, the Apostles Edition is a work of art in its own right—bound in Italian leather, it features the exquisite calligraphy, vibrant imagery, and stunning gold and silver embossed illuminations of the original–160 illuminations in all. Each has received special hand-treatments making each set unique—numbered and authenticated by Donald Jackson.",
     "images": [
-      "assets/images/lots/live-11-apostles-edition.jpg",
-      "assets/images/lots/live-11-apostles-genesis.jpg"
+      "assets/images/lots-cropped/live-11-apostles-edition.jpg",
+      "assets/images/lots-cropped/live-11-apostles-genesis.jpg"
+    ],
+    "videos": [
+      {
+        "title": "The Saint John’s Bible on the Today Show",
+        "source": "TODAY",
+        "url": "https://youtu.be/mqW5oTBtjsU",
+        "poster": "assets/images/site/bible-video-today.jpg"
+      },
+      {
+        "title": "The Saint John’s Bible on PBS NewsHour",
+        "source": "PBS NewsHour",
+        "url": "https://youtu.be/Js9x-9YCg_s",
+        "poster": "assets/images/site/bible-video-newshour.jpg"
+      }
+    ]
+  },
+  {
+    "id": "L11",
+    "lotNumber": 11,
+    "sale": "live",
+    "artist": "Donald Jackson & scribes",
+    "title": "Gospels and Acts — Word Made Flesh (John Frontispiece) & Tree of Life",
+    "year": 2002,
+    "medium": "Offset lithograph with gold and silver foil embossing on 100% uncoated cotton archival paper",
+    "dimensionsIn": "24 ½ × 32 in (unframed) · 34 × 41 ½ in (framed)",
+    "dimensionsCm": "62.2 × 81.3 cm (unframed) · 86.4 × 105.4 cm (framed)",
+    "widthIn": 24.5,
+    "heightIn": 32,
+    "estimateLow": null,
+    "estimateHigh": null,
+    "reserve": 4950,
+    "category": "bible",
+    "provenance": "The Unbound Collection — authentic, hand-numbered and authenticated pages from the Heritage Edition of The Saint John’s Bible; one of only 15 numbered impressions of this page and fewer than 10 remain available for acquisition. Saint John’s University, Collegeville, Minnesota.",
+    "essay": "Word Made Flesh (John Frontispiece)\n\nThe words from Colossians 1:15-20 emerge from the shadows. The Living Word steps from the darkness which recalls the chaos and nothingness of the Creation story and moves toward light and order. The texture behind and above the head of Christ is inspired from an image taken from the Hubble Space Telescope and lends a breathtaking cosmic character to the whole action taking place.\n\nTree of Life Carpet Page\n\nSally Mae Joseph used a series of stamps to create the Tree of Life carpet page which functions to transition the reader from the Gospel of Luke to the Gospel of John.\n\nWord Made Flesh (John Frontispiece) and John Incipit, Scribe and Artist: Donald Jackson; John 1:31 – 2:14 and Call of the Disciples, and Tree of Life Carpet Page, Artists: Donald Jackson and Sally Mae Joseph; Scribe: Sally Mae Joseph, ©2002 The Saint John’s Bible, Saint John’s University, Collegeville, Minnesota, USA. Scripture quotations are from the New Revised Standard Version of the Bible, Catholic Edition, © 1993, 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved. Offset Lithograph, high-quality 10-micron stochastic hybrid printing with fade-resistant ultraviolet inks, silver and gold foils, on acid-free uncoated 100% archival cotton Monadnock paper.",
+    "images": [
+      "assets/images/lots-cropped/live-10-word-made-flesh.jpg",
+      "assets/images/lots-cropped/live-10-tree-of-life.jpg"
     ]
   },
   {
@@ -271,7 +300,7 @@ window.TUPA_LOTS = [
     "provenance": "From the artist’s studio, Saint John’s Abbey, Collegeville, Minnesota.",
     "essay": "Every pilgrimage begins with the human heart, where longing awakens the desire to seek the divine. This painting introduces an inward journey that precedes spiritual travel.\n\nAt the center of the composition, a luminous vessel, evoking both chalice and vase, radiates warm tones of sienna and ochre. The light emanates from within, symbolizing grace revealed in the hidden depths of the soul. Surrounding fields of deep blue and muted teal recall the contemplative stillness of Benedictine prayer.\n\nThough no physical sanctuary is depicted, Meditation II serves as the spiritual foundation of the exhibition, reminding viewers that the first sacred space encountered on any pilgrimage is the heart.",
     "images": [
-      "assets/images/lots/silent-01-meditation-ii.jpg"
+      "assets/images/lots-cropped/silent-01-meditation-ii.jpg"
     ]
   },
   {
@@ -293,7 +322,7 @@ window.TUPA_LOTS = [
     "provenance": "From the artist’s studio, Saint John’s Abbey, Collegeville, Minnesota.",
     "essay": "Created in 1993, Self Portrait reflects the deeply personal and contemplative nature of Fr. Jerome Tupa’s artistic practice. Executed in gouache—a medium that combines the fluid qualities of watercolor with the rich, opaque layering of acrylic—the work balances precision with expressive depth.\n\nThe theme of pilgrimage enriches the work and Self Portrait invites viewers to consider art as a journey of discovery—a movement inward as much as outward.\n\nCreated at a pivotal moment in the early 1990s, the work carries a sense of introspection and reflection that resonates with a period of cultural change.",
     "images": [
-      "assets/images/lots/silent-02-self-portrait.jpg"
+      "assets/images/lots-cropped/silent-02-self-portrait.jpg"
     ]
   },
   {
@@ -315,7 +344,7 @@ window.TUPA_LOTS = [
     "provenance": "From the artist’s studio, Saint John’s Abbey, Collegeville, Minnesota.",
     "essay": "Palermo has long stood at the crossroads of civilizations. Phoenician, Greek, Roman, Arab, Norman, and Byzantine cultures have each left their mark upon the city, creating one of Europe’s richest architectural landscapes. Rising above this extraordinary history is the Cathedral of the Holy Mother Mary, where centuries of faith converge into one sacred space.\n\nRather than recording the cathedral with architectural precision, I seek to capture its living spirit. Towers and arcades are animated through expressive color and rhythmic movement, suggesting that great churches continue to live through the generations of pilgrims who pass beneath their walls.\n\nThe brilliant Mediterranean light fills every corner of the composition. Deep blues, radiant golds, warm terracotta, and luminous violets transform stone into living color. Across the foreground unfolds a vibrant mosaic of geometric forms that recalls Sicily’s celebrated decorative traditions while guiding the viewer’s eye toward the cathedral itself. The patterned plaza becomes a symbolic pathway leading into the heart of the city.\n\nPalermo reminds us that faith has often flourished through dialogue with diverse cultures. Here, Byzantine splendor, Norman strength, and Islamic artistry meet in remarkable harmony. The painting celebrates this rich inheritance, revealing beauty as a language capable of uniting peoples across centuries.\n\nAs pilgrims approach the cathedral, they discover more than an architectural masterpiece. They encounter a place where history, prayer, and hope continue to converge. Through this luminous vision, the artist invites us to enter that same encounter with attentive hearts.",
     "images": [
-      "assets/images/lots/silent-03-holy-mother-mary.jpg"
+      "assets/images/lots-cropped/silent-03-holy-mother-mary.jpg"
     ]
   },
   {
@@ -337,7 +366,7 @@ window.TUPA_LOTS = [
     "provenance": "From the artist’s studio, Saint John’s Abbey, Collegeville, Minnesota.",
     "essay": "A striking vertical composition from the Padua Suite, this work reimagines the grandeur of Veneto through a vivid, contemporary lens. Viewed from a high-angle perspective, the Basilica of Saint Anthony and its surrounding architecture unfold in a dynamic interplay of gold domes, crimson roofs, and a deeply textured cerulean sky. Below, a luminous yellow plaza animated by stylized vehicles conveys the rhythm of modern life amid historic splendor. The contrast between cool and warm tones generates a powerful visual tension, celebrating Padua’s enduring vitality and the harmony between its sacred heritage and present-day energy.\n\nCondition Report: Pristine gallery condition. The canvas is perfectly tensioned, with the rich paint layers displaying exceptional adhesion and vibrant, heavy impasto textures. However, it suffered a tear in the canvas and was restored to excellent condition. Housed in a custom charcoal frame that provides a powerful, formal boundary while allowing the painting’s bright palette to pop.",
     "images": [
-      "assets/images/lots/silent-04-padova.jpg"
+      "assets/images/lots-cropped/silent-04-padova.jpg"
     ]
   },
   {
@@ -359,7 +388,7 @@ window.TUPA_LOTS = [
     "provenance": "From the artist’s studio, Saint John’s Abbey, Collegeville, Minnesota.",
     "essay": "Part of the vibrant Prague Suite, Wenceslaus Meets Emaus in Prague brings together the historic and spiritual landmarks of Prague in a dynamic, dreamlike composition. Animated architecture, dramatic perspectives, and a richly saturated palette transform the city’s old-world character into an expressive contemporary vision.\n\nA steep cobblestone roadway draws the viewer into the scene, surrounded by colorful, tilting facades and iconic architectural forms. Terracotta and crimson cathedral walls contrast with an electric-blue tower and whimsical green and cream structures, while a brilliant setting sun illuminates the skyline against a glowing crimson-orange sky.\n\nThe work creates a striking dialogue between Prague’s enduring spiritual heritage and the energy of modern city life, capturing the city as both a place of history and a landscape of imagination.",
     "images": [
-      "assets/images/lots/silent-05-wenceslaus-rules.jpg"
+      "assets/images/lots-cropped/silent-05-wenceslaus-rules.jpg"
     ]
   },
   {
@@ -381,7 +410,7 @@ window.TUPA_LOTS = [
     "provenance": "From the artist’s studio, Saint John’s Abbey, Collegeville, Minnesota.",
     "essay": "A visual crossroad within the Prague Suite, this composition unites two of the city’s most revered spiritual landmarks—the legacy of Saint Wenceslaus and the Emaus Monastery—within a single, dynamic architectural dialogue. A steep cobblestone roadway anchors the scene, plunging toward the viewer and framed by bright green borders and leaning historic facades. Terracotta, ochre, and electric-blue structures converge beneath a radiant sun and a crimson-orange sky, creating a powerful interplay of light and movement. Through its compressed perspective and luminous atmosphere, Wenceslaus Meets Emaus captures the artist’s mastery of emotive distortion and color, embodying the spiritual and historical essence of Prague.",
     "images": [
-      "assets/images/lots/silent-06-wenceslaus-meets-emaus.jpg"
+      "assets/images/lots-cropped/silent-06-wenceslaus-meets-emaus.jpg"
     ]
   },
   {
@@ -403,7 +432,7 @@ window.TUPA_LOTS = [
     "provenance": null,
     "essay": "Brother series is a body of work that lays bare the artist’s bond with fleeting moments from his childhood in an African homestead. These memories return not as gentle whispers, but as sudden flashes — summoning visions of family, belonging, and a time when life was whole and unburdened.\n\nIn the faces of the children around him, the artist beholds his own reflection. He sees the dust beneath bare feet, the careless laughter, the unmeasured days. They stand where he once stood, heirs to a simplicity he can no longer claim.\n\nThis work is an inquiry into loss — the slow and inevitable theft committed by time itself. Innocence yields to duty, freedom to burden, and the warmth of family recedes into memory.\n\nYet, in deliberate defiance of his years, the artist chooses to see the world through the eyes of these children. Though they dwell amid hardship, their narrow horizon shields them from the full measure of what they lack. In this fragile unknowing, their joy endures.\n\nThus, the work becomes both witness and reckoning — a meditation on what time steals and what knowledge unveils, and the quiet burden of seeing the world as it truly is.",
     "images": [
-      "assets/images/lots/silent-07-brother.jpg"
+      "assets/images/lots-cropped/silent-07-brother.jpg"
     ]
   },
   {
@@ -425,7 +454,7 @@ window.TUPA_LOTS = [
     "provenance": "Saint John’s Pottery, Collegeville, Minnesota.",
     "essay": "Platter with White Slip under painting and Iron underpainting with brush. The glaze is an Organic Soybean Straw ash glaze and fired in the second Chamber of the Johanna kiln at 2420 degrees Fahrenheit. Signature, Studio Seal, and 17th firing seal on the inside of the foot.",
     "images": [
-      "assets/images/lots/silent-08-wheat-platter.jpg"
+      "assets/images/lots-cropped/silent-08-wheat-platter.jpg"
     ]
   },
   {
@@ -447,7 +476,7 @@ window.TUPA_LOTS = [
     "provenance": "Saint John’s Pottery, Collegeville, Minnesota.",
     "essay": "Coiled and Paddled Jar, 12th firing seal and signature at the side of the Jar. Circular wood anvil pattern on the interior and carved wooden paddle on the exterior. This piece was fired on its side so the natural ashes run horizontally across the surface. The white circular marking is the abstract painting protected by the wad clay. The Jar was fired to 2420 degrees Fahrenheit. The interior of the jar is oak slip glaze. A turned lip with line is the distinction of the piece.",
     "images": [
-      "assets/images/lots/silent-09-slip-painted-jar.jpg"
+      "assets/images/lots-cropped/silent-09-slip-painted-jar.jpg"
     ]
   },
   {
@@ -466,18 +495,18 @@ window.TUPA_LOTS = [
     "estimateHigh": null,
     "reserve": 4725,
     "category": "bible",
-    "provenance": "The Unbound Collection — authentic, hand-numbered and authenticated pages from the Heritage Edition of The Saint John’s Bible; one of only 15 numbered impressions of this page. Saint John’s University, Collegeville, Minnesota.",
+    "provenance": "The Unbound Collection — authentic, hand-numbered and authenticated pages from the Heritage Edition of The Saint John’s Bible; one of only 15 numbered impressions of this page and fewer than 10 remain available for acquisition. Saint John’s University, Collegeville, Minnesota.",
     "essay": "Ecclesiastes focuses attention on life, death, and God’s relationship with humanity. A raven serves as a messenger flying up from the center of the illumination appearing to carry the breath of life back to God. It is pierced and surrounded by gold and silver bars, designations of divinity. There is a constant communication between the heavens and the earth as butterfly wings dance across the page.\n\nEcclesiastes Frontispiece, Ecclesiastes 1:1-2:11, Artist and Scribe: Donald Jackson with contributions from Chris Tomlin; Ecclesiastes 2:12 to 4:4, Scribes Susan Leiper and Sally Mae Joseph; Proverbs 30:21-31:31 Scribes Sue Hufton and Brian Simpson; Hebrew Lettering, Izzy Pludwinski, ©2006 The Saint John’s Bible, Saint John’s University, Collegeville, Minnesota, USA. Scripture quotations are from the New Revised Standard Version of the Bible, Catholic Edition, © 1993, 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved. Offset Lithograph, high-quality 10-micron stochastic hybrid printing with fade-resistant ultraviolet inks, silver and gold foils, on acid-free uncoated 100% archival cotton Monadnock paper.\n\nFor the first and only time ever, 18 rare, illuminated, unbound pages from the masterful and historic Heritage Edition of The Saint John’s Bible are offered as a limited series of hand-numbered and authenticated pieces. Printed and embossed on 100% cotton, each page from The Unbound Collection is a whole new way to experience the sacred words of scripture. There are only 15 hand-numbered copies of each of the 18 selected pages.",
     "images": [
-      "assets/images/lots/silent-10-ecclesiastes-a.jpg",
-      "assets/images/lots/silent-10-ecclesiastes-b.jpg"
+      "assets/images/lots-cropped/silent-10-ecclesiastes-a.jpg",
+      "assets/images/lots-cropped/silent-10-ecclesiastes-b.jpg"
     ]
   },
   {
     "id": "S11",
     "lotNumber": 11,
     "sale": "silent",
-    "artist": "Donald Jackson",
+    "artist": "Donald Jackson & scribes",
     "title": "Gospels and Acts — Genealogy of Jesus (Matthew Frontispiece)",
     "year": 2002,
     "medium": "Offset lithograph with gold and silver foil embossing on 100% uncoated cotton archival paper",
@@ -489,10 +518,10 @@ window.TUPA_LOTS = [
     "estimateHigh": null,
     "reserve": 4875,
     "category": "bible",
-    "provenance": "The Unbound Collection — authentic, hand-numbered and authenticated pages from the Heritage Edition of The Saint John’s Bible; one of only 15 numbered impressions of this page. Saint John’s University, Collegeville, Minnesota.",
+    "provenance": "The Unbound Collection — authentic, hand-numbered and authenticated pages from the Heritage Edition of The Saint John’s Bible; one of only 15 numbered impressions of this page and fewer than 10 remain available for acquisition. Saint John’s University, Collegeville, Minnesota.",
     "essay": "This illumination is a family tree structured as both a tree of life and a stylized menorah; the menorah serves as a bridge between the Old and New Testaments. A mandala-like cosmic image near the base is common to several religions and implies the universality of the search for God. The intricate gold medallions above the menorah were inspired by illuminations from the Koran. Reflecting our own time, patterns of DNA double helixes between the outer branches emphasize the connectedness of all humanity.\n\nGenealogy of Jesus, Donald Jackson, ©2002 The Saint John’s Bible, Saint John’s University, Collegeville, Minnesota, USA. Used by permission. All rights reserved. Offset Lithograph, high-quality 10-micron stochastic hybrid printing with fade-resistant ultraviolet inks, silver and gold foils, on acid-free uncoated 100% archival cotton Monadnock paper.\n\nFor the first and only time ever, 18 rare, illuminated, unbound pages from the masterful and historic Heritage Edition of The Saint John’s Bible are offered as a limited series of hand-numbered and authenticated pieces. Printed and embossed on 100% cotton, each page from The Unbound Collection is a whole new way to experience the sacred words of scripture. There are only 15 hand-numbered copies of each of the 18 selected pages.",
     "images": [
-      "assets/images/lots/silent-11-genealogy-of-jesus.jpg"
+      "assets/images/lots-cropped/silent-11-genealogy-of-jesus.jpg"
     ]
   },
   {
@@ -511,11 +540,11 @@ window.TUPA_LOTS = [
     "estimateHigh": null,
     "reserve": 4900,
     "category": "bible",
-    "provenance": "The Unbound Collection — authentic, hand-numbered and authenticated pages from the Heritage Edition of The Saint John’s Bible; one of only 15 numbered impressions of this page. Saint John’s University, Collegeville, Minnesota.",
+    "provenance": "The Unbound Collection — authentic, hand-numbered and authenticated pages from the Heritage Edition of The Saint John’s Bible; one of only 15 numbered impressions of this page and fewer than 10 remain available for acquisition. Saint John’s University, Collegeville, Minnesota.",
     "essay": "Creation\n\nThis opening illumination from Genesis uses gold throughout to symbolize God’s intervention in the chaos and His ordering of the universe and its elements. Hence, the gold squares are applied geometrically, starting with day one and expanding progressively outwards and upwards in influence until reaching the serenity and simplicity of the Sabbath. Each of the seven strips unfolds the story day-by-day, and the presence of the snake in the sixth slice hints at what is to come.\n\nAbraham\n\nThe over-lapping shapes strongly suggest multiple menorahs and within the branches of the candelabrum are the Hebrew names of the Twelve Tribes of Israel. The green leaves sprouting from old vegetation anticipate new salvation on the witness of Abraham’s faith.\n\nCreation, Donald Jackson with contributions from Chris Tomlin; Abraham (details from Abraham and Sarah), Donald Jackson; Ge. 11:14 to 13:6 Scribe Brian Simpson; Gen. 13:7 to 14.24 Scribe Donald Jackson; Hebrew Lettering, Izzy Pludwinski, ©2003 The Saint John’s Bible, Saint John’s University, Collegeville, Minnesota, USA. Scripture quotations are from the New Revised Standard Version of the Bible, Catholic Edition, © 1993, 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved. Offset Lithograph, high-quality 10-micron stochastic hybrid printing with fade-resistant ultraviolet inks, silver and gold foils, on acid-free uncoated 100% archival cotton Monadnock paper.\n\nFor the first and only time ever, 18 rare, illuminated, unbound pages from the masterful and historic Heritage Edition of The Saint John’s Bible are offered as a limited series of hand-numbered and authenticated pieces. Printed and embossed on 100% cotton, each page from The Unbound Collection is a whole new way to experience the sacred words of scripture. There are only 15 hand-numbered copies of each of the 18 selected pages.",
     "images": [
-      "assets/images/lots/silent-12-creation.jpg",
-      "assets/images/lots/silent-12-abraham.jpg"
+      "assets/images/lots-cropped/silent-12-creation.jpg",
+      "assets/images/lots-cropped/silent-12-abraham.jpg"
     ]
   },
   {
@@ -534,11 +563,11 @@ window.TUPA_LOTS = [
     "estimateHigh": null,
     "reserve": 4410,
     "category": "bible",
-    "provenance": "The Unbound Collection — authentic, hand-numbered and authenticated pages from the Heritage Edition of The Saint John’s Bible; one of only 15 numbered impressions of this page. Saint John’s University, Collegeville, Minnesota.",
+    "provenance": "The Unbound Collection — authentic, hand-numbered and authenticated pages from the Heritage Edition of The Saint John’s Bible; one of only 15 numbered impressions of this page and fewer than 10 remain available for acquisition. Saint John’s University, Collegeville, Minnesota.",
     "essay": "Baptism of Jesus\n\nJohn the Baptist is shown at the lower right, walking away after baptizing Christ, but his gaze directs you back to Christ standing in the Jordan River. Bright yellow and green plants in the foreground recall the verse from Isaiah, “…the desert shall rejoice and blossom; like the crocus it shall blossom abundantly.” Spider-like creatures foreshadow what lies ahead in the wilderness.\n\nLoaves and Fishes\n\nThe circular loaves, marked with a cross, prefigure the bread of the Eucharist. The circular geometric designs surrounding the image are based on ancient Native American Anasazi basket weaving, acknowledging the American origin of this Bible and the coexistence of other beliefs.\n\nBaptism of Jesus (Mark Frontispiece), Donald Jackson; Two Cures and Mark 5:14-43, Aidan Hart with contributions from Sally Mae Joseph and Donald Jackson, Scribe: Sally Mae Joseph; Loaves and Fishes (detail), Mark 6:1 to 34, Donald Jackson; Matthew 27:57-28:20 and Carpet Treatment, Scribe: Brian Simpson, Artist: Donald Jackson, ©2002 The Saint John’s Bible, Saint John’s University, Collegeville, Minnesota, USA. Scripture quotations are from the New Revised Standard Version of the Bible, Catholic Edition, © 1993, 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved. Offset Lithograph, high-quality 10-micron stochastic hybrid printing with fade-resistant ultraviolet inks, silver and gold foils, on acid-free uncoated 100% archival cotton Monadnock paper.\n\nFor the first and only time ever, 18 rare, illuminated, unbound pages from the masterful and historic Heritage Edition of The Saint John’s Bible are offered as a limited series of hand-numbered and authenticated pieces. Printed and embossed on 100% cotton, each page from The Unbound Collection is a whole new way to experience the sacred words of scripture. There are only 15 hand-numbered copies of each of the 18 selected pages.",
     "images": [
-      "assets/images/lots/silent-13-baptism-of-jesus.jpg",
-      "assets/images/lots/silent-13-loaves-and-fishes.jpg"
+      "assets/images/lots-cropped/silent-13-baptism-of-jesus.jpg",
+      "assets/images/lots-cropped/silent-13-loaves-and-fishes.jpg"
     ]
   }
 ];

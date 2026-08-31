@@ -95,6 +95,7 @@ function render(lot, lots) {
   cr.href = `mailto:John@JohnPellegrene.com?subject=${encodeURIComponent(`Condition report request — ${lotNumberLabel(lot)}: ${lot.title}`)}`;
 
   initStage(lot);
+  initFilms(lot);
   initHeart(lot);
   initShare(lot);
   injectSchema(lot);
@@ -267,6 +268,63 @@ function initHeart(lot) {
     sync();
   });
   sync();
+}
+
+/* ------------------------------------------------- Films about the work */
+
+function initFilms(lot) {
+  const wrap = $('[data-films]');
+  if (!wrap || !lot.videos || !lot.videos.length) return;
+
+  const head = document.createElement('p');
+  head.className = 'films__head';
+  head.textContent = 'Watch';
+
+  const row = document.createElement('div');
+  row.className = 'films__row';
+
+  lot.videos.forEach((v) => {
+    const a = document.createElement('a');
+    a.className = 'film-card';
+    a.href = v.url;
+    a.target = '_blank';
+    a.rel = 'noopener';
+
+    const frame = document.createElement('span');
+    frame.className = 'film-card__frame';
+    if (v.poster) {
+      const img = document.createElement('img');
+      img.src = v.poster;
+      img.alt = '';
+      img.loading = 'lazy';
+      img.width = 640;
+      img.height = 360;
+      frame.appendChild(img);
+    }
+    const play = document.createElement('span');
+    play.className = 'film-card__play';
+    play.setAttribute('aria-hidden', 'true');
+    frame.appendChild(play);
+
+    const text = document.createElement('span');
+    text.className = 'film-card__text';
+    if (v.source) {
+      const src = document.createElement('span');
+      src.className = 'film-card__source';
+      src.textContent = v.source;
+      text.appendChild(src);
+    }
+    const title = document.createElement('span');
+    title.className = 'film-card__title';
+    Tupa.appendWithBibleItalics(title, v.title);
+    text.appendChild(title);
+
+    a.append(frame, text);
+    row.appendChild(a);
+  });
+
+  wrap.append(head, row);
+  wrap.hidden = false;
 }
 
 /* -------------------------------------------------------------- Share */

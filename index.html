@@ -28,6 +28,7 @@
   <script defer src="js/rail.js"></script>
   <script defer src="js/countdown.js"></script>
   <script defer src="js/parallax.js"></script>
+  <script defer src="js/invitation.js"></script>
   <script defer src="data/lots.js"></script>
   <script defer src="js/data.js"></script>
   <script defer src="js/home.js"></script>
@@ -52,7 +53,7 @@
       }
     },
     "organizer": { "@type": "Person", "name": "John Pellegrene" },
-    "description": "A live fundraising auction of original paintings by Father Jerome Tupa, illuminated pages from the St. John's Bible, pottery by Richard Bresnahan, and an original work by Pablo Picasso — benefiting St. John's Abbey."
+    "description": "A live fundraising auction of original paintings by Father Jerome Tupa, illuminated pages from the Saint John's Bible, pottery by Richard Bresnahan, and an original work by Pablo Picasso — benefiting Saint John's Abbey."
   }
   </script>
 </head>
@@ -73,7 +74,7 @@
         <li><a href="menu.html">The Menu</a></li>
         <li><a href="support.html">The Cause</a></li>
       </ul>
-      <span class="rsvp-pill" aria-disabled="true">Tickets</span>
+      <!-- Tickets button (restore later): <span class="rsvp-pill" aria-disabled="true">Tickets</span> -->
       <button class="nav-burger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span></button>
     </div>
   </header>
@@ -90,7 +91,7 @@
       <li><a href="menu.html">The Menu</a></li>
       <li><a href="support.html">The Cause</a></li>
     </ul>
-    <span class="rsvp-pill" aria-disabled="true">Tickets</span>
+    <!-- Tickets button (restore later): <span class="rsvp-pill" aria-disabled="true">Tickets</span> -->
   </nav>
 
   <main id="main">
@@ -129,11 +130,29 @@
     <section class="section">
       <div class="container invite">
         <div class="invite__copy">
+          <a class="invite-opener reveal" href="assets/tupa-gala-invitation.pdf" aria-haspopup="dialog" aria-controls="invitation-viewer">
+            <span class="invite-opener__mail" aria-hidden="true">
+              <span class="invite-opener__flap"></span>
+              <span class="invite-opener__card">
+                <img src="assets/images/site/invitation-front.jpg" alt="" width="1400" height="1400" loading="lazy">
+              </span>
+              <span class="invite-opener__pocket"></span>
+              <span class="invite-opener__badge">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 7.5 12 13l9-5.5M3 7.5v9A1.5 1.5 0 0 0 4.5 18h15a1.5 1.5 0 0 0 1.5-1.5v-9M3 7.5 12 3l9 4.5"/>
+                </svg>
+              </span>
+            </span>
+            <span class="invite-opener__text">
+              <span class="invite-opener__label">View the invitation</span>
+              <span class="invite-opener__hint">Open the envelope — card and booklet</span>
+            </span>
+          </a>
           <p class="eyebrow reveal" style="color: var(--tupa-red)">The Invitation</p>
           <p class="invite__formal reveal">John Pellegrene cordially invites you to a gala of fine art &amp; philanthropy featuring Father Jerome Tupa.</p>
           <p class="reveal">Discover an extraordinary collection of original paintings by Father Jerome Tupa—Benedictine monk of Saint John's Abbey and Artist in Residence at Saint John's University—whose bold, vibrant oils reflect more than fifty years of artistic pilgrimage. The evening also features illuminated pages from <em>The Saint John's Bible</em>, masterworks by Richard Bresnahan, an original work by Pablo Picasso, an original painting by Yusuf Mirumbe, and exceptional fine art from distinguished private collections.</p>
           <p class="reveal">Proceeds from the evening will support the enduring mission of Saint John's Abbey.</p>
-          <p class="reveal"><span class="rsvp-pill" aria-disabled="true">Tickets</span></p>
+          <!-- Tickets button (restore later): <p class="reveal"><span class="rsvp-pill" aria-disabled="true">Tickets</span></p> -->
         </div>
         <div class="invite__panel reveal">
           <p class="eyebrow">Save the date</p>
@@ -152,7 +171,7 @@
             <li><time>6:30</time><span>Auction</span></li>
             <li><time>8:00</time><span>Entertainment — Amy Grant</span></li>
           </ol>
-          <span class="rsvp-pill" aria-disabled="true">Tickets</span>
+          <!-- Tickets button (restore later): <span class="rsvp-pill" aria-disabled="true">Tickets</span> -->
           <p class="caption invite__note">Meal choice available with ticket purchase. <a href="menu.html">View the menu</a></p>
           <div class="invite__map">
             <iframe title="Map to The Hutton House, 10715 South Shore Drive, Medicine Lake" src="https://www.google.com/maps?q=The+Hutton+House,+10715+South+Shore+Drive,+Medicine+Lake,+MN+55441&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
@@ -204,7 +223,7 @@
                 <img src="assets/images/site/illumination-transfiguration.jpg" alt="The Transfiguration illumination from the Saint John's Bible — gold leaf and pigment on vellum" loading="lazy" width="1600" height="1209">
               </div>
               <figcaption>
-                <h3><em>The St.&nbsp;John's Bible</em></h3>
+                <h3><em>The Saint&nbsp;John's Bible</em></h3>
                 <p>Illuminated pages from the first handwritten and illuminated Bible commissioned by a Benedictine abbey in five hundred years.</p>
               </figcaption>
             </figure>
@@ -212,7 +231,7 @@
           <a class="beyond-card reveal" href="collection.html#pottery">
             <figure>
               <div class="beyond-card__frame curtain">
-                <img src="assets/images/lots/live-06-bresnahan-large-vase.jpg" alt="Richard Bresnahan, large coiled and paddled jar fired in the Johanna Kiln" loading="lazy" width="1067" height="1600">
+                <img src="assets/images/lots-cropped/live-06-bresnahan-large-vase.jpg" alt="Richard Bresnahan, large coiled and paddled jar fired in the Johanna Kiln" loading="lazy" width="1067" height="1600">
               </div>
               <figcaption>
                 <h3>Bresnahan Pottery</h3>
@@ -223,7 +242,7 @@
           <a class="beyond-card reveal" href="collection.html#picasso">
             <figure>
               <div class="beyond-card__frame curtain">
-                <img src="assets/images/lots/live-08-toros-en-vallauris.jpg" alt="Pablo Picasso, Toros en Vallauris — black and white linoleum print of a bullfight" loading="lazy" width="890" height="886">
+                <img src="assets/images/lots-cropped/live-08-toros-en-vallauris.jpg" alt="Pablo Picasso, Toros en Vallauris — black and white linoleum print of a bullfight" loading="lazy" width="610" height="573">
               </div>
               <figcaption>
                 <h3>An Original Picasso</h3>
@@ -252,11 +271,11 @@
       <div class="container">
         <p class="eyebrow reveal" style="color: var(--tupa-red)">The Cause</p>
         <h2 class="display display-l reveal">Every Lot Gives Back</h2>
-        <p class="lead reveal">Every dollar raised on October 22 supports the enduring mission of St.&nbsp;John's Abbey — a community of prayer, hospitality and art in Collegeville, Minnesota.</p>
+        <p class="lead reveal">Every dollar raised on October 22 supports the enduring mission of Saint&nbsp;John's Abbey — a community of prayer, hospitality and art in Collegeville, Minnesota.</p>
         <div class="sponsor-row reveal" data-stagger="0.08">
           <a href="support.html"><img src="assets/images/logos/fidelis.png" alt="Fidelis Capital" width="1280" height="373"></a>
           <a href="support.html"><img src="assets/images/logos/abbey.webp" alt="Saint John's Abbey" width="242" height="127"></a>
-          <a href="support.html"><img src="assets/images/logos/sju.svg" alt="Saint John's University" width="300" height="80"></a>
+          <a href="support.html"><img src="assets/images/logos/sju.png" alt="Saint John's University" width="598" height="184"></a>
           <a href="support.html"><img src="assets/images/logos/bible.png" alt="The Saint John's Bible" width="480" height="586"></a>
           <a href="support.html"><img src="assets/images/logos/bacio.webp" alt="Bacio" width="400" height="71"></a>
         </div>
@@ -271,6 +290,77 @@
 
   </main>
 
+  <!-- The printed invitation: envelope → 7×7 card → zig-zag booklet.
+       Body-level so the fixed overlay is never trapped by a transformed ancestor. -->
+  <div class="invite-viewer" id="invitation-viewer" role="dialog" aria-modal="true" aria-labelledby="invite-viewer-title" data-stage="envelope" hidden>
+    <div class="invite-viewer__backdrop" data-invite-close></div>
+    <button class="invite-viewer__close" type="button" data-invite-close aria-label="Close the invitation">&times;</button>
+    <div class="invite-viewer__inner">
+      <p class="eyebrow invite-viewer__title" id="invite-viewer-title">The Invitation</p>
+
+      <div class="invite-stage invite-stage--envelope" data-stage-panel="envelope">
+        <button class="mail" type="button" data-invite-draw aria-label="Open the envelope">
+          <span class="mail__flap"></span>
+          <span class="mail__card">
+            <img src="assets/images/site/invitation-front.jpg" alt="" width="1400" height="1400">
+          </span>
+          <span class="mail__pocket"></span>
+        </button>
+        <p class="invite-viewer__hint">The card is the first thing in the envelope.</p>
+      </div>
+
+      <div class="invite-stage invite-stage--card" data-stage-panel="card" hidden>
+        <div class="invite-viewer__stage">
+          <div class="invite-viewer__hinge">
+            <div class="invite-viewer__card">
+              <img class="invite-viewer__face invite-viewer__face--front" src="assets/images/site/invitation-front.jpg" width="1400" height="1400"
+                   alt="John Pellegrene cordially invites you to Works of Heart, a gala and auction featuring Father Jerome Tupa, benefiting Saint John's Abbey. Live performance by Amy Grant. Thursday, October 22, 2026, 4:00 to 9:00 p.m. at The Hutton House, 10715 South Shore Drive, Medicine Lake, Minnesota. The live auction features original paintings by Father Jerome Tupa, the Heritage Edition of The Saint John's Bible, pottery by Richard Bresnahan, and an original work by Pablo Picasso.">
+              <img class="invite-viewer__face invite-viewer__face--back" src="assets/images/site/invitation-back.jpg" width="1400" height="1400"
+                   alt="The reverse of the card: reserve your table or tickets at www.worksofheart.us. Seating is limited. In support of the enduring mission of Saint John's Abbey, with The Saint John's Bible and Fidelis Capital.">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="invite-stage invite-stage--booklet" data-stage-panel="booklet" hidden>
+        <div class="zigzag" data-zigzag>
+          <div class="zigzag__viewport">
+            <div class="zigzag__strip" data-zigzag-side="a">
+              <figure class="zigzag__panel is-current"><img src="assets/images/site/zigzag/a1.jpg" width="977" height="1000" alt="Saint John's Abbey: the evening's live auction benefits the Abbey's enduring missions — a community where prayer, work and creativity have given life to Minnesota Public Radio, the Hill Museum and Manuscript Library, The Saint John's Bible, and more."></figure>
+              <figure class="zigzag__panel"><img src="assets/images/site/zigzag/a2.jpg" width="978" height="1000" alt="An original painting by Father Jerome Tupa — a vivid architectural courtyard in reds, golds and blues."></figure>
+              <figure class="zigzag__panel"><img src="assets/images/site/zigzag/a3.jpg" width="978" height="1000" alt="Father Jerome Tupa, Artist in Residence at Saint John's University: a Benedictine monk whose internationally exhibited oils explore faith, beauty and the human spirit."></figure>
+              <figure class="zigzag__panel"><img src="assets/images/site/zigzag/a4.jpg" width="977" height="1000" alt="The letter U, overlaid on Father Jerome Tupa's painting of an embrace."></figure>
+              <figure class="zigzag__panel"><img src="assets/images/site/zigzag/a5.jpg" width="978" height="1000" alt="The letter P, overlaid on a Tupa cityscape of striped towers."></figure>
+              <figure class="zigzag__panel"><img src="assets/images/site/zigzag/a6.jpg" width="977" height="1000" alt="The letter A, overlaid on a Tupa town square — completing the name Tupa across the fold."></figure>
+            </div>
+            <div class="zigzag__strip" data-zigzag-side="b" hidden>
+              <figure class="zigzag__panel is-current"><img src="assets/images/site/zigzag/b1.jpg" width="977" height="1000" alt="The Saint John's Bible Heritage and Apostles Editions: the first handwritten, illuminated Bible commissioned by a Benedictine monastery in more than 500 years."></figure>
+              <figure class="zigzag__panel"><img src="assets/images/site/zigzag/b2.jpg" width="978" height="1000" alt="The Saint John's Bible open to the Gospel according to Matthew, with gold illumination and calligraphy."></figure>
+              <figure class="zigzag__panel"><img src="assets/images/site/zigzag/b3.jpg" width="977" height="1000" alt="Pottery by Richard Bresnahan: the Saint John's Pottery Studio, founded in 1979, rooted in local materials and a generational studio tradition."></figure>
+              <figure class="zigzag__panel"><img src="assets/images/site/zigzag/b4.jpg" width="961" height="1000" alt="A wood-fired vessel by Richard Bresnahan, its surface marked by ash and incised grass-like lines."></figure>
+              <figure class="zigzag__panel"><img src="assets/images/site/zigzag/b5.jpg" width="978" height="1000" alt="Pablo Picasso, Toros en Vallauris: an original linoleum print whose verso bears Pierre Raybaud's handwritten certification."></figure>
+              <figure class="zigzag__panel"><img src="assets/images/site/zigzag/b6.jpg" width="978" height="1000" alt="Picasso's Toros en Vallauris 1954 linocut — the bullring carved in bold black and white."></figure>
+            </div>
+          </div>
+          <div class="zigzag__nav">
+            <button class="btn btn--ghost" type="button" data-zigzag-prev>Previous fold</button>
+            <p class="zigzag__count" data-zigzag-count>1 / 6</p>
+            <button class="btn btn--ghost" type="button" data-zigzag-next>Next fold</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="invite-viewer__controls">
+        <button class="btn btn--ghost" type="button" data-invite-draw>Open the envelope</button>
+        <button class="btn btn--ghost" type="button" data-invite-flip aria-pressed="false" hidden>Turn the card over</button>
+        <button class="btn btn--ghost" type="button" data-invite-unfold hidden>Unfold the booklet</button>
+        <button class="btn btn--ghost" type="button" data-zigzag-flip hidden>Turn the booklet over</button>
+        <a class="btn btn--ghost" href="assets/tupa-gala-invitation.pdf" target="_blank" rel="noopener">Download the card</a>
+        <a class="btn btn--ghost" href="assets/tupa-gala-booklet.pdf" target="_blank" rel="noopener">Download the booklet</a>
+      </div>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <div class="container site-footer__main">
       <div>
@@ -284,13 +374,13 @@
         Medicine Lake, Minnesota 55441<br>
         Thursday, October 22, 2026 · 4:00–9:00 p.m.<br><br>
         Enquiries: <a href="mailto:John@JohnPellegrene.com">John@JohnPellegrene.com</a><br><br>
-        <span class="rsvp-pill" aria-disabled="true">Tickets</span>
+        <!-- Tickets button (restore later): <span class="rsvp-pill" aria-disabled="true">Tickets</span> -->
       </address>
     </div>
     <div class="container site-footer__sponsors">
       <a href="support.html"><img src="assets/images/logos/fidelis.png" alt="Fidelis Capital" width="1280" height="373"></a>
       <a href="support.html"><img src="assets/images/logos/abbey.webp" alt="Saint John's Abbey" width="242" height="127"></a>
-      <a href="support.html"><img src="assets/images/logos/sju.svg" alt="Saint John's University" width="300" height="80"></a>
+      <a href="support.html"><img src="assets/images/logos/sju.png" alt="Saint John's University" width="598" height="184"></a>
       <a href="support.html"><img src="assets/images/logos/bible.png" alt="The Saint John's Bible" width="480" height="586"></a>
       <a href="support.html"><img src="assets/images/logos/bacio.webp" alt="Bacio" width="400" height="71"></a>
     </div>
@@ -303,7 +393,7 @@
       </div>
     </div>
     <div class="container site-footer__legal">
-      <span>© 2026 Jerome Tupa Fine Art. Benefiting St. John's Abbey.</span>
+      <span>© 2026 Jerome Tupa Fine Art. Benefiting Saint John's Abbey.</span>
       <span><a href="auction.html">The Lots</a> · <a href="event.html">The Event</a> · <a href="support.html">The Cause</a></span>
     </div>
   </footer>

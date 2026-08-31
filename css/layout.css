@@ -104,8 +104,11 @@ main { display: block; }
   display: grid;
   place-items: center;
   cursor: pointer;
-  margin-left: 0.25rem;
+  /* While the Tickets pill is commented out, this keeps the burger on the right.
+     The + rule below restores the original 0.25rem gap once the pill is back. */
+  margin-left: auto;
 }
+.site-nav .rsvp-pill + .nav-burger { margin-left: 0.25rem; }
 .nav-burger span {
   display: block;
   width: 24px; height: 2px;
@@ -205,7 +208,7 @@ main { display: block; }
   margin-bottom: env(safe-area-inset-bottom);
 }
 
-body.menu-open { overflow: hidden; }
+body.menu-open, body.overlay-open { overflow: hidden; }
 
 /* ------------------------------------------------------------- Footer */
 

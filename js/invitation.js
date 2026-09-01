@@ -30,6 +30,8 @@
   const nextBtn = viewer.querySelector('[data-zigzag-next]');
   const countEl = viewer.querySelector('[data-zigzag-count]');
   const zigzag = viewer.querySelector('[data-zigzag]');
+  const prevArrow = viewer.querySelector('[data-invite-prev]');
+  const nextArrow = viewer.querySelector('[data-invite-next]');
 
   let lastFocused = null;
   let stage = 'envelope';
@@ -45,9 +47,9 @@
 
   function onKeydown(e) {
     if (e.key === 'Escape') { close(); return; }
-    if (stage === 'booklet' && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
       e.preventDefault();
-      step(e.key === 'ArrowRight' ? 1 : -1);
+      advance(e.key === 'ArrowRight' ? 1 : -1);
       return;
     }
     if (e.key !== 'Tab') return;
@@ -69,6 +71,7 @@
     if (!flip) return;
     flip.setAttribute('aria-pressed', String(showBack));
     flip.textContent = showBack ? FLIP_LABELS.back : FLIP_LABELS.front;
+    syncArrows();
   }
 
   function strip() {
@@ -86,6 +89,7 @@
     if (prevBtn) prevBtn.disabled = index === 0;
     if (nextBtn) nextBtn.disabled = index === N - 1;
     if (sideFlip) sideFlip.textContent = SIDE_LABELS[side];
+    syncArrows();
   }
 
   function showSide(next) {
@@ -122,6 +126,58 @@
     if (name === 'booklet') {
       showSide('a');
       requestAnimationFrame(() => { if (nextBtn) nextBtn.focus(); });
+    }
+    syncArrows();
+  }
+
+  /* Floating step arrows: one linear sequence through the whole mailer —
+     envelope → card front → card back → booklet folds (side a, then b). */
+  function canStep(dir) {
+    if (stage === 'envelope') return dir > 0;
+    if (stage === 'card') return true;
+    return dir < 0 || !(side === 'b' && index === N - 1);
+  }
+
+  function syncArrows() {
+    if (prevArrow) prevArrow.disabled = !canStep(-1);
+    if (nextArrow) nextArrow.disabled = !canStep(1);
+  }
+
+  function advance(dir) {
+    if (!canStep(dir)) return;
+    const arrow = dir > 0 ? nextArrow : prevArrow;
+    const keepFocus = document.activeElement === arrow;
+    if (stage === 'envelope') {
+      drawCard();
+    } else if (stage === 'card') {
+      const onBack = viewer.classList.contains('is-flipped');
+      if (dir > 0) {
+        if (onBack) openBooklet(); else setFace(true);
+      } else if (onBack) {
+        setFace(false);
+      } else {
+        clearTimeout(drawTimer);
+        viewer.classList.remove('is-unsealing');
+        setStage('envelope');
+      }
+    } else if (dir > 0) {
+      if (index < N - 1) step(1); else showSide('b');
+    } else if (index > 0) {
+      step(-1);
+    } else if (side === 'b') {
+      showSide('a');
+      index = N - 1;
+      renderZigzag();
+    } else {
+      setStage('card');
+      setFace(true);
+    }
+    if (keepFocus) {
+      // setStage moves focus to the stage's own button; give it back to the
+      // arrow the guest is clicking so they can keep stepping.
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        if (arrow && !arrow.disabled) arrow.focus();
+      }));
     }
   }
 
@@ -201,6 +257,8 @@
     });
   }
   if (unfold) unfold.addEventListener('click', openBooklet);
+  if (prevArrow) prevArrow.addEventListener('click', () => advance(-1));
+  if (nextArrow) nextArrow.addEventListener('click', () => advance(1));
   if (prevBtn) prevBtn.addEventListener('click', () => step(-1));
   if (nextBtn) nextBtn.addEventListener('click', () => step(1));
   if (sideFlip) {

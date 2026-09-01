@@ -232,6 +232,7 @@ body.menu-open, body.overlay-open { overflow: hidden; }
   flex-wrap: wrap;
   gap: 2rem 3rem;
   align-items: center;
+  justify-content: center;
   padding-block: 2.5rem;
   border-top: 1px solid rgba(250, 250, 247, 0.15);
 }

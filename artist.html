@@ -37,6 +37,7 @@
         <img src="assets/images/logos/tupa-white.png" alt="" width="1273" height="683">
       </a>
       <ul class="site-nav__links">
+        <li><a href="index.html">Home</a></li>
         <li><a href="auction.html">The Lots</a></li>
         <li><a href="artist.html">The Artist</a></li>
         <li><a href="collection.html">The Collection</a></li>
@@ -68,13 +69,16 @@
   <main id="main">
 
     <section class="artist-hero">
-      <img class="artist-hero__img" src="assets/images/site/tupa-portrait.jpg" alt="Father Jerome Tupa seated in his studio, surrounded by his bold, colorful canvases" fetchpriority="high" width="933" height="1400" data-parallax-bg="36">
       <div class="artist-hero__band">
-        <div class="container">
+        <div class="artist-hero__band-inner">
           <p class="eyebrow">The Artist</p>
-          <h1 class="display display-xl">Father Jerome&nbsp;Tupa</h1>
+          <h1 class="display artist-hero__title">Father Jerome&nbsp;Tupa</h1>
         </div>
       </div>
+      <!-- The portrait is shown whole — no cover crop — so his face is never cut off -->
+      <figure class="artist-hero__photo">
+        <img class="artist-hero__img" src="assets/images/site/tupa-portrait.jpg" alt="Father Jerome Tupa seated in his studio, surrounded by his bold, colorful canvases" fetchpriority="high" width="933" height="1400">
+      </figure>
     </section>
 
     <section class="section on-dark artist-bio">

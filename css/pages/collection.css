@@ -30,6 +30,11 @@
 .chapter__media img { width: 100%; height: auto; }
 .chapter__copy > * + * { margin-top: 1.25rem; }
 .chapter__copy .caption { display: block; }
+.chapter__body--top { align-items: start; }
+.chapter__media--stack {
+  display: grid;
+  gap: 1.25rem;
+}
 .chapter__picasso {
   background: var(--ink);
   color: var(--gallery);

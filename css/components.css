@@ -811,6 +811,8 @@
 }
 .zigzag__nav {
   display: flex;
+  position: relative;
+  z-index: 1;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
@@ -828,6 +830,9 @@
 
 .invite-viewer__controls {
   display: flex;
+  /* Sit above the card/booklet drop shadow so lit buttons stay evenly lit */
+  position: relative;
+  z-index: 1;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.75rem;
@@ -874,4 +879,67 @@
   }
   .invite-viewer[data-stage="card"].is-open .invite-viewer__hinge { animation: none; }
   .invite-opener:hover .invite-opener__flap { transform: none; }
+}
+
+/* Lit buttons — always filled so guests can see they are clickable;
+   hover only deepens the fill rather than being the first hint. */
+.invite-viewer .btn--lit,
+.zigzag__nav .btn {
+  background: #fff;
+  color: var(--ink);
+  box-shadow: none;
+}
+.invite-viewer .btn--lit:hover, .invite-viewer .btn--lit:focus-visible,
+.zigzag__nav .btn:hover, .zigzag__nav .btn:focus-visible {
+  background: var(--tupa-yellow);
+  color: var(--ink);
+}
+.zigzag__nav .btn { min-width: 9.5rem; }
+.zigzag__nav .btn:disabled,
+.zigzag__nav .btn:disabled:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.65);
+  cursor: default;
+  transform: none;
+}
+.zigzag__arrow { font-size: 1.25em; line-height: 1; }
+
+/* Floating step arrows — always lit, on every stage, so guests can see how
+   to move through the invitation without hovering to discover it */
+.invite-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  width: 3.75rem;
+  height: 3.75rem;
+  margin-top: -1.875rem;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--ink);
+  font-size: 1.85rem;
+  line-height: 1;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: background 0.3s ease, transform 0.3s var(--ease-out-expo);
+}
+.invite-arrow--prev { left: clamp(0.75rem, 3vw, 3rem); }
+.invite-arrow--next { right: clamp(0.75rem, 3vw, 3rem); }
+.invite-arrow:hover, .invite-arrow:focus-visible {
+  background: var(--tupa-yellow);
+  transform: scale(1.08);
+}
+.invite-arrow:disabled,
+.invite-arrow:disabled:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.65);
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+@media (min-width: 48em) {
+  .invite-arrow { display: inline-flex; }
 }

@@ -1,29 +1,24 @@
-// Artist page — scroll-driven quote build + Tupa works grid.
+// Artist page — pilgrimage quote reveal + Tupa works grid.
 // Classic script; requires data/lots.js, js/data.js, js/reveal.js.
 
 (function () {
   'use strict';
 
-  /* Pilgrimage quote: tall section with a sticky inner panel; lines light
-     up as scroll progresses through the section. */
+  /* Pilgrimage quote: every line lights together the first time the panel
+     scrolls into view — no scroll-driven build. */
   const pin = document.querySelector('.quote-pin');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 
-  if (pin && !reduced.matches) {
-    const lines = Array.from(
-      pin.querySelectorAll('.quote-pin__line, .quote-pin__sig, .quote-pin__attr'));
-    const update = () => {
-      const r = pin.getBoundingClientRect();
-      const total = r.height - window.innerHeight;
-      const progress = Math.min(1, Math.max(0, -r.top / total));
-      const lit = Math.floor(progress * (lines.length + 0.5));
-      lines.forEach((el, i) => el.classList.toggle('is-lit', i < lit));
-    };
-    window.addEventListener('scroll', update, { passive: true });
-    update();
-  } else if (pin) {
-    pin.querySelectorAll('.quote-pin__line, .quote-pin__sig, .quote-pin__attr')
-      .forEach((el) => el.classList.add('is-lit'));
+  if (pin) {
+    const light = () => pin.classList.add('is-lit');
+    if (reduced.matches || !('IntersectionObserver' in window)) {
+      light();
+    } else {
+      const io = new IntersectionObserver((entries) => {
+        if (entries.some((e) => e.isIntersecting)) { light(); io.disconnect(); }
+      }, { threshold: 0.3 });
+      io.observe(pin.querySelector('.quote-pin__panel') || pin);
+    }
   }
 
   /* Works by Tupa */

@@ -66,6 +66,7 @@
         <img src="assets/images/logos/tupa-white.png" alt="" width="1273" height="683">
       </a>
       <ul class="site-nav__links">
+        <li><a href="index.html">Home</a></li>
         <li><a href="auction.html">The Lots</a></li>
         <li><a href="artist.html">The Artist</a></li>
         <li><a href="collection.html">The Collection</a></li>
@@ -295,6 +296,9 @@
   <div class="invite-viewer" id="invitation-viewer" role="dialog" aria-modal="true" aria-labelledby="invite-viewer-title" data-stage="envelope" hidden>
     <div class="invite-viewer__backdrop" data-invite-close></div>
     <button class="invite-viewer__close" type="button" data-invite-close aria-label="Close the invitation">&times;</button>
+    <!-- Always-lit step arrows: one sequence through envelope, card front, card back and every booklet fold -->
+    <button class="invite-arrow invite-arrow--prev" type="button" data-invite-prev aria-label="Back"><span aria-hidden="true">&larr;</span></button>
+    <button class="invite-arrow invite-arrow--next" type="button" data-invite-next aria-label="Next"><span aria-hidden="true">&rarr;</span></button>
     <div class="invite-viewer__inner">
       <p class="eyebrow invite-viewer__title" id="invite-viewer-title">The Invitation</p>
 
@@ -343,18 +347,18 @@
             </div>
           </div>
           <div class="zigzag__nav">
-            <button class="btn btn--ghost" type="button" data-zigzag-prev>Previous fold</button>
+            <button class="btn" type="button" data-zigzag-prev><span class="zigzag__arrow" aria-hidden="true">&larr;</span> Previous</button>
             <p class="zigzag__count" data-zigzag-count>1 / 6</p>
-            <button class="btn btn--ghost" type="button" data-zigzag-next>Next fold</button>
+            <button class="btn" type="button" data-zigzag-next>Next <span class="zigzag__arrow" aria-hidden="true">&rarr;</span></button>
           </div>
         </div>
       </div>
 
       <div class="invite-viewer__controls">
-        <button class="btn btn--ghost" type="button" data-invite-draw>Open the envelope</button>
-        <button class="btn btn--ghost" type="button" data-invite-flip aria-pressed="false" hidden>Turn the card over</button>
-        <button class="btn btn--ghost" type="button" data-invite-unfold hidden>Unfold the booklet</button>
-        <button class="btn btn--ghost" type="button" data-zigzag-flip hidden>Turn the booklet over</button>
+        <button class="btn btn--lit" type="button" data-invite-draw>Open the envelope</button>
+        <button class="btn btn--lit" type="button" data-invite-flip aria-pressed="false" hidden>Turn the card over</button>
+        <button class="btn btn--lit" type="button" data-invite-unfold hidden>Unfold the booklet</button>
+        <button class="btn btn--lit" type="button" data-zigzag-flip hidden>Turn the booklet over</button>
         <a class="btn btn--ghost" href="assets/tupa-gala-invitation.pdf" target="_blank" rel="noopener">Download the card</a>
         <a class="btn btn--ghost" href="assets/tupa-gala-booklet.pdf" target="_blank" rel="noopener">Download the booklet</a>
       </div>

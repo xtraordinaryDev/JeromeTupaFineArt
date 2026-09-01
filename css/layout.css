@@ -131,11 +131,11 @@ main { display: block; }
   .nav-burger { display: none; }
   .site-nav .rsvp-pill { margin-left: 0; }
 }
-/* Seven tabs plus the pill only breathe on wider desktops */
+/* Eight tabs (Home through The Cause) only breathe on wider desktops */
 @media (min-width: 60em) and (max-width: 78em) {
   .site-nav__inner { gap: 1.25rem; }
-  .site-nav__links { gap: 1rem; }
-  .site-nav__links a { font-size: 0.875rem; }
+  .site-nav__links { gap: 0.85rem; }
+  .site-nav__links a { font-size: 0.8125rem; }
 }
 
 /* Mobile overlay menu — the red screenshot moment */

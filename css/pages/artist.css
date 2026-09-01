@@ -1,48 +1,75 @@
 /* Artist page */
 
+/* Hero — split layout: red title panel beside the portrait shown whole.
+   The photo is a tall 2:3 frame; a cover crop kept cutting his face off on
+   wide screens, so the photo column is sized to the frame instead. */
 .artist-hero {
   position: relative;
   min-height: 88svh;
-  display: flex;
-  align-items: flex-end;
-  overflow: clip;
+  display: grid;
+  grid-template-areas: "photo" "band";
   color: #fff;
-}
-.artist-hero__img {
-  position: absolute;
-  left: 0; right: 0;
-  top: -5%;
-  width: 100%;
-  height: 110%;
-  object-fit: cover;
-  /* Prefer the upper portrait — forehead and hair stay visible */
-  object-position: center 12%;
-  z-index: -2;
-  will-change: transform;
-  filter: brightness(0.88) contrast(1.05);
-}
-.artist-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(14, 6, 32, 0.35) 0%, transparent 38%, rgba(20, 8, 16, 0.15) 100%),
-    radial-gradient(ellipse at 50% 12%, rgba(90, 30, 190, 0.14), transparent 55%);
-  pointer-events: none;
-  z-index: -1;
+  background: var(--ink);
 }
 .artist-hero__band {
-  position: relative;
-  width: 100%;
+  grid-area: band;
+  display: flex;
+  align-items: flex-end;
   /* Solid red — translucent band made type unreadable over the studio photo */
   background: var(--tupa-red);
   padding: clamp(1.5rem, 3.5vw, 3rem) var(--gutter);
-  z-index: 1;
 }
+.artist-hero__band-inner { width: 100%; }
 .artist-hero__band .eyebrow,
 .artist-hero__band .display {
   color: #fff;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+}
+.artist-hero__title {
+  font-size: clamp(1.9rem, 8.5vw, 7.5rem);
+  line-height: 0.95;
+  margin: 0;
+}
+.artist-hero__photo {
+  grid-area: photo;
+  position: relative;
+  margin: 0;
+  min-width: 0;
+  background: var(--ink);
+}
+/* Gentle scrim so the white nav text stays readable over the studio photo */
+.artist-hero__photo::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 10rem;
+  background: linear-gradient(rgba(20, 20, 20, 0.55), transparent);
+  pointer-events: none;
+}
+.artist-hero__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: brightness(0.94) contrast(1.04);
+}
+@media (min-width: 48em) {
+  .artist-hero {
+    /* Photo column matches the portrait's 933×1400 frame at the hero height,
+       capped at half the width so the title always has room */
+    grid-template-columns: minmax(0, 1fr) min(calc(88svh * 0.6664), 50%);
+    grid-template-areas: "band photo";
+  }
+  .artist-hero__photo { overflow: clip; }
+  /* Narrower column beside the photo — keep "Jerome Tupa" on one line */
+  .artist-hero__title { font-size: clamp(2.5rem, 6.5vw, 7.5rem); }
+  .artist-hero__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
 }
 
 /* Biography — editorial two-column with display drop cap */
@@ -125,55 +152,47 @@
 .bio__facts dt { color: var(--stone); }
 .bio__facts dd { margin: 0; text-align: right; }
 
-/* Pilgrimage quote — full-screen typographic moment, sticky pin */
-.quote-pin { height: 320vh; position: relative; }
+/* Pilgrimage quote — one full-height typographic panel. Every line lights
+   together the moment the panel scrolls into view (no scroll-driven build). */
+.quote-pin { position: relative; }
 .quote-pin__panel {
-  position: sticky;
-  top: 0;
-  height: 100svh;
+  min-height: 88svh;
   background: var(--ink);
   color: var(--gallery);
   display: grid;
   place-content: center;
   text-align: center;
-  padding: var(--gutter);
+  padding: clamp(4rem, 10vh, 7rem) var(--gutter);
   overflow: hidden;
 }
 .quote-pin__line {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 7vw, 6rem);
   line-height: 1.05;
-  opacity: 0.08;
+  opacity: 0;
   transform: translateY(0.3em);
-  transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
+  transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
 }
-.quote-pin__line.is-lit { opacity: 1; transform: none; }
 .quote-pin__line em { font-style: normal; color: var(--tupa-yellow); }
 .quote-pin__sig {
   margin-top: 2.5rem;
   display: flex;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.8s var(--ease-out-expo);
+  transition: opacity 0.9s var(--ease-out-expo);
 }
-.quote-pin__sig.is-lit { opacity: 1; }
 .quote-pin__sig img { width: min(280px, 60vw); height: auto; }
 .quote-pin__attr {
   margin-top: 1.5rem;
   opacity: 0;
-  transition: opacity 0.8s var(--ease-out-expo) 0.2s;
+  transition: opacity 0.9s var(--ease-out-expo);
 }
-.quote-pin__attr.is-lit { opacity: 0.7; }
+.quote-pin.is-lit .quote-pin__line { opacity: 1; transform: none; }
+.quote-pin.is-lit .quote-pin__sig { opacity: 1; }
+.quote-pin.is-lit .quote-pin__attr { opacity: 0.7; }
 @media (prefers-reduced-motion: reduce) {
-  .quote-pin { height: auto; }
-  .quote-pin__panel { position: static; height: auto; padding-block: 6rem; }
-  .quote-pin__line, .quote-pin__sig, .quote-pin__attr {
-    opacity: 1; transform: none; transition: none;
-  }
-  .quote-pin__attr { opacity: 0.7; }
+  .quote-pin__line, .quote-pin__sig, .quote-pin__attr { transition: none; }
 }
-.no-js .quote-pin { height: auto; }
-.no-js .quote-pin__panel { position: static; height: auto; padding-block: 6rem; }
 .no-js .quote-pin__line, .no-js .quote-pin__sig { opacity: 1; transform: none; }
 .no-js .quote-pin__attr { opacity: 0.7; }
 

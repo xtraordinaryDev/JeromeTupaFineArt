@@ -173,7 +173,7 @@ window.TUPA_LOTS = [
     "estimateHigh": 75000,
     "reserve": 40000,
     "category": "modern",
-    "provenance": "Directly from the estate of Pierre Raybaud, owner of Raybaudy Press, Vallauris, France.",
+    "provenance": "Given to Father Jerome Tupa directly from the estate of Pierre Raybaud, owner of Raybaudy Press, Vallauris, France.",
     "essay": "An important early linocut by Pablo Picasso, Toros en Vallauris was created in 1954 during the artist's celebrated Vallauris period. The image depicts the drama of the bullring in an extraordinarily forceful composition of black and white, in which Picasso transforms the traditional subject of the corrida into a dynamic arrangement of sweeping curves, angular figures, bold areas of black and rapidly carved white lines.\n\nThe bull, horse, matador and spectators appear to emerge from the dense black field of the composition. Picasso uses the resistance and simplicity of the linoleum block to exceptional effect, creating a sense of movement and excitement through the contrast between solid masses and rapidly articulated linear passages. The architecture of the arena curves around the central action, drawing the viewer's eye continuously through the composition.\n\nToros en Vallauris was Picasso's first poster for the bullfighting festivals of Vallauris and was the only subject in this series executed on the large-format printing press. The work was printed by Hidalgo Arnéra in Vallauris and published by the Association des Potiers de Vallauris. Contemporary catalogue records describe an edition of 100 signed impressions together with approximately 140 unsigned impressions.\n\nThe present impression is distinguished by an exceptionally significant contemporary inscription on the verso, signed by Pierre Raybaud, together with a stamped mark of Imprimerie Robaudy.",
     "images": [
       "assets/images/lots-cropped/live-08-toros-en-vallauris.jpg",
@@ -181,7 +181,7 @@ window.TUPA_LOTS = [
       "assets/images/lots-cropped/live-08-picasso-inscription.jpg"
     ],
     "catalogueRefs": "Bloch 1264; Baer 1027; Czwiklitzer 13",
-    "inscription": "Hand-signed and inscribed by master printer Pierre Raybaud on the reverse: \"I the undersigned attest that I worked with Pablo Picasso when we pulled the first print of this matrix. Subsequently Picasso made several changes before printing the full run. Pierre Raybaud 1954\""
+    "inscription": "Inscribed by master printer Pierre Raybaud on the reverse: \"I the undersigned attest that I worked with Pablo Picasso when we pulled the first print of this matrix. Subsequently Picasso made several changes before printing the full run. Pierre Raybaud 1954\""
   },
   {
     "id": "L09",
@@ -229,6 +229,7 @@ window.TUPA_LOTS = [
     "title": "The Saint John’s Bible — Apostles Edition",
     "year": 2011,
     "medium": "Seven-volume fine art edition, hand-stitched and bound in the UK, with Deluxe Viewing Stand and Cabinet",
+    "includes": "Deluxe Viewing Stand and Cabinet, hand-made by Abbey Woodworking. <a href=\"https://saintjohnsbible.org/displays/\" target=\"_blank\" rel=\"noopener\">See the display options</a>",
     "dimensionsIn": "Seven volumes · 1,120 pages",
     "dimensionsCm": "Seven volumes · 1,120 pages",
     "widthIn": 16,

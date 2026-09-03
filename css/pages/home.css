@@ -115,10 +115,13 @@
 
 /* --------------------------------------------------------- Invitation */
 
+/* Less white space around the Save the Date panel: the section runs tighter
+   top and bottom so the teal box sits higher and the black band follows sooner. */
+.section--invite { padding-block: clamp(2rem, 4vw, 3.5rem) clamp(2rem, 4vw, 3rem); }
 .invite {
   display: grid;
   gap: 3rem;
-  align-items: center;
+  align-items: start;
 }
 @media (min-width: 60em) {
   .invite { grid-template-columns: 1.1fr 1fr; gap: 5rem; }
@@ -162,11 +165,6 @@
   align-items: baseline;
   padding-block: 0.6rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-.invite__schedule time {
-  font-family: var(--font-display);
-  font-size: 1.0625rem;
-  min-width: 3.25rem;
 }
 .invite__note {
   margin: -0.75rem 0 0;
@@ -255,7 +253,9 @@
 }
 .beyond-card__frame img {
   width: 100%; height: 100%;
-  object-fit: cover;
+  /* contain, not cover — these are whole works, and the pottery and the
+     Picasso were losing their edges to the crop */
+  object-fit: contain;
   transition: transform 0.6s var(--ease-out-expo);
 }
 .beyond-card:hover .beyond-card__frame img { transform: scale(1.03); }
@@ -351,3 +351,15 @@
 
 .cause { text-align: center; }
 .cause .lead { max-width: 44rem; margin: 1.5rem auto 3rem; }
+
+/* ---------------------------------------------------------- Amy Grant */
+
+.amy__body { max-width: 46rem; }
+.amy__body > * + * { margin-top: 1.25rem; }
+.amy__lede {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-optical-sizing: auto;
+  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+  line-height: 1.25;
+}

@@ -121,11 +121,6 @@
   padding-block: 1.1rem;
   border-bottom: 1px solid rgba(20,20,20,0.12);
 }
-.program time {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  min-width: 4.5rem;
-}
 .program .todo { color: var(--stone); font-size: 0.8125rem; }
 
 /* Calendar buttons */

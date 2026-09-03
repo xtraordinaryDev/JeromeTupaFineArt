@@ -21,12 +21,10 @@ main { display: block; }
   height: var(--nav-h);
   display: flex;
   align-items: center;
-  transition: background-color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
-  border-bottom: 1px solid transparent;
-}
-.site-nav.is-scrolled {
+  /* Always white — the bar reads as a fixed menu, not something that appears
+     once you start scrolling. Applies on every page. */
   background: var(--gallery);
-  border-bottom-color: rgba(20, 20, 20, 0.12);
+  border-bottom: 1px solid rgba(20, 20, 20, 0.12);
 }
 .site-nav__inner {
   width: min(100% - 2 * var(--gutter), var(--max-w));
@@ -42,9 +40,8 @@ main { display: block; }
   filter: brightness(0);
 }
 
-/* On dark heroes the un-scrolled nav renders the logo/links in white */
-.site-nav--overlay:not(.is-scrolled) { color: #fff; }
-.site-nav--overlay:not(.is-scrolled) .site-nav__logo img { filter: none; }
+/* The nav is permanently white on every page, so the logo and links stay ink
+   at all times — no overlay/scrolled variant. */
 
 .site-nav__links {
   display: none;

@@ -806,7 +806,9 @@
   width: 100%;
   height: auto;
   aspect-ratio: 1;
-  object-fit: cover;
+  /* contain, not cover: the folds are now cropped to the artwork itself and
+     no longer share one aspect ratio, so nothing may be trimmed again */
+  object-fit: contain;
   background: #111;
 }
 .zigzag__nav {
@@ -942,4 +944,20 @@
 }
 @media (min-width: 48em) {
   .invite-arrow { display: inline-flex; }
+}
+
+/* Embedded video player (Vimeo / YouTube) - 16:9, fills its column */
+.video-embed {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  background: #232320;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }

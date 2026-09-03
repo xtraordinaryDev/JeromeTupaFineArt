@@ -63,6 +63,7 @@ function render(lot, lots) {
   addSpec('Year', String(lot.year ?? 'To be announced'));
   addSpec('Medium', lot.medium);
   addSpec('Dimensions', dims, true);
+  if (lot.includes) addSpec('Includes', lot.includes, true, true);
   if (lot.catalogueRefs) addSpec('Catalogue', lot.catalogueRefs);
   if (lot.inscription) addSpec('Inscription', lot.inscription, false, true);
   addSpec('Provenance', lot.provenance || 'Available on request');
@@ -215,22 +216,43 @@ function initStage(lot) {
   stage.addEventListener('pointerup', release);
   stage.addEventListener('pointercancel', release);
 
-  /* Room view — true relative scale from the artwork's real dimensions */
+  /* Room view - the artwork composited on the wall at true relative scale.
+     The photographs are not all cropped to the catalogued proportions, so
+     forcing the box to widthIn x heightIn stretched several of them. Keep the
+     photo's own aspect ratio and match the artwork's real *area* instead: the
+     piece reads at the right size on the wall, is never distorted, and the
+     result no longer depends on whether the catalogue lists a work as
+     width x height or height x width. */
   function placeInRoom() {
     const sw = stage.clientWidth, sh = stage.clientHeight;
+    if (!sw || !sh) return;
     const cover = Math.max(sw / WALL.imgW, sh / WALL.imgH);
     const ppi = (WALL.imgW / WALL.wallInches) * cover; // rendered px per inch
-    const offX = (sw - WALL.imgW * cover) / 2;
     const offY = (sh - WALL.imgH * cover) / 2;
-    const w = lot.widthIn * ppi;
-    const h = lot.heightIn * ppi;
+    // Until the photo has loaded its natural size is unknown; place it from
+    // the catalogued proportions and correct it the moment it arrives.
+    if (!img.complete || !img.naturalWidth) {
+      img.addEventListener('load', placeInRoom, { once: true });
+    }
+    const ar = img.naturalWidth && img.naturalHeight
+      ? img.naturalWidth / img.naturalHeight
+      : lot.widthIn / lot.heightIn;
+    const areaIn = lot.widthIn * lot.heightIn;
+    let w = Math.sqrt(areaIn * ar) * ppi;
+    let h = Math.sqrt(areaIn / ar) * ppi;
     // wall/floor junction, in stage pixels (asset is 10 px per inch):
     const junction = offY + WALL.floorFromTopIn * (WALL.imgW / WALL.wallInches) * cover;
-    const centerY = junction - WALL.eyeHeightIn * ppi; // artwork centered at 57in eye height
+    // Always keep a band of wall visible above the work, and never let it
+    // cross the floor line or run off the sides.
+    const minTop = Math.max(offY, 0) + sh * 0.07;
+    const fit = Math.min(1, (junction - minTop) / h, (sw * 0.86) / w);
+    if (fit < 1) { w *= fit; h *= fit; }
+    let top = junction - WALL.eyeHeightIn * ppi - h / 2; // centred at 57in eye height
+    top = Math.min(Math.max(top, minTop), junction - h);
     img.style.width = `${w}px`;
     img.style.height = `${h}px`;
     img.style.left = `${(sw - w) / 2}px`;
-    img.style.top = `${centerY - h / 2}px`;
+    img.style.top = `${top}px`;
   }
 
   const roomBtn = $('.room-toggle');

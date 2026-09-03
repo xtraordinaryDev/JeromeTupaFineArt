@@ -14,7 +14,9 @@
 .chapter__intro--blue { background: var(--tupa-blue); }
 .chapter__intro--teal { background: var(--tupa-teal); }
 .chapter__intro--red  { background: var(--tupa-red); }
-.chapter__intro .display { max-width: 20ch; }
+/* Chapter headings wrap to two lines; the display face sets at 0.95 line-height,
+   which let the "g" of Heritage collide with the "d" of Apostles. */
+.chapter__intro .display { max-width: 20ch; line-height: 1.1; }
 
 .chapter__body {
   display: grid;

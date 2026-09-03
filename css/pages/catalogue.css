@@ -194,8 +194,21 @@ body.wall-view .lot-grid {
   max-width: 56rem;
   margin-inline: auto;
 }
-body.wall-view .lot-grid .lot-card__frame { aspect-ratio: auto; background: none; }
-body.wall-view .lot-grid .lot-card__frame img { height: auto; object-fit: contain; }
+body.wall-view .lot-grid .lot-card__frame {
+  aspect-ratio: auto;
+  background: none;
+  display: flex;
+  justify-content: center;
+}
+/* One work per screen: the whole piece fits without scrolling, so a scroll
+   moves you to the next lot rather than down the same one. */
+body.wall-view .lot-grid .lot-card__frame img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: max(20rem, calc(100svh - 16rem));
+  object-fit: contain;
+}
 body.wall-view .lot-grid .lot-card__meta { text-align: center; }
 
 .catalogue-empty {

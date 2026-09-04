@@ -18,7 +18,12 @@ const params = new URLSearchParams(location.search);
 const lotId = params.get('lot');
 
 /* Wall asset real-world scale contract — see scripts/generate-art.mjs */
-const WALL = { imgW: 1600, imgH: 1000, wallInches: 160, floorFromTopIn: 80, eyeHeightIn: 57 };
+const WALL = {
+  imgW: 1600, imgH: 1000, wallInches: 160, floorFromTopIn: 80, eyeHeightIn: 57,
+  benchHeightIn: 18, benchWidthIn: 62, // bench drawn in wall.svg: 62in wide, 18in seat
+  benchGapIn: 4,       // hung work stays at least this far above the bench
+  minObjectFrac: 0.3,  // pottery on the bench is never shorter than 30% of the stage
+};
 
 getLots().then((lots) => {
   const lot = lots.find((l) => l.id === lotId || String(l.lotNumber) === lotId);
@@ -124,6 +129,8 @@ function initStage(lot) {
   }
   img.src = currentSrc;
   img.alt = altText(lot);
+  // Bound volumes cannot hang on a wall - the catalogue can opt a lot out
+  if (lot.roomView === false) $('.room-toggle')?.remove();
 
   /* Thumbnails */
   lot.images.forEach((src, i) => {
@@ -216,13 +223,14 @@ function initStage(lot) {
   stage.addEventListener('pointerup', release);
   stage.addEventListener('pointercancel', release);
 
-  /* Room view - the artwork composited on the wall at true relative scale.
-     The photographs are not all cropped to the catalogued proportions, so
-     forcing the box to widthIn x heightIn stretched several of them. Keep the
-     photo's own aspect ratio and match the artwork's real *area* instead: the
-     piece reads at the right size on the wall, is never distorted, and the
-     result no longer depends on whether the catalogue lists a work as
-     width x height or height x width. */
+  /* Room view - the piece composited on the wall at true relative scale.
+     Paintings keep the photo's own aspect ratio and match the artwork's real
+     area (several photos are not cropped to the catalogued proportions, and
+     the catalogue is not consistent about width x height vs height x width).
+     Pottery stands on the bench instead, using its background-free cutout. */
+  const isObject = lot.category === 'pottery';
+  const cutout = isObject && lot.cutout ? lot.cutout : null;
+
   function placeInRoom() {
     const sw = stage.clientWidth, sh = stage.clientHeight;
     if (!sw || !sh) return;
@@ -237,18 +245,32 @@ function initStage(lot) {
     const ar = img.naturalWidth && img.naturalHeight
       ? img.naturalWidth / img.naturalHeight
       : lot.widthIn / lot.heightIn;
-    const areaIn = lot.widthIn * lot.heightIn;
-    let w = Math.sqrt(areaIn * ar) * ppi;
-    let h = Math.sqrt(areaIn / ar) * ppi;
-    // wall/floor junction, in stage pixels (asset is 10 px per inch):
-    const junction = offY + WALL.floorFromTopIn * (WALL.imgW / WALL.wallInches) * cover;
-    // Always keep a band of wall visible above the work, and never let it
-    // cross the floor line or run off the sides.
-    const minTop = Math.max(offY, 0) + sh * 0.07;
-    const fit = Math.min(1, (junction - minTop) / h, (sw * 0.86) / w);
-    if (fit < 1) { w *= fit; h *= fit; }
-    let top = junction - WALL.eyeHeightIn * ppi - h / 2; // centred at 57in eye height
-    top = Math.min(Math.max(top, minTop), junction - h);
+    const junction = offY + WALL.floorFromTopIn * (WALL.imgW / WALL.wallInches) * cover; // floor line
+    const benchTop = junction - WALL.benchHeightIn * ppi;
+    let w, h, top;
+    if (isObject) {
+      // Height is the largest catalogued dimension (the platter is shown
+      // face-on, so that is its diameter). Small pieces are lifted to a
+      // minimum size so they read at all on screen - not strictly to scale.
+      h = Math.max(lot.widthIn, lot.heightIn) * ppi;
+      h = Math.max(h, sh * WALL.minObjectFrac);
+      w = h * ar;
+      const maxW = WALL.benchWidthIn * ppi * 0.9;
+      if (w > maxW) { h *= maxW / w; w = maxW; }
+      top = benchTop - h + 2;
+    } else {
+      const areaIn = lot.widthIn * lot.heightIn;
+      w = Math.sqrt(areaIn * ar) * ppi;
+      h = Math.sqrt(areaIn / ar) * ppi;
+      // Keep a band of wall above the work, never hang it down into the
+      // bench, and never let it run off the sides.
+      const minTop = Math.max(offY, 0) + sh * 0.07;
+      const lowest = benchTop - WALL.benchGapIn * ppi;
+      const fit = Math.min(1, (lowest - minTop) / h, (sw * 0.86) / w);
+      if (fit < 1) { w *= fit; h *= fit; }
+      top = junction - WALL.eyeHeightIn * ppi - h / 2; // centred at 57in eye height
+      top = Math.min(Math.max(top, minTop), lowest - h);
+    }
     img.style.width = `${w}px`;
     img.style.height = `${h}px`;
     img.style.left = `${(sw - w) / 2}px`;
@@ -256,14 +278,17 @@ function initStage(lot) {
   }
 
   const roomBtn = $('.room-toggle');
-  roomBtn.addEventListener('click', () => {
+  if (roomBtn) roomBtn.addEventListener('click', () => {
     roomMode = !roomMode;
     roomBtn.setAttribute('aria-pressed', String(roomMode));
     resetZoom();
     stage.classList.toggle('lot-stage--room', roomMode);
+    stage.classList.toggle('lot-stage--object', roomMode && !!cutout);
     if (roomMode) {
+      if (cutout) img.src = cutout; // background removed so it sits on the bench
       placeInRoom();
     } else {
+      if (cutout) img.src = currentSrc;
       img.style.width = img.style.height = img.style.left = img.style.top = '';
     }
     hint.hidden = roomMode;

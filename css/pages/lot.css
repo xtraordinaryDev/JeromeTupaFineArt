@@ -59,6 +59,12 @@
   cursor: default;
 }
 
+/* Background-free pottery on the bench: a soft cast shadow, not a box */
+.lot-stage--object img {
+  box-shadow: none;
+  filter: drop-shadow(0 10px 14px rgba(20, 20, 20, 0.35));
+}
+
 .lot-thumbs {
   display: flex;
   gap: 0.75rem;

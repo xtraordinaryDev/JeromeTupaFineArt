@@ -125,6 +125,7 @@
     "estimateHigh": 25000,
     "reserve": 14000,
     "category": "pottery",
+    "cutout": "assets/images/lots-cutout/live-06-bresnahan-large-vase.png",
     "provenance": "Saint John’s Pottery, Collegeville, Minnesota.",
     "essay": "The large coiled and Paddled Jar uses a circular wooden anvil on the interior which gives the pattern. The exterior is a fine grain wood pattern. Iron Slip Painted then hand carved Big Blue Stem grass pattern carved over the whole surface. Natural ash glaze from the front chamber fills in the carving lines with natural glaze. The Jar was fired to 2420 degrees Fahrenheit.",
     "images": [
@@ -194,6 +195,7 @@
     "estimateLow": 250000,
     "estimateHigh": 250000,
     "reserve": 200000,
+    "roomView": false,
     "category": "bible",
     "provenance": "Saint John’s Abbey and University, Collegeville, Minnesota.",
     "essay": "At the onset of a new millennium, Saint John’s Abbey and University in Collegeville, Minnesota sought to ignite the spiritual imagination of people throughout the world by commissioning a work of art that illuminates the Word of God for the world today. Its construction paralleled that of its medieval predecessors, written on vellum, using quills, natural handmade inks, hand-ground pigments, and gold leaf while incorporating modern themes, images and technology of the 21st century.\n\nThe Bible is the collaborative work of an international team of associates, scribes, and artists under the direction of scribe and illuminator, Donald Jackson—former Senior Scribe to Her Majesty Queen Elizabeth’s Crown Office. The artistic team worked closely with theologians and scholars at Saint John’s Abbey & University to create over 160 illuminations used to depict the scripture passages with an eye to interpreting them for our time. Working in a scriptorium in Monmouth, Wales, Mr. Jackson and his team began work in 1995 and completed the final pages in 2011. The completed artwork is an 1,120-page, seven volume achievement in the book arts that continually inspires people of all cultures and creeds with the spirit and beauty of this historic undertaking—unprecedented in over 500 years, since the invention of the printing press.\n\nCommunities around the world experience this gift of sacred art through the Heritage and Apostles Editions of The Saint John’s Bible, the only full-size, fine art recreations of the original manuscript. Each page and illumination was scrupulously compared to its original counterpart to guarantee accurate reproduction and maintain the awe-inspiring artistic intent of the original. Leading manuscript experts around the world who have seen the Heritage and Apostles Editions recognize them as the highest quality reproductions ever made.\n\nIn all, only 299 seven-volume sets of the Heritage Edition have been created. No more can ever be created. Each has received special hand-treatments making each set unique—numbered and authenticated by Donald Jackson. To date over 170 Heritage Editions have been acquired by families, churches, schools, libraries, universities, healthcare centers, and retreat centers. Less than 125 of these rare sets remain available for acquisition.",
@@ -225,7 +227,7 @@
     "title": "The Saint John’s Bible — Apostles Edition",
     "year": 2011,
     "medium": "Seven-volume fine art edition, hand-stitched and bound in the UK, with Deluxe Viewing Stand and Cabinet",
-    "includes": "Deluxe Viewing Stand and Cabinet, hand-made by Abbey Woodworking. <a href=\"https://saintjohnsbible.org/displays/\" target=\"_blank\" rel=\"noopener\">See the display options</a>",
+    "includes": "Deluxe Viewing Stand and Cabinet, hand-made by Abbey Woodworking. <a href=\"assets/deluxe-viewing-stand-and-cabinet.pdf\" target=\"_blank\" rel=\"noopener\">Read the details (PDF)</a>",
     "dimensionsIn": "Seven volumes · 1,120 pages",
     "dimensionsCm": "Seven volumes · 1,120 pages",
     "widthIn": 16,
@@ -233,6 +235,7 @@
     "estimateLow": 1000000,
     "estimateHigh": 1000000,
     "reserve": null,
+    "roomView": false,
     "category": "bible",
     "provenance": "Saint John’s Abbey and University, Collegeville, Minnesota.",
     "essay": "There are only 12, seven-volume sets of the Apostles Edition in existence. Of those, only 4 remain available for acquisition and no more can ever be created. This hyper-rare version of The Saint John’s Bible is hand-stitched and bound in the UK. It comes with a custom-designed and crafted dedication page, and an exquisite hand-made Deluxe Viewing Stand and Cabinet from Abbey Woodworking.\n\nMost notably, every Apostles Edition includes a companion Heritage Edition which the benefactor may keep for their own collection or donate to a beloved institution. Apostles Editions are presently housed in such prominent locations as the Vatican Library (Rome), Washington National Cathedral (DC), Morgan Library & Museum (NYC), Lambeth Palace (London), Library of Congress (DC), St. Patrick’s Cathedral (NYC) and one private home.\n\nThanks to the creative leadership of Donald Jackson, the Apostles Edition is a work of art in its own right—bound in Italian leather, it features the exquisite calligraphy, vibrant imagery, and stunning gold and silver embossed illuminations of the original–160 illuminations in all. Each has received special hand-treatments making each set unique—numbered and authenticated by Donald Jackson.",
@@ -448,6 +451,7 @@
     "estimateHigh": null,
     "reserve": null,
     "category": "pottery",
+    "cutout": "assets/images/lots-cutout/silent-08-wheat-platter.png",
     "provenance": "Saint John’s Pottery, Collegeville, Minnesota.",
     "essay": "Platter with White Slip under painting and Iron underpainting with brush. The glaze is an Organic Soybean Straw ash glaze and fired in the second Chamber of the Johanna kiln at 2420 degrees Fahrenheit. Signature, Studio Seal, and 17th firing seal on the inside of the foot.",
     "images": [
@@ -470,6 +474,7 @@
     "estimateHigh": null,
     "reserve": null,
     "category": "pottery",
+    "cutout": "assets/images/lots-cutout/silent-09-slip-painted-jar.png",
     "provenance": "Saint John’s Pottery, Collegeville, Minnesota.",
     "essay": "Coiled and Paddled Jar, 12th firing seal and signature at the side of the Jar. Circular wood anvil pattern on the interior and carved wooden paddle on the exterior. This piece was fired on its side so the natural ashes run horizontally across the surface. The white circular marking is the abstract painting protected by the wad clay. The Jar was fired to 2420 degrees Fahrenheit. The interior of the jar is oak slip glaze. A turned lip with line is the distinction of the piece.",
     "images": [

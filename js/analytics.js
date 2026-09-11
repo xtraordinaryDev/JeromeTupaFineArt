@@ -7,7 +7,7 @@
 
   const CLOUDFLARE_TOKEN = '';      // Cloudflare Web Analytics: the "token" value from its snippet
   const PLAUSIBLE_DOMAIN = '';      // Plausible: the site's domain as registered, e.g. 'worksofheart.us'
-  const GA4_MEASUREMENT_ID = '';    // Google Analytics 4: e.g. 'G-XXXXXXXXXX'
+  const GA4_MEASUREMENT_ID = 'G-10JMMGEGYF'; // Google Analytics 4: e.g. 'G-XXXXXXXXXX'
 
   if (location.protocol === 'file:') return;
   if (/^(localhost|127\.)/.test(location.hostname)) return;

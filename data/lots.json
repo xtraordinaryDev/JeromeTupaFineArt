@@ -571,5 +571,27 @@
       "assets/images/lots-cropped/silent-13-baptism-of-jesus.jpg",
       "assets/images/lots-cropped/silent-13-loaves-and-fishes.jpg"
     ]
+  },
+  {
+    "id": "S14",
+    "lotNumber": 14,
+    "sale": "silent",
+    "artist": "Father Jerome Tupa",
+    "title": "Gubbio Streets",
+    "year": 2025,
+    "medium": "Oil on canvas",
+    "dimensionsIn": "65 × 52 in",
+    "dimensionsCm": "165.1 × 132.1 cm",
+    "widthIn": 65,
+    "heightIn": 52,
+    "estimateLow": null,
+    "estimateHigh": null,
+    "reserve": null,
+    "category": "tupa",
+    "provenance": "From the artist’s studio, Saint John’s Abbey, Collegeville, Minnesota.",
+    "essay": "“Gubbio Wolf Streets” is part of the Road to Rome series, since the city is part of the St. Francis legend along with the paintings from Assisi. The wolf legend is painted to represent that little village, which was terrorized by a big, vicious wolf. When St. Francis heard about the problem, he went to the village and confronted the animal that was terrorizing the villagers. Francis sat down with the wolf and talked to him about how Jesus loved all animals and would not be pleased if one of the villagers were to be hurt. Francis prayed with the wolf and asked him not to terrorize the village anymore. Thus it was that the wolf became a friend of the village and protected Gubbio. The wolf became a pet from then onward because of the saint’s love of all things.\n\nYou can see that the painting has vibrant colors showing the warmth of the saint’s faith. The use of squares throughout the painting allows the animation of the scene to underscore this lively Italian village’s history and lively commerce.",
+    "images": [
+      "assets/images/lots-cropped/silent-14-gubbio-streets.jpg"
+    ]
   }
 ]

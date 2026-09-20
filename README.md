@@ -25,7 +25,7 @@ css/        tokens, base, layout, components, motion + pages/*.css
 js/         classic scripts (reveal, nav, countdown, catalogue, lot, …)
 data/       lots.js (embedded catalogue), lots.json, site.json
 assets/
-  images/lots-cropped/  web-sized auction photos, white backdrops trimmed (live-01 … silent-13) — the set the site loads
+  images/lots-cropped/  web-sized auction photos, white backdrops trimmed (live-01 … silent-14) — the set the site loads
   images/lots/          the untrimmed originals of the same 32 filenames, kept for reference
   images/site/    hero, portraits, Bible illuminations
   images/logos/   Tupa signature + sponsor marks

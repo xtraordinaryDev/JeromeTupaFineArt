@@ -47,6 +47,18 @@
   padding: 2rem;
 }
 .chapter__picasso .display { font-size: clamp(3.5rem, 8vw, 6.5rem); }
+.chapter__coming-soon {
+  background: var(--ink);
+  color: var(--gallery);
+  aspect-ratio: 4 / 5;
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 2rem;
+}
+.chapter__coming-soon .eyebrow { color: var(--tupa-yellow); }
+.chapter__coming-soon .display { font-size: clamp(2.5rem, 6vw, 4.5rem); }
 
 /* ------------------------------------------------------------ Support */
 

@@ -63,7 +63,10 @@ function render(lot, lots) {
     wrap.append(dt, dd);
     specs.appendChild(wrap);
   };
-  const dims = `<span data-dims>${lot.dimensionsIn}</span><button type="button" class="unit-toggle" data-unit-toggle aria-label="Show dimensions in centimeters">cm</button>`;
+  const hasDims = lot.widthIn != null && lot.heightIn != null;
+  const dims = hasDims
+    ? `<span data-dims>${lot.dimensionsIn}</span><button type="button" class="unit-toggle" data-unit-toggle aria-label="Show dimensions in centimeters">cm</button>`
+    : lot.dimensionsIn || 'To be announced';
   addSpec('Auction', Tupa.SALE_LABELS[lot.sale] || 'Live Auction');
   addSpec('Year', String(lot.year ?? 'To be announced'));
   addSpec('Medium', lot.medium);
@@ -75,7 +78,7 @@ function render(lot, lots) {
 
   /* in ⇄ cm toggle */
   let metric = false;
-  specs.querySelector('[data-unit-toggle]').addEventListener('click', (e) => {
+  specs.querySelector('[data-unit-toggle]')?.addEventListener('click', (e) => {
     metric = !metric;
     specs.querySelector('[data-dims]').textContent = metric ? lot.dimensionsCm : lot.dimensionsIn;
     e.target.textContent = metric ? 'in' : 'cm';
@@ -407,8 +410,8 @@ function injectSchema(lot) {
     name: lot.title,
     creator: { '@type': 'Person', name: lot.artist },
     artMedium: lot.medium,
-    width: { '@type': 'Distance', name: `${lot.widthIn} in` },
-    height: { '@type': 'Distance', name: `${lot.heightIn} in` },
+    ...(lot.widthIn != null ? { width: { '@type': 'Distance', name: `${lot.widthIn} in` } } : {}),
+    ...(lot.heightIn != null ? { height: { '@type': 'Distance', name: `${lot.heightIn} in` } } : {}),
     ...(lot.year ? { dateCreated: String(lot.year) } : {}),
     ...(lot.images.length ? { image: new URL(lot.images[0], location.href).href } : {}),
   };

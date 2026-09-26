@@ -140,23 +140,21 @@ window.TUPA_LOTS = [
     "id": "L07",
     "lotNumber": 7,
     "sale": "live",
-    "artist": "Yusuf Mirumbe",
-    "title": "The Face of Hope",
-    "year": 2024,
-    "medium": "Oil on canvas",
-    "dimensionsIn": "38 × 55 in (framed)",
-    "dimensionsCm": "96.5 × 139.7 cm (framed)",
-    "widthIn": 38,
-    "heightIn": 55,
-    "estimateLow": 12000,
-    "estimateHigh": 12000,
-    "reserve": 9000,
+    "artist": "To be announced",
+    "title": "Coming Soon",
+    "year": null,
+    "medium": "To be announced",
+    "dimensionsIn": "To be announced",
+    "dimensionsCm": "To be announced",
+    "widthIn": null,
+    "heightIn": null,
+    "estimateLow": null,
+    "estimateHigh": null,
+    "reserve": null,
     "category": "private",
     "provenance": null,
-    "essay": "The Face of Hope is a work that dwells in those solemn moments when hope is all that remains. The artist recalls watching adults lost in deep thought, their eyes fixed on distant horizons he could not see. As a child, he could not grasp the weight of their silence, yet he longed to understand their burdens. In place of answers, they offered gentle smiles before returning to that long, searching gaze, as though reality itself might yield from the distance.\n\nAmong these memories are visions of his mother in troubled reflection. He paints these moments from memory — not to solve their mystery, but to preserve them. Her struggles remain unknowable to him, like many quiet wars fought behind brave faces.\n\nThus, the work stands as a testament to unseen battles, to love concealed within silence, and to hope — fragile, enduring, and often the last light to remain when certainty fades.",
-    "images": [
-      "assets/images/lots-cropped/live-07-face-of-hope.jpg"
-    ]
+    "essay": "Details and photography for this lot are coming soon.",
+    "images": []
   },
   {
     "id": "L08",
@@ -415,28 +413,6 @@ window.TUPA_LOTS = [
     "essay": "A visual crossroad within the Prague Suite, this composition unites two of the city’s most revered spiritual landmarks—the legacy of Saint Wenceslaus and the Emaus Monastery—within a single, dynamic architectural dialogue. A steep cobblestone roadway anchors the scene, plunging toward the viewer and framed by bright green borders and leaning historic facades. Terracotta, ochre, and electric-blue structures converge beneath a radiant sun and a crimson-orange sky, creating a powerful interplay of light and movement. Through its compressed perspective and luminous atmosphere, Wenceslaus Meets Emaus captures the artist’s mastery of emotive distortion and color, embodying the spiritual and historical essence of Prague.",
     "images": [
       "assets/images/lots-cropped/silent-06-wenceslaus-meets-emaus.jpg"
-    ]
-  },
-  {
-    "id": "S07",
-    "lotNumber": 7,
-    "sale": "silent",
-    "artist": "Yusuf Mirumbe",
-    "title": "Brother",
-    "year": null,
-    "medium": "Oil on canvas",
-    "dimensionsIn": "20 ½ × 24 ½ in (framed)",
-    "dimensionsCm": "52.1 × 62.2 cm (framed)",
-    "widthIn": 20.5,
-    "heightIn": 24.5,
-    "estimateLow": null,
-    "estimateHigh": null,
-    "reserve": null,
-    "category": "private",
-    "provenance": null,
-    "essay": "Brother series is a body of work that lays bare the artist’s bond with fleeting moments from his childhood in an African homestead. These memories return not as gentle whispers, but as sudden flashes — summoning visions of family, belonging, and a time when life was whole and unburdened.\n\nIn the faces of the children around him, the artist beholds his own reflection. He sees the dust beneath bare feet, the careless laughter, the unmeasured days. They stand where he once stood, heirs to a simplicity he can no longer claim.\n\nThis work is an inquiry into loss — the slow and inevitable theft committed by time itself. Innocence yields to duty, freedom to burden, and the warmth of family recedes into memory.\n\nYet, in deliberate defiance of his years, the artist chooses to see the world through the eyes of these children. Though they dwell amid hardship, their narrow horizon shields them from the full measure of what they lack. In this fragile unknowing, their joy endures.\n\nThus, the work becomes both witness and reckoning — a meditation on what time steals and what knowledge unveils, and the quiet burden of seeing the world as it truly is.",
-    "images": [
-      "assets/images/lots-cropped/silent-07-brother.jpg"
     ]
   },
   {

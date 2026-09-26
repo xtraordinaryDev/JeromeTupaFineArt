@@ -8,10 +8,12 @@
   if (!rail) return;
 
   Tupa.getLots().then((lots) => {
-    const featured = lots.filter((l) => l.category === 'tupa').slice(0, 5)
-      .concat(lots.filter((l) => l.category === 'modern').slice(0, 1))
-      .concat(lots.filter((l) => l.category === 'private').slice(0, 1))
-      .concat(lots.filter((l) => l.category === 'pottery').slice(0, 1));
+    // Lots without photography yet (e.g. "Coming Soon" placeholders) stay off the rail.
+    const ready = lots.filter((l) => l.images.length);
+    const featured = ready.filter((l) => l.category === 'tupa').slice(0, 5)
+      .concat(ready.filter((l) => l.category === 'modern').slice(0, 1))
+      .concat(ready.filter((l) => l.category === 'private').slice(0, 1))
+      .concat(ready.filter((l) => l.category === 'pottery').slice(0, 1));
     featured.forEach((lot) => rail.appendChild(Tupa.buildLotCard(lot)));
 
     const cta = document.createElement('a');
